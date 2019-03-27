@@ -1,0 +1,237 @@
+.create-transfer {
+	position: relative;
+	z-index: 2;
+	padding-top: 63px;
+
+	.wallet {
+		margin-bottom: 0;
+		position: relative;
+
+		&.wallet_transfer {
+			padding: 13px 26px 23px 15px;
+			overflow: hidden;
+
+			&:before {
+				content: '';
+				position: absolute;
+				background: linear-gradient(180deg, rgba(153, 206, 255, 0.1508) 0%, rgba(47, 123, 194, 0) 100%), #061A37;
+				opacity: 0.5;
+				z-index: 0;
+			}
+
+			.wallet {
+				position: relative;
+
+				&__img {
+					width: 40px;
+					height: 40px;
+
+					img {
+						width: 36px;
+						height: 36px;
+						top: 2px;
+						left: 2px;
+						right: 2px;
+						bottom: 2px;
+					}
+				}
+
+				&__text {
+					margin-left: 21px;
+					margin-top: 6px;
+					width: ~"calc(100% - 70px)";
+				}
+
+				&__name {
+					font-weight: 300;
+					letter-spacing: .2px;
+					margin-bottom: 3px;
+					font-size: 13px;
+					line-height: 15px;
+				}
+
+				&__num {
+					font-weight: 200;
+					font-size: 10px;
+					line-height: 15px;
+					letter-spacing: .4px;
+					margin-left: 2px;
+				}
+			}
+
+			.asset {
+				position: relative;
+				text-align: left;
+				padding-left: 61px;
+				margin-top: 26px;
+
+				&__val {
+					text-align: left;
+					margin-top: 6px;
+					font-weight: 300;
+				}
+
+				&__int {font-size: 34px;}
+				&__div {font-weight: 300;}
+				&__cur {
+					font-weight: 200;
+					font-size: 17px;
+					padding-left: 1px;
+
+					span {
+						padding-left: 1px;
+					}
+				}
+			}
+
+			.mod {
+				position: relative;
+				padding-top: 24px;
+				text-align: left;
+				padding-left: 61px;
+				font-style: normal;
+				font-weight: 300;
+				line-height: 15px;
+				font-size: 10px;
+				letter-spacing: 0.03em;
+				color: #99CEFF;
+
+				.month,
+				.plus,
+				.minus {
+					display: inline-block;
+				}
+
+				.plus {padding-left: 15px;}
+				.minus {padding-left: 22px;}
+			}
+		}
+	}
+
+	&__form {
+		display: block;
+		width: 100%;
+		padding-top: 32px;
+
+		.input {
+			position: relative;
+
+			&.input_address {
+				input {padding-right: 50px;}
+
+				.input__icon {
+					position: absolute;
+					right: 15px;
+					top: 22px;
+					bottom: 0;
+					width: 19px;
+					background: url(~assets/img/address-book.svg);
+					background-position: center;
+					background-repeat: no-repeat;
+				}
+			}
+
+			&.input_fee {
+				input {
+					padding-right: 50px;
+					color: #99CEFF; 
+				}
+
+				.input__icon {
+					position: absolute;
+					right: 15px;
+					top: 22px;
+					bottom: 0;
+					width: 19px;
+					background: url(~assets/img/fee-arrow.svg);
+					background-position: center;
+					background-repeat: no-repeat;
+				}
+			}
+
+			&:last-of-type {
+				input {margin-bottom: 0;}
+			}
+
+			label {
+				display: inline-block;
+				margin-bottom: 9px;
+				font-style: normal;
+				font-weight: 100;
+				line-height: 12px;
+				font-size: 10px;
+				text-transform: uppercase;
+				color: #99CEFF;
+				vertical-align: top;
+			}
+
+			input {
+				display: block;
+				width: 100%;
+				margin-bottom: 25px;
+				line-height: 40px;
+				height: 40px;
+				padding: 0px 16px;
+				background: rgba(5, 11, 31, 0.6);
+				border: 1px solid rgba(153, 206, 255, 0.3);
+				border-radius: 37px;
+				font-weight: 300;
+				font-size: 12px;
+				color: #FFFFFF;
+
+				&[type="password"] {font-size: 36px;}
+			}
+
+			&__hint {
+				display: inline-block;
+				font-style: normal;
+				font-weight: normal;
+				line-height: normal;
+				font-size: 10px;
+				color: #99CEFF;
+				padding-left: 24px;
+				vertical-align: top;
+			}
+
+			&__timer {
+				display: inline-block;
+				width: 13px;
+				height: 13px;
+				background: url(~assets/img/fee-timer.svg);
+				background-position: center;
+				background-repeat: no-repeat;
+				margin-right: 4px;
+			}
+
+			&__time {
+				display: inline-block;
+				vertical-align: top;
+				padding-left: 3px;
+			}
+		}
+
+		.submit {
+			margin-top: 46px;
+			display: block;
+			width: 100%;
+			height: 57px;
+			line-height: 57px;
+			background: linear-gradient(180deg, rgba(153, 206, 255, 0.29) 0%, rgba(47, 123, 194, 0) 100%), #0A4982;
+			border: 1px solid rgba(153, 206, 255, 0.25);
+			box-sizing: border-box;
+			border-radius: 54px;
+			vertical-align: middle;
+
+			span {
+				font-style: normal;
+				font-weight: 300;
+				line-height: 14px;
+				font-size: 12px;
+				text-transform: uppercase;
+				color: #FFFFFF;
+				text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+				vertical-align: 2px;
+			}
+		}
+	}
+}

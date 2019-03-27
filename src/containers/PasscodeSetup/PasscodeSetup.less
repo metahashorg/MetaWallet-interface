@@ -1,0 +1,121 @@
+@import "../../../public/css/variables.less";
+
+.passcode {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	z-index: 2;
+	position: relative;
+	min-height: 100vh;
+
+	&__copyright {
+		flex: none;
+		font-style: normal;
+		font-weight: normal;
+		line-height: 14px;
+		font-size: 10px;
+		text-align: center;
+		color: rgba(129, 190, 247, 0.45);
+		margin-bottom: 18px;
+	}
+
+	&__version {
+		flex: none;		
+		font-weight: normal;
+		line-height: 14px;
+		font-size: 12px;
+		text-align: center;
+		margin-bottom: 19px;
+		color: #99CEFF;
+		opacity: 0.5;
+	}
+
+	&__metahash {
+		display: block;
+		flex: none;
+		text-align: center;
+		margin-bottom: 11px;
+	}
+
+	&__spacer {
+		flex: 1 0 auto;
+	}
+
+	&__button {
+		display: block;
+		margin-top: 36px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 196px;
+		height: 50px;
+		border: 1px solid fade(#99CEFF, 50%);
+		box-sizing: border-box;
+		border-radius: 56px;
+		flex: none;
+		line-height: 50px;
+		text-align: center;
+
+		span {
+			font-style: normal;
+			font-weight: 300;
+			line-height: normal;
+			font-size: 14px;
+			color: #99CEFF;
+		}
+	}
+
+	&__panel {
+		flex: none;
+		display: block;
+		padding-top: 176px;
+	}
+}
+
+.passcode-panel {
+	padding: 40px;
+	width: 290px;
+	background: linear-gradient(180deg, rgba(153, 206, 255, 0.261) 0%, rgba(47, 123, 194, 0) 100%);
+	border: 1px solid rgba(153, 206, 255, 0.15);
+	box-sizing: border-box;
+	border-radius: 5px;
+
+	&__header {
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		font-size: 14px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #FFFFFF;
+	}
+
+	&__text {
+		font-style: normal;
+		font-weight: normal;
+		padding: 0 10px;
+		line-height: 20px;
+		font-size: 14px;
+		text-align: center;
+		color: #99CEFF;
+		margin-top: 14px;
+	}
+
+	.passcode__button {
+		background: #0A4982;
+		border: 1px solid #0A4982;
+
+		span {
+			font-style: normal;
+			font-weight: 500;
+			line-height: normal;
+			font-size: 12px;
+			text-align: center;
+			text-transform: uppercase;
+			color: #FFFFFF;
+			text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+		}
+	}
+}

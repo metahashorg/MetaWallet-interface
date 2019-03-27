@@ -1,0 +1,45 @@
+{
+  "name": "metagate-mobile",
+  "description": "#MetaGate mobile app",
+  "version": "0.0.1",
+  "author": "AdSniper",
+  "private": true,
+  "dependencies": {
+    "copy-to-clipboard": "^3.0.8",
+    "date-fns": "^1.29.0",
+    "lodash-es": "^4.17.11",
+    "metrics-graphics": "^2.15.6",
+    "moment": "^2.22.2",
+    "query-string": "^6.4.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-fade-in": "^0.1.6",
+    "react-qr-svg": "^2.1.0",
+    "react-router-scroll-4": "^1.0.0-beta.2",
+    "react-router-scroll-top": "^0.1.1",
+    "react-scripts": "^2.0.0",
+    "react-transition-group": "^2.5.0",
+    "recharts": "^1.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "format": "prettier --print-width 80  --single-quote --trailing-comma es5 --jsx-bracket-same-line  --write \"src/**/*.js*\""
+  },
+  "homepage": "./",
+  "devDependencies": {
+    "classnames": "^2.2.6",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "terser": "^3.14.1"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

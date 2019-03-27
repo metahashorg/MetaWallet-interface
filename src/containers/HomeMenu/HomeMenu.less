@@ -1,0 +1,124 @@
+.home-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+	transform: translateX(-100%);
+	transition: transform .3s;
+
+	&.opened {
+		transform: translateX(0);
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(0deg, rgba(4, 27, 51, 0.78) 54.06%, rgba(4, 27, 51, 0) 100%);
+		backdrop-filter: blur(15px);
+		z-index: 0;
+	}
+
+	&__close {
+		position: absolute;
+		top: 47px;
+		right: 20px;
+		width: 22px;
+		height: 22px;
+		background: url(~assets/img/menu-close.svg);
+		z-index: 2;
+	}
+
+	&__logo {
+		position: absolute;
+		top: 44px;
+		left: 0;
+		width: 240px;
+		height: 251px;
+		background: url(~assets/img/menu-logo.svg);
+		z-index: 1;
+	}
+
+	&__content {
+		position: relative;
+		z-index: 1;
+		padding: 320px 19px 0 54px;
+	}
+
+	&__name {
+		font-style: normal;
+		font-weight: normal;
+		line-height: normal;
+		font-size: 20px;
+		text-transform: uppercase;
+		color: #FFFFFF;
+		display: block;
+	}
+
+	&__menu {padding-top: 50px;}
+
+	&__link {
+		display: block;
+		padding-bottom: 35px;
+
+		&:last-child {padding-bottom: 0;}
+
+		&.home-menu__link_home .icon {
+			background-image: url(~assets/img/menu/home.svg);
+		}
+		&.home-menu__link_apps .icon {
+			background-image: url(~assets/img/menu/app.svg);
+		}
+		&.home-menu__link_buy .icon {
+			background-image: url(~assets/img/menu/buy.svg);
+		}
+		&.home-menu__link_settings .icon {
+			background-image: url(~assets/img/menu/settings.svg);
+		}
+		&.home-menu__link_support .icon {
+			background-image: url(~assets/img/menu/support.svg);
+		}
+		&.home-menu__link_logout .icon {
+			background-image: url(~assets/img/menu/logout.svg);
+		}
+
+		.icon {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background-position: center;
+			background-repeat: no-repeat;
+			vertical-align: middle;
+		}
+
+		.text {
+			padding-left: 30px;
+			display: inline-block;
+			font-style: normal;
+			font-weight: 300;
+			line-height: normal;
+			font-size: 17px;
+			text-transform: uppercase;
+			color: #FFFFFF;
+			vertical-align: middle;
+		}
+	}
+
+	&__copyright {
+		position: absolute;
+		bottom: 32px;
+		left: 0;
+		right: 0;
+		text-align: center;
+		font-style: normal;
+		font-weight: normal;
+		line-height: normal;
+		font-size: 12px;
+		color: #99CEFF;
+		opacity: 0.4;
+	}
+}

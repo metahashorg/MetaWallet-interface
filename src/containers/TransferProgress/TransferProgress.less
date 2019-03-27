@@ -1,0 +1,128 @@
+@import "../../../public/css/variables.less";
+
+.transfer-progress {
+	position: absolute;
+	z-index: 2;
+	top: 70px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	&__card {
+		display: block;
+		margin-left: 19px;
+		margin-right: 19px;
+		padding: 41px 32px 49px;
+		position: relative;
+		overflow: hidden;
+		border-radius: 5px;
+		margin-bottom: 70px;
+
+		&:before {
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			content: '';
+			background: linear-gradient(180deg, rgba(153, 206, 255, 0.261) 0%, rgba(47, 123, 194, 0) 100%), #0A4982;
+			opacity: 0.7;					
+			box-sizing: border-box;
+			transform: matrix(-1, 0, 0, 1, 0, 0);
+		}
+
+		& > div {
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	&__title {
+		font-weight: 300;
+		line-height: 16px;
+		font-size: 14px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #FFFFFF;
+		margin-bottom: 28px;
+	}
+
+	&__status {
+		font-weight: 100;
+		line-height: 12px;
+		font-size: 10px;
+		text-transform: uppercase;
+		text-align: center;
+		color: #FFFFFF;
+		margin-bottom: 11px;
+
+		span {
+			color: #99CEFF;
+		}
+	}
+
+	&__progressbar {
+		background: rgba(0, 41, 79, 0.2);
+		border-radius: 25px;
+		width: 100%;
+		position: relative;
+		height: 32px;
+		margin-bottom: 9px;
+
+		.bar {
+			position: absolute;
+			top: 3px;
+			left: 3px;
+			bottom: 3px;
+			background: linear-gradient(270deg, #168545 -68.61%, #3BCA2E 96.41%);
+			border-radius: 43px;
+			width: 30px;
+		}
+	}
+
+	&__percent {
+		font-weight: 400;
+		line-height: 18px;
+		font-size: 15px;
+		text-align: center;
+		color: #FFFFFF;
+		margin-bottom: 15px;
+	}
+
+	&__tip {
+		font-weight: 300;
+		line-height: 20px;
+		font-size: 14px;
+		text-align: center;
+		color: #99CEFF;
+		margin-bottom: 33px;
+	}
+
+	&__button {
+		display: block;
+		width: 100%;
+		height: 57px;
+		line-height: 57px;
+		background: linear-gradient(180deg, rgba(153, 206, 255, 0.29) 0%, rgba(47, 123, 194, 0) 100%), #0A4982;
+		border: 1px solid rgba(153, 206, 255, 0.25);
+		box-sizing: border-box;
+		border-radius: 54px;
+		vertical-align: middle;
+		text-align: center;
+
+		span {
+			font-style: normal;
+			font-weight: 300;
+			line-height: 14px;
+			font-size: 12px;
+			text-transform: uppercase;
+			color: #FFFFFF;
+			text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+			vertical-align: 2px;
+		}
+	}
+}

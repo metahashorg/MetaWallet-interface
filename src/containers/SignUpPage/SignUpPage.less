@@ -1,0 +1,168 @@
+@import "../../../public/css/variables.less";
+
+.login-page {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	z-index: 2;
+	position: relative;
+	min-height: 100vh;
+
+	&__logo {
+		flex: none;
+		display: block;
+		margin-top: 35px;
+
+		@media @iphonex {
+			margin-top: 60px;
+		}
+
+		img {
+			display: block;
+			margin: 0 auto;
+			vertical-align: bottom;
+		}
+	}
+
+	&__title {
+		flex: none;
+		display: block;
+		margin-top: 25px;
+		margin-left: 40px;
+		margin-right: 40px;
+		font-size: 37px;
+		line-height: 43px;
+		font-weight: 100;
+		text-align: center;
+		color: #fff;
+
+		span {color: #99CEFF;}
+	}
+
+	&__copyright {
+		flex: none;
+		font-style: normal;
+		font-weight: normal;
+		line-height: 14px;
+		font-size: 10px;
+		text-align: center;
+		color: rgba(129, 190, 247, 0.45);
+		margin-bottom: 18px;
+	}
+
+	&__version {
+		flex: none;		
+		font-weight: normal;
+		line-height: 14px;
+		font-size: 12px;
+		text-align: center;
+		margin-bottom: 19px;
+		color: #99CEFF;
+		opacity: 0.5;
+	}
+
+	&__metahash {
+		display: block;
+		flex: none;
+		text-align: center;
+		margin-bottom: 11px;
+	}
+
+	&__spacer {
+		flex: 1 0 auto;
+	}
+
+	&__header {
+		margin-top: 40px;
+		.clearfix();
+
+		@media @iphonex {
+			margin-top: 83px;
+		}
+	}
+
+	&__page-name {
+		float: left;
+		margin-top: 14px;
+
+		span {
+			font-weight: 300;
+			line-height: 22px;
+			font-size: 16px;
+
+			color: #FFFFFF;
+		}
+	}
+
+	&__page-button {
+		display: block;
+		float: right;
+		width: auto;
+		text-align: center;
+		padding: 15px 35px;
+		background: #0A4982;
+		border-radius: 25px;
+
+		span {
+			line-height: 12px;
+			font-size: 10px;
+			text-transform: uppercase;
+			color: #99CEFF;
+		}
+
+		img {
+			line-height: 12px; 
+			vertical-align: middle;
+			margin-left: 12px;
+		}
+	}
+}
+
+.login-form {
+	margin-top: 38px;
+	width: 100%;	
+
+	&__submit {
+		margin-top: 12px;
+		margin-bottom: 24px;
+		width: 100%;
+		height: 60px;
+		border-radius: 30px;
+		position: relative;
+		background: radial-gradient(farthest-corner at 50% 0px, #FFFFFF 0%, #87C5FF 49.17%, #1F77C8 100%);
+		border: none;
+
+		&:before {
+			content: '';
+			background: #001C3A;
+			position: absolute;
+			border-radius: 30px;
+			top: 2px;
+			left: 2px;
+			right: 2px;
+			bottom: 2px;
+			z-index: 1;
+		}
+
+		span {
+			position: relative;
+			font-weight: 500;
+			line-height: 20px;
+			font-size: 14px;
+			text-transform: uppercase;
+			color: #99CEFF;
+			vertical-align: middle;
+			z-index: 2;
+		}
+
+		img {
+			margin-left: 6px;
+			position: relative;
+			vertical-align: -3px;
+			z-index: 2;
+		}
+	}
+}

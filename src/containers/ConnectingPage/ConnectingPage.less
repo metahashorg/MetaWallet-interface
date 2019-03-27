@@ -1,0 +1,109 @@
+@import "../../../public/css/variables.less";
+
+.loading-page{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	z-index: 2;
+	position: relative;
+	min-height: 100vh;
+
+	&.show-hint {
+		.hint {animation: loading-hint .3s ease-in-out forwards;}
+	}
+
+	&.login-page_index {
+		min-height: auto;
+	}
+
+	&__title {
+		flex: none;
+		display: block;
+		margin-top: 70px;
+		margin-left: 40px;
+		margin-right: 40px;
+		font-size: 37px;
+		line-height: 43px;
+		font-weight: 100;
+		text-align: center;
+		color: #fff;
+
+		@media @iphonex {
+			margin-top: 136px;
+		}
+
+		span {color: #99CEFF;}
+	}
+
+	&__copyright {
+		flex: none;
+		font-style: normal;
+		font-weight: normal;
+		line-height: 14px;
+		font-size: 10px;
+		text-align: center;
+		color: rgba(129, 190, 247, 0.45);
+		margin-bottom: 18px;
+	}
+
+	&__version {
+		flex: none;		
+		font-weight: normal;
+		line-height: 14px;
+		font-size: 12px;
+		text-align: center;
+		margin-bottom: 19px;
+		color: #99CEFF;
+		opacity: 0.5;
+	}
+
+	&__metahash {
+		display: block;
+		flex: none;
+		text-align: center;
+		margin-bottom: 11px;
+	}
+
+	&__spacer {
+		flex: 1 0 auto;
+	}
+
+	&__status {
+		flex: none;
+		margin-top: 34px;
+
+		@media @iphonex {
+			margin-top: 90px;
+		}
+	}
+
+	&__icon {
+		flex: none;
+		margin-top: 34px;
+
+		@media @iphonex {
+			margin-top: 124px;
+		}
+	}
+
+	&__tips {
+		flex: none;
+		margin-top: 24px;
+
+		@media @iphonex {
+			margin-top: 45px;
+		}
+	}
+
+	&__button {
+		flex: none;
+		margin-top: 55px;
+
+		&+.loading-page__tips {
+			margin-top: 19px;
+		}
+	}	
+}

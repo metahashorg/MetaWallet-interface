@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter
+            id="backdrop-filter-blur"
+            x="0"
+            y="0"
+            width="100%"
+            height="100%">
+            <feGaussianBlur stdDeviation="3" />
+            <feComponentTransfer result="blur">
+              <feFuncA type="discrete" tableValues="1 1" />
+            </feComponentTransfer>
+            <feComponentTransfer in="SourceGraphic" result="source">
+              <feFuncA type="linear" slope="2" intercept="0" />
+            </feComponentTransfer>
+            <feComposite operator="in" in="blur" in2="source" />
+            <feMerge>
+              <feMergeNode />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+      </svg>

@@ -1,0 +1,19 @@
+.custom-tooltip div {
+  padding: 7px 10px;
+    background: #2F7BC2;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    line-height: 12px;
+    font-size: 10px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.custom-tooltip div::after{
+  width: 8px;
+    height: 8px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background: #2F7BC2;
+}

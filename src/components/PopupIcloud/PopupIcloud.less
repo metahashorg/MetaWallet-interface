@@ -1,0 +1,137 @@
+.popup {
+
+	&.popup_icloud {
+		.popup {
+			&__bg {
+				background-image: url(~assets/img/blur/card.png);
+			}
+
+			&__content {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				z-index: 1;
+				text-align: center;
+				padding: 0 46px;
+			}
+
+			&__card {
+				display: block;
+				padding: 27px 32px 32px;
+				border: 1px solid rgba(153, 206, 255, 0.25);
+				border-radius: 5px;
+				position: relative;
+
+				&:before {
+					position: absolute;
+					z-index: 0;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					content: '';
+					background: linear-gradient(180deg, rgba(153, 206, 255, 0.261) 0%, rgba(47, 123, 194, 0) 100%), #0A4982;
+					opacity: 0.7;					
+					box-sizing: border-box;
+                    transform: matrix(-1, 0, 0, 1, 0, 0);
+                    border-radius: 5px;
+				}
+
+				div {
+					position: relative;
+					z-index: 1;
+				}
+            }
+
+            &__icon {
+                position: absolute !important;
+                top: -71px;
+                left: ~"calc(50% - 89px)";
+                width: 178px;
+                height: 134px;
+                background: url("~assets/img/iCloud_image.svg");
+				background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: 10;
+            }
+
+			&__title {
+				font-weight: 500;
+				line-height: 16px;
+				font-size: 14px;
+				text-align: center;
+				text-transform: uppercase;
+                color: #FFFFFF;
+                padding-top: 36px;
+				margin-bottom: 23px;
+            }
+            
+            &__text {
+                font-size: 14px;
+                line-height: 20px;
+                text-align: center;
+                color: #FFFFFF;
+                padding: 0 8px;
+                margin-bottom: 56px;
+            }
+
+            &__warning {
+                .icon {
+                    display: block;
+                    margin: 0 auto 14px;
+                    width: 25px;
+                    height: 24px;
+                    background: url("~assets/img/ic_warning.svg");
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+
+                .title {
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 20px;
+                    text-align: center;
+                    color: #FFFFFF;
+                    margin-bottom: 12px;
+                }
+
+                .text {
+                    font-size: 12px;
+                    line-height: 17px;
+                    text-align: center;
+                    color: #FFFFFF;
+                    margin-bottom: 36px;
+                }
+            }
+
+            &__btn {
+                display: block;
+
+                .btn {
+                    display: inline-block;
+                    width: 196px;
+                    height: 50px;
+                    background: #2F7BC2;
+                    border-radius: 25px;
+                    line-height: 50px;
+
+                    span {
+                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: 14px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        color: #FFFFFF;
+                        text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+                    }
+                }
+            }
+		}
+	}
+}

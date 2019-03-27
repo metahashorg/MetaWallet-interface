@@ -1,0 +1,51 @@
+@import "../../../public/css/variables.less";
+
+.hint {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 3;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	transform: translateY(-100%);
+	transition: transform .5s;
+
+	@media @iphonex {
+		padding-top: 46px;
+	}
+
+	&.hint_tip {
+		background: #99CEFF;
+		.hint__icon.hint__icon_tip {display: inline;}
+	}
+
+	&.hint_warning {
+		background: #FB5E5B;
+		.hint__icon.hint__icon_warning {display: inline;}
+	}
+
+	&.hint_show {
+		transform: translateY(0%);
+	}
+
+	&__text {
+		line-height: 16px;
+		font-size: 13px;
+		text-transform: uppercase;
+		padding: 0 19px;
+		text-align: center;
+		color: #FFFFFF;
+		vertical-align: middle
+	}
+
+	&__icon {
+		display: none;
+		vertical-align: -2px;
+		margin-right: 8px;
+
+		&.hint__icon_warning {
+			vertical-align: -3px;
+		}
+	}
+}

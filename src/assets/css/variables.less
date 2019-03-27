@@ -1,0 +1,21 @@
+@hq: ~"(max-width: 1663px)";
+@desktop: ~"(max-width: 1380px)";
+@tablet: ~"(max-width: 1023px)";
+@mobile: ~"(max-width: 767px)";
+@small: ~"(max-width: 370px)";
+@iphonex: ~"only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3)";
+@iphonexr: ~"only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2)";
+@iphonexs: ~"only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3)";
+
+@tr: rgba(0,0,0,0);
+
+.clearfix() {
+  &:after,
+  &:before {
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+}

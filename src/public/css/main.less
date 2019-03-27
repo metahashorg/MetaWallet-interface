@@ -1,0 +1,148 @@
+@import "variables.less";
+
+* {
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+	outline: none;
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+b,
+strong {font-weight: 700;}
+
+html {
+	background: #001C3A;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+.bg	{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	background: #001C3A;
+	z-index: 1;
+
+	transition: background .3s;
+
+	&.bg_home {
+		&.bg_wallets {
+			.bg__img {
+				background: linear-gradient(360deg, #001C3A 30%, rgba(14, 78, 135, 0) 120.21%), url('../img/bg.png');
+				background-position: 16% 0%;
+				background-size: 140%;
+				background-repeat: no-repeat;
+			}
+		}
+
+		.bg__img {
+			background: linear-gradient(360deg, #001C3A 30%, rgba(14, 78, 135, 0) 120.21%), url('../img/bg.png');
+			background-position: 78% 0%;
+			background-size: 140%;
+			background-repeat: no-repeat;
+		}
+	}
+
+	&.bg_star {
+		.bg__img {
+			background: url('../img/bg-star.jpg');
+			background-position: center;
+			background-size: cover;
+			min-height: 100%;
+		}
+	}
+
+	&.bg_mirror {
+		.bg__img {
+			background: linear-gradient(360deg, #001C3A 30%, rgba(14, 78, 135, 0) 120.21%), url('../img/bg.png');
+			background-position: 96% 0%;
+			background-size: 145%;
+			background-repeat: no-repeat;
+			transform: rotateY(180deg);
+		}
+	}
+
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		display: block;
+		height: 351px;
+		background: linear-gradient(360deg, #001C3A 0%, rgba(14, 78, 135, 0) 120.21%), url('../img/bg.png');
+		background-position: 90% 0;
+		background-size: cover;
+		background-repeat: no-repeat;
+		z-index: 1;
+
+		transition: filter .3s;
+	}
+}
+
+.content {
+	width: 100%;
+	padding: 0 19px;
+}
+
+.chart {
+	position: relative;
+	margin-top: 43px;
+	max-width: 100%;
+
+	svg {
+		max-width: 100%;
+	}
+}
+
+.line {
+	fill: none;
+	stroke-width: 2;
+}
+
+.dot {
+	position: absolute;
+	
+
+	div {
+		position: absolute;
+		right: -20px;
+		bottom: 13px;
+		padding: 7px 10px;
+		background: #2F7BC2;
+		border-radius: 15px;
+		line-height: 12px;
+		font-size: 10px;
+		text-align: center;
+		color: #FFFFFF;
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: -4px;
+			right: 16px;
+			width: 8px;
+			height: 8px;
+			transform: rotate(45deg);
+			background: #2F7BC2;
+		}
+	}	
+}
+
+.offline-mode {
+	&.bg {background: #181818;}
+	.bg__img {filter: grayscale(100%);}
+	.wallet-home {
+		.asset__changes {filter: grayscale(100%);}
+		.asset__current {filter: grayscale(100%);}
+	}
+	.wallet,
+	.currency {filter: grayscale(100%);}
+	.loading-page {
+		&__metahash {filter: grayscale(100%);}
+	}
+	.passcode__copyright {filter: grayscale(100%);}
+}

@@ -1,0 +1,87 @@
+.settings-block {
+	display: block;
+	position: fixed;
+	z-index: 100;
+	top: 10px;
+	left: 10px;
+	width: 150px;
+	max-height: 300px;
+	padding: 10px;
+	background: fade(#eee, 80%);
+	border: 1px solid #eee;
+	border-radius: 4px;
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	&.hidden {
+		width: 30px;
+		opacity: .5;
+
+		.settings-block {
+			&__hide {
+				span {
+					&:nth-child(2) {display: block;}
+					&:nth-child(1) {display: none;}
+				}
+			}
+
+			&__list {display: none;}
+		}
+	}
+
+	&__hide {
+		span {
+			&:nth-child(1) {display: block;}
+			&:nth-child(2) {display: none;}
+		}
+	}
+
+	&__list {
+		display: block;
+		width: 100%;
+		margin-bottom: 8px;
+
+		&:last-child {margin-bottom: 0;}
+
+		&.opened {
+			& > * {
+				display: block;
+			}
+		}
+
+		& > * {
+			display: none;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+
+			&:first-child {display: block;}
+		}
+
+		h3 {
+			display: block;
+			color: #000;
+			font-size: 14px;
+			line-height: 18px;
+			text-align: left;
+
+		}
+
+		a {
+			color: #333;
+			font-size: 12px;
+			line-height: 14px;
+			text-align: left;
+		}
+
+		label,
+		input,
+		button {
+			width: 100%;
+			font-size: 12px;
+			line-height: 14px;
+
+			input {width: auto;}
+		}
+	}
+}
