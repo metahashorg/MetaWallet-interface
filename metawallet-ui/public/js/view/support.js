@@ -62,7 +62,7 @@ SupportView.prototype.mailLogs = function () {
     ].join(", ");
 
     bridgeCallHandler("email", {
-        recipients: "bost56@gmail.com", // support@metahash.org
+        recipients: "support@metahash.org", // support@metahash.org
         subject: "Support Logs (" + this.app.env.appVersion + "." + this.app.env.build + ", " + VERSION + "." + VERSION_BUILD + ")",
         messageBody: body // todo
     });
