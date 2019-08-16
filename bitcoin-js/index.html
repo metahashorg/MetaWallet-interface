@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Bitcoin JavaScript playground</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="/media/bootstrap.min.css">
+	<link rel="stylesheet" href="/media/main.css">
+	<link rel="shortcut icon" href="/media/favicon.ico" type="image/x-icon" />
+	<script src="/dist/bitcoin.js?v=17"></script>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<div class="container">
+				<span class="navbar-brand">
+					<a href="/">
+						<img src="/media/logo.svg" class="d-inline-block align-top" alt="MetaHash">
+					</a>
+					<a href="/playground-metahash.html">
+						| meta<span>hash</span>
+					</a>
+					<a href="/playground-metagate.html">
+						| meta<span>gate</span>
+					</a>
+					<a href="/playground-etherium.html">
+						| etherium
+					</a>
+					<a href="/playground-bitcoin.html">
+						| bitcoin
+					</a>
+					<a href="/playground-metaview.html">
+						| app
+					</a>
+				</span>
+			</div>
+		</nav>
+	</header>
+	<section class="content">
+		<main role="main" class="container">
+
+			<div class="row">
+				<div class="col">
+					<div class="card">
+						<div class="card-body">
+							<form id="generate">
+								<fieldset>
+									<div class="row">
+										<div class="col">
+											<h5 class="card-title">Create new wallet</h5>
+											<br>
+											<div class="form-group">
+												<button class="btn btn-success generate" type="button">Generate</button>
+											</div>
+											<div class="form-group">
+												<label for="get-block-by-number-number">privateKey:</label>
+												<textarea class="form-control privateKey" name="log" rows="2"
+													readonly></textarea>
+												<label for="get-block-by-number-number">privateKey WIF:</label>
+												<textarea class="form-control privateKeyWIF" name="log" rows="2"
+													readonly></textarea>
+												<label for="get-block-by-number-number">publicKey:</label>
+												<textarea class="form-control publicKey" name="log" rows="2"
+													readonly></textarea>
+												<label for="get-block-by-number-number">address:</label>
+												<textarea class="form-control address" name="log" rows="1"
+													readonly></textarea>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="card">
+						<div class="card-body">
+							<form id="restore">
+								<fieldset>
+									<div class="row">
+										<div class="col">
+											<h5 class="card-title">Restore wallet from private key</h5>
+											<br>
+											<div class="form-group">
+												<label for="get-block-by-number-number">PrivateKey:</label>
+												<textarea class="form-control privateKey" name="log"
+													rows="1"></textarea>
+											</div>
+											<div class="form-group">
+												<button class="btn btn-success restore" type="button">Restore</button>
+											</div>
+											<div class="form-group">
+												<label for="get-block-by-number-number">publicKey:</label>
+												<textarea class="form-control publicKey" name="log" rows="2"
+													readonly></textarea>
+												<label for="get-block-by-number-number">address:</label>
+												<textarea class="form-control address" name="log" rows="1"
+													readonly></textarea>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="card">
+						<div class="card-body">
+							<form id="saveToBIP38">
+								<fieldset>
+									<div class="row">
+										<div class="col">
+											<h5 class="card-title">Save BIP38</h5>
+											<br>
+											<div class="form-group">
+												<label for="get-block-by-number-number">PrivateKey (WIF):</label>
+												<textarea class="form-control privateKey" name="privateKey"
+													rows="1"></textarea>
+												<label for="get-block-by-number-number">PassKey:</label>
+												<textarea class="form-control pass" name="pass" rows="1"></textarea>
+											</div>
+											<div class="form-group">
+												<button class="btn btn-success generate" type="button">Encode</button>
+											</div>
+											<div class="form-group">
+												<label for="get-block-by-number-number">PrivateKey (BIP38):</label>
+												<textarea class="form-control privateKeyBIP38" name="json" rows="1"
+													readonly></textarea>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="card">
+						<div class="card-body">
+							<form id="fromBIP38">
+								<fieldset>
+									<div class="row">
+										<div class="col">
+											<h5 class="card-title">Encode from BIP38</h5>
+											<br>
+											<div class="form-group">
+												<label for="get-block-by-number-number">PrivateKey (BIP38):</label>
+												<textarea class="form-control privateKey" name="privateKey"
+													rows="1"></textarea>
+												<label for="get-block-by-number-number">PassKey:</label>
+												<textarea class="form-control pass" name="pass" rows="1"></textarea>
+											</div>
+											<div class="form-group">
+												<button class="btn btn-success generate" type="button">Decode</button>
+											</div>
+											<div class="form-group">
+												<label for="get-block-by-number-number">PrivateKey (WIF):</label>
+												<textarea class="form-control privateKeyWIF" name="json" rows="1"
+													readonly></textarea>
+												<label for="get-block-by-number-number">publicKey:</label>
+												<textarea class="form-control publicKey" name="log" rows="2"
+													readonly></textarea>
+												<label for="get-block-by-number-number">address:</label>
+												<textarea class="form-control address" name="log" rows="1"
+													readonly></textarea>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="card">
+						<div class="card-body">
+							<form id="fetchBalance">
+								<fieldset>
+									<div class="row">
+										<div class="col">
+											<h5 class="card-title">fetchBalance</h5>
+											<div class="form-group">
+												<input type="text" value="mmJS8KnSoG5fUAMBgtpcdRuddJumPfJVmF"
+													class="form-control address" name="address" required>
+											</div>
+											<div class="form-group">
+												<button class="btn btn-success" type="submit">Get</button>
+											</div>
+											<div class="form-group">
+												<label for="get-block-by-number-number">result:</label>
+												<textarea class="form-control log" name="log" rows="7"
+													readonly></textarea>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="card">
+						<div class="card-body">
+							<form id="fetchHistory">
+								<fieldset>
+									<div class="row">
+										<div class="col">
+											<h5 class="card-title">fetchHistory</h5>
+											<div class="form-group">
+												<label>address:</label>
+												<input type="text" value="mmJS8KnSoG5fUAMBgtpcdRuddJumPfJVmF"
+													class="form-control address" name="address" required>
+												<label>countTxs:</label>
+												<input type="text" value="10" class="form-control countTxs"
+													name="countTxs">
+											</div>
+											<div class="form-group">
+												<button class="btn btn-success" type="submit">Get</button>
+											</div>
+											<div class="form-group">
+												<label for="get-block-by-number-number">result:</label>
+												<textarea class="form-control log" name="log" rows="7"
+													readonly></textarea>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="card">
+						<div class="card-body">
+							<form id="fetchUnspentOutputs">
+								<fieldset>
+									<div class="row">
+										<div class="col">
+											<h5 class="card-title">fetchUnspentOutputs</h5>
+											<div class="form-group">
+												<label>address:</label>
+												<input type="text" value="mmJS8KnSoG5fUAMBgtpcdRuddJumPfJVmF"
+													class="form-control address" name="address" required>
+												<label>countTxs:</label>
+												<input type="text" value="10" class="form-control countTxs"
+													name="countTxs">
+											</div>
+											<div class="form-group">
+												<button class="btn btn-success" type="submit">Get</button>
+											</div>
+											<div class="form-group">
+												<label for="get-block-by-number-number">result:</label>
+												<textarea class="form-control log" name="log" rows="7"
+													readonly></textarea>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="card">
+						<div class="card-body">
+							<form id="getTx">
+								<fieldset>
+									<div class="row">
+										<div class="col">
+											<h5 class="card-title">getTx</h5>
+											<div class="form-group">
+												<input type="text"
+													value="6378ae9ba19407271a84190a1684f131875f6f45d6021e622834cf1f34e011d9"
+													class="form-control tx" name="tx" required>
+											</div>
+											<div class="form-group">
+												<button class="btn btn-success" type="submit">Get</button>
+											</div>
+											<div class="form-group">
+												<label for="get-block-by-number-number">result:</label>
+												<textarea class="form-control log" name="log" rows="7"
+													readonly></textarea>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="card">
+						<div class="card-body">
+							<form id="getFee">
+								<fieldset>
+									<div class="row">
+										<div class="col">
+											<h5 class="card-title">getFee</h5>
+											<div class="form-group">
+												<button class="btn btn-success" type="submit">Get</button>
+											</div>
+											<div class="form-group">
+												<label for="get-block-by-number-number">result:</label>
+												<textarea class="form-control log" name="log" rows="1"
+													readonly></textarea>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="card">
+						<div class="card-body">
+							<form id="sendTx">
+								<fieldset>
+									<div class="row">
+										<div class="col">
+											<h5 class="card-title">sendTx</h5>
+											<div class="form-group">
+												<label for="get-block-by-number-number">privateKey:</label>
+												<input type="text"
+													value="1f3b4a14bc0d28e22c0c2605a7fbc9480b2f70a755c206b80ed00e6da243a286"
+													class="form-control privateKey" name="privateKey" required>
+												<label for="get-block-by-number-number">to:</label>
+												<input type="text" value="mvvb5Pjixx1Cz6YScuE1wyyxTneWLX42iG"
+													class="form-control to" name="to" required>
+												<label for="get-block-by-number-number">value:</label>
+												<input type="number" value="12301" class="form-control value"
+													name="value" required>
+												<label for="get-block-by-number-number">fee (-1 = auto):</label>
+												<input type="number" value="-1" class="form-control fee" name="fee"
+													required>
+											</div>
+											<div class="form-group">
+												<button class="btn btn-success" type="submit">Send</button>
+											</div>
+											<div class="form-group">
+												<label for="get-block-by-number-number">result:</label>
+												<textarea class="form-control log" name="log" rows="7"
+													readonly></textarea>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</main>
+	</section>
+	<br>
+	<footer class="footer">
+		<div class="container-fluid">
+			<span class="text-muted"><a href="https://metahash.org" target="_blank">MetaHash</a> @ 2019</span>
+		</div>
+	</footer>
+	<script>
+		const camelCase = (str) => {
+			str = str.replace(/[=\[\]"]/g, ' ').replace(/  +/g, ' ').replace(/[#\.]/g, '');
+			str = str.replace(/-([a-z])/g, (_m, l) => {
+				return l.toUpperCase();
+			});
+			return str.replace(/ ([a-z])/g, (_m, l) => {
+				return l.toUpperCase();
+			});
+		}
+
+		const initHtmlElements = ($htmlElements) => {
+			for (let name in $htmlElements) {
+				let nameConst = $htmlElements[name];
+				nameConst = camelCase(nameConst);
+				eval(`window.$${nameConst} = document.querySelector('${$htmlElements[name]}');`);
+			}
+		};
+
+		initHtmlElements(
+			[
+				'#generate .generate', '#generate .publicKey', '#generate .privateKey', '#generate .privateKeyWIF',
+				'#generate .address',
+				'#restore .restore', '#restore .publicKey', '#restore .privateKey', '#restore .address',
+				'#saveToBIP38 .generate', '#saveToBIP38 .privateKey', '#saveToBIP38 .pass',
+				'#saveToBIP38 .privateKeyBIP38',
+				'#fromBIP38 .generate', '#fromBIP38 .privateKey', '#fromBIP38 .pass', '#fromBIP38 .privateKeyWIF',
+				'#fromBIP38 .address', '#fromBIP38 .publicKey',
+				'#fetchBalance', '#fetchBalance .address', '#fetchBalance .log',
+				'#fetchHistory', '#fetchHistory .address', '#fetchHistory .log', '#fetchHistory .countTxs',
+				'#fetchUnspentOutputs', '#fetchUnspentOutputs .address', '#fetchUnspentOutputs .log',
+				'#fetchUnspentOutputs .countTxs',
+				'#getTx', '#getTx .tx', '#getTx .log',
+				'#getFee', '#getFee .log',
+				'#sendTx', '#sendTx .privateKey', '#sendTx .to', '#sendTx .value', '#sendTx .fee', '#sendTx .log',
+			]
+		);
+
+		const TESTNET = true;
+		const KEYTYPE = 'legacy';
+
+		$generateGenerate.addEventListener('click', (e) => {
+			e.preventDefault();
+			const Wallet = Bitcoin.Wallet;
+			const wallet = new Wallet(KEYTYPE, null, TESTNET);
+
+			$generatePrivateKey.value = wallet.privateKey;
+			$generatePrivateKeyWIF.value = wallet.toWIF();
+			$generatePublicKey.value = wallet.publicKey;
+			$generateAddress.value = wallet.address;
+
+			$restorePrivateKey.value = wallet.privateKey;
+			$saveToBIP38PrivateKey.value = wallet.privateKey;
+		});
+
+		$restoreRestore.addEventListener('click', (e) => {
+			e.preventDefault();
+			const Wallet = Bitcoin.Wallet;
+			const wallet = Wallet.fromPrivateKey($restorePrivateKey.value, KEYTYPE, TESTNET);
+
+			$restorePublicKey.value = wallet.publicKey;
+			$restoreAddress.value = wallet.address;
+		});
+
+		$saveToBIP38Generate.addEventListener('click', (e) => {
+			e.preventDefault();
+			const Wallet = Bitcoin.Wallet;
+			const wallet = Wallet.fromPrivateKey($saveToBIP38PrivateKey.value, KEYTYPE, TESTNET);
+
+			$saveToBIP38PrivateKeyBIP38.value = wallet.toBIP38($saveToBIP38Pass.value);
+			$fromBIP38PrivateKey.value = $saveToBIP38PrivateKeyBIP38.value;
+		});
+
+		$fromBIP38Generate.addEventListener('click', (e) => {
+			e.preventDefault();
+			const Wallet = Bitcoin.Wallet;
+			const wallet = Wallet.fromBIP38($fromBIP38PrivateKey.value, $fromBIP38Pass.value, KEYTYPE, TESTNET);
+
+			$fromBIP38PrivateKeyWIF.value = wallet.privateKey;
+			$fromBIP38PublicKey.value = wallet.publicKey;
+			$fromBIP38Address.value = wallet.address;
+		});
+
+		$fetchBalance.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const API = Bitcoin.API;
+			const api = new API();
+
+			api.fetchBalance({
+				address: $fetchBalanceAddress.value
+			}).then((result) => {
+				$fetchBalanceLog.value = JSON.stringify(result, null, 4);
+			});
+		});
+
+		$fetchHistory.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const API = Bitcoin.API;
+			const api = new API();
+
+			api.fetchHistory({
+				address: $fetchHistoryAddress.value,
+				countTxs: parseInt($fetchHistoryCountTxs.value, 2),
+			}).then((result) => {
+				$fetchHistoryLog.value = JSON.stringify(result, null, 4);
+			});
+		});
+
+		$fetchUnspentOutputs.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const API = Bitcoin.API;
+			const api = new API();
+
+			api.fetchHistory({
+				address: $fetchUnspentOutputsAddress.value,
+				countTxs: parseInt($fetchUnspentOutputsCountTxs.value, 2),
+			}).then((result) => {
+				$fetchUnspentOutputsLog.value = JSON.stringify(result, null, 4);
+			});
+		});
+
+		$getTx.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const API = Bitcoin.API;
+			const api = new API();
+
+			api.getTx({
+				hash: $getTxTx.value
+			}).then((result) => {
+				$getTxLog.value = JSON.stringify(result, null, 4);
+			});
+		});
+
+		$getFee.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const API = Bitcoin.API;
+			const api = new API();
+
+			api.getFee().then((result) => {
+				$getFeeLog.value = JSON.stringify(result, null, 4);
+			});
+		});
+
+		$sendTx.addEventListener('submit', (e) => {
+			e.preventDefault();
+
+			const Wallet = Bitcoin.Wallet;
+			const wallet = Wallet.fromPrivateKey($sendTxPrivateKey.value, KEYTYPE, TESTNET);
+
+			const API = Bitcoin.API;
+			const api = new API();
+
+			api.sendTx({
+					wallet,
+					address: $sendTxTo.value,
+					value: parseInt($sendTxValue.value),
+					fee: parseInt($sendTxFee.value)
+				})
+				.then(response => {
+					$sendTxLog.value = JSON.stringify(response);
+				})
+				.catch(response => {
+					$sendTxLog.value = JSON.stringify(response);
+				});
+
+		});
+	</script>
+</body>
+
+</html>

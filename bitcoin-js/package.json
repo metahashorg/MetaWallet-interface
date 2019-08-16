@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "bip38": "^2.0.3",
+    "bitcoinjs-lib": "^5.0.5",
+    "blockchain.info": "^2.12.1"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "tinyify": "^2.5.0"
+  },
+  "scripts": {
+    "build": "browserify --standalone Bitcoin src/index.js > dist/bitcoin.js",
+    "build:min": "browserify -p tinyify --standalone Bitcoin src/index.js > dist/bitcoin.min.js",
+    "build:full": "npm run build && npm run build:min"
+  }
+}
