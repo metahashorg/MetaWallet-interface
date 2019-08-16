@@ -12,6 +12,7 @@ window.appLang = {
     "error.connection.offline": "Offline mode",
     "error.connection.online": "Online mode",
     "error.notavailable": "Not available in current version",
+    "error.availableonlyinmetagate": "Available only in desktop MetaGate",
     "error.unknown.domain": "Unknown domain",
     "error.emptyfields": "Fill in all required fields",
     "error.wrongqrcode": "No data found in scanned QR code",

@@ -18,7 +18,7 @@ extendFunction(DAppSubView, View);
 DAppSubView.prototype.onStarted = function () {
     this.element.onclick = function () {
         this.app.showNotification({
-            text: __( "error.notavailable" ),
+            text: __( "error.availableonlyinmetagate" ),
             type: "warning",
         });
     }.bind(this);

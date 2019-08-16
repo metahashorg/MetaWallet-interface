@@ -11,6 +11,7 @@ window.appLang = {
     "error.connection.offline": "Offline mode",
     "error.connection.online": "Online mode",
     "error.notavailable": "Недоступно в текущей версии",
+    "error.availableonlyinmetagate": "Недоступно только в MetaGate",
     "error.unknown.domain": "Unknown domain",
 
     // common
