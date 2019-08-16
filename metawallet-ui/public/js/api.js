@@ -27,9 +27,9 @@ function getJsonRpcXhrParams (method, methodParams, currencyId) {
         "dapps": API_ENDPOINT_APP,
         "fetch-balance": (currencyId === CURRENCY_ID_TMH ? API_ENDPOINT_TOR_TEST : API_ENDPOINT_TOR),
         "fetch-history": (currencyId === CURRENCY_ID_TMH ? API_ENDPOINT_TOR_TEST : API_ENDPOINT_TOR),
+        "fetch-history-filter": (currencyId === CURRENCY_ID_TMH ? API_ENDPOINT_TOR_TEST : API_ENDPOINT_TOR),
         "get-address-delegations": (currencyId === CURRENCY_ID_TMH ? API_ENDPOINT_TOR_TEST : API_ENDPOINT_TOR),
         "get-tx": (currencyId === CURRENCY_ID_TMH ? API_ENDPOINT_TOR_TEST : API_ENDPOINT_TOR),
-        "plus": API_ENDPOINT_PLUS,
         "node": API_ENDPOINT_NETREGISTRY,
     }[method.split(".")[0]];
 

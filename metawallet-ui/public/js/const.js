@@ -1,5 +1,5 @@
 const VERSION = "1.0";
-const VERSION_BUILD = "22";
+const VERSION_BUILD = "25";
 const VERSION_APP = "1.0.3.4";
 
 const NODE_PORT_PROXY = 9999;
@@ -22,7 +22,6 @@ const API_ENDPOINT_TOR_TEST = "https://tor-dev.metawat.ch/";
 const API_ENDPOINT_PROXY = "https://proxy.metawat.ch/";
 const API_ENDPOINT_PROXY_TEST = "https://proxy-dev.metawat.ch/";
 const API_ENDPOINT_APP = "https://app.metahash.org/api/";
-const API_ENDPOINT_PLUS = "https://plus.metawat.ch/api/";
 const API_ENDPOINT_NETREGISTRY = "https://netregistry.metahash.io/api/";
 
 /** @link https://www.cloudflare.com/distributed-web-gateway/ */
@@ -157,6 +156,7 @@ const METAHASH_WALLET_SECP256R1 = "secp256r1";
 
 // MetaHash system addresses
 const ADDRESS_FORGING = "0x666174686572206f662077616c6c65747320666f7267696e67";
+const ADDRESS_NODE_REGISTRATOR = "0x666174686572206f662073657276657220666f7267696e6720";
 
 const TRANSACTIONS_PER_FETCH = 20;
 

@@ -51,7 +51,7 @@ HeaderSubView.prototype.update = function () {
     this.element.querySelector(".home-header-stats .currency-amount-smaller").innerHTML = mhcCurrency.ticker;
     this.element.querySelector(".home-header-value").innerHTML = amountBaseCurrency + " " + baseCurrency.ticker;
 
-    this.element.querySelector(".home-graph-params-value .js--rate").innerHTML = formatNum(rateBaseCurrency, -2);
+    this.element.querySelector(".home-graph-params-value .js--rate").innerHTML = (new Decimal(rateBaseCurrency)).toFixed(8).replace(/0+$/,'');
     let rateDiffElement = this.element.querySelector(".home-graph-params-value .js--rate--diff");
     rateDiffElement.classList.remove("color-green");
     rateDiffElement.classList.remove("color-red");

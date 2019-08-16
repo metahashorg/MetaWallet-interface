@@ -594,10 +594,10 @@ Wallet.prototype.getRewards = function () {
         return;
     }
 
-    xhr(getJsonRpcXhrParams("plus.address.rewards", {params: {address: this.address, countTxs: 25}}, this.currencyId))
+    xhr(getJsonRpcXhrParams("fetch-history-filter", {params: {address: this.address, filters:{isForging: true} ,countTxs: 25}}, this.currencyId))
         .then(function (response) {
             if (response.result) {
-                response.result.forEach(function (/** @type {MetaHashTransaction} */ transaction) {
+                response.result.txs.forEach(function (/** @type {MetaHashTransaction} */ transaction) {
                     this.rewardsTransaction.push(new Transaction({walletCollection: this.walletCollection, currency: this.currency, wallet: this, transaction: transaction}));
                 }.bind(this));
                 Events.trigger("Wallet.onRewardsTransactionsFetched", {wallet: this});
@@ -643,7 +643,7 @@ Wallet.prototype.getDelegations = function () {
                 .then(function (response) {
                     if (response.result) {
                         response.result.states.forEach(function (/** @type {MetaHashDelegation} */ state) {
-                            if(state.to !== ADDRESS_FORGING){
+                            if(state.to !== ADDRESS_FORGING && state.to !== ADDRESS_NODE_REGISTRATOR){
                                 if (typeof this.delegations[state.to] === "undefined"){
                                     this.delegations[state.to] = new Delegation({wallet: this, state: state});
                                 } else {
