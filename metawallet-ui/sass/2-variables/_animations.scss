@@ -1,0 +1,198 @@
+/*
+  Animations
+*/
+
+
+
+// spinning
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.animation-spin {
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+// spinning
+
+
+
+// loader glow
+@keyframes loader-glow {
+  0%,
+  40%,
+  100% {
+    opacity: 0.3;
+    fill: #2F7BC2;
+  }
+
+  10%, 30% {
+    opacity: 1;
+    fill: #2F7BC2;
+  }
+  20% {
+    opacity: 1;
+    fill: #99CEFF;
+  }
+}
+
+.animation-loader-glow {
+  -webkit-animation: loader-glow 4s linear infinite;
+  animation: loader-glow 4s linear infinite;
+}
+
+.icon-loader-1,
+.icon-loader-2,
+.icon-loader-3 {
+
+  &.animation-stop {
+    & > * {
+      fill: $blue-007;
+      opacity: 0.3;
+    }
+  }
+
+  &.animation-complete {
+    & > * {
+      fill: $green;
+      opacity: 1;
+    }
+  }
+
+  &.animation-progress {
+    & > * {
+      fill: $blue-007;
+      opacity: 0.3;
+      animation: loader-glow 2.1s linear infinite;
+
+      &:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+    }
+  }
+}
+// /loader glow
+
+
+
+//  loader
+@keyframes animation-pulse {
+  0%, 10% {
+    top: -3px;
+    right: -3px;
+    bottom: -3px;
+    left: -3px;
+    opacity: 0;
+  }
+
+  10.1% {
+    top: -3px;
+    right: -3px;
+    bottom: -3px;
+    left: -3px;
+    opacity: 0.5;
+  }
+
+  100% {
+    top: -40px;
+    right: -40px;
+    bottom: -40px;
+    left: -40px;
+    opacity: 0.0;
+  }
+}
+
+.animation-pulse {
+  -webkit-animation: animation-pulse 1.75s linear infinite;
+  animation: animation-pulse 1.75s linear infinite;
+
+  &.i-2 {
+    -webkit-animation-delay: 0.75s;
+    animation-delay: 0.75s;
+  }
+}
+// /loader
+
+
+
+// pulltorefresh
+@keyframes pulltorefresh {
+  0% {
+    background-color: rgba(255, 255, 255, .5);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, .7);
+  }
+}
+
+.pulltorefresh {
+  position: absolute;
+  top: 279px;
+  z-index: 1000;
+  width: 100%;
+  height: 4px;
+
+  div {
+    background-color: rgba(255, 255, 255, .5);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+
+    &:nth-child(1)  { left: 40%; }
+    &:nth-child(2)  { left: 42%; }
+    &:nth-child(3)  { left: 44%; }
+    &:nth-child(4)  { left: 46%; }
+    &:nth-child(5)  { left: 48%; }
+    &:nth-child(6)  { left: 50%; }
+    &:nth-child(7)  { left: 52%; }
+    &:nth-child(8)  { left: 54%; }
+    &:nth-child(9)  { left: 56%; }
+    &:nth-child(10) { left: 58%; }
+  }
+
+  &.pulltorefresh--0  div { background-color: rgba(0, 0, 0, .7); }
+  &.pulltorefresh--1  div:nth-child(n + 2)  { background-color: rgba(0, 0, 0, .7); }
+  &.pulltorefresh--2  div:nth-child(n + 3)  { background-color: rgba(0, 0, 0, .7); }
+  &.pulltorefresh--3  div:nth-child(n + 4)  { background-color: rgba(0, 0, 0, .7); }
+  &.pulltorefresh--4  div:nth-child(n + 5)  { background-color: rgba(0, 0, 0, .7); }
+  &.pulltorefresh--5  div:nth-child(n + 6)  { background-color: rgba(0, 0, 0, .7); }
+  &.pulltorefresh--6  div:nth-child(n + 7)  { background-color: rgba(0, 0, 0, .7); }
+  &.pulltorefresh--7  div:nth-child(n + 8)  { background-color: rgba(0, 0, 0, .7); }
+  &.pulltorefresh--8  div:nth-child(n + 9)  { background-color: rgba(0, 0, 0, .7); }
+  &.pulltorefresh--9  div:nth-child(n + 10) { background-color: rgba(0, 0, 0, .7); }
+  &.pulltorefresh--10 div:nth-child(n + 11) { background-color: rgba(0, 0, 0, .7); }
+
+  &.pulltorefresh-waiting {
+    div {
+      animation: pulltorefresh 1.0s linear infinite;
+
+      &:nth-child(1)  { animation-delay: -0.9s; }
+      &:nth-child(2)  { animation-delay: -0.8s; }
+      &:nth-child(3)  { animation-delay: -0.7s; }
+      &:nth-child(4)  { animation-delay: -0.6s; }
+      &:nth-child(5)  { animation-delay: -0.5s; }
+      &:nth-child(6)  { animation-delay: -0.4s; }
+      &:nth-child(7)  { animation-delay: -0.3s; }
+      &:nth-child(8)  { animation-delay: -0.2s; }
+      &:nth-child(9)  { animation-delay: -0.1s; }
+      &:nth-child(10) { animation-delay:    0s; }
+    }
+  }
+}
+// /pulltorefresh

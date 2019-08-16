@@ -1,0 +1,130 @@
+/*
+  Wallet - Forging
+*/
+
+
+
+// overwrites
+.page--wallet-delegations {
+
+  .page-inner {
+    overflow: auto;
+  }
+
+  .page-wrapper {
+    padding-bottom: 0;
+  }
+
+  .wallet-action-button {
+    margin: 15px 0 20px 0;
+  }
+
+  .wallet-actions-wrapper + .wallet-action-button {
+    margin-top: -5px;
+  }
+}
+// /overwrites
+
+
+
+// border
+.home-delegations-list-border {
+  position: relative;
+  bottom: 0;
+  margin-left: 4%;
+  margin-right: 4%;
+  height: 1px;
+  min-height: 1px;
+  background: rgba($blue-011, 0.7);
+}
+// /border
+
+
+
+//
+.home-delegations-list-wrapper {
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: 20px 5% 20px 5%;
+
+  .pages--blurred & {
+    overflow: hidden;
+  }
+}
+
+
+// wallet-delegations
+.wallet-delegations {
+
+}
+
+.wallet-delegation {
+  background: linear-gradient(180deg, rgba($blue-010, 0.5) 0%, rgba($blue-014, 0.5) 100%);
+  mix-blend-mode: normal;
+  border: 1px solid rgba($blue-light, 0.25);
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-bottom: 13px;
+  padding: 14px 16px 16px 20px;
+  color: $white;
+  text-align: left;
+  position: relative;
+}
+
+.wallet-delegation-status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 12px;
+  right: 9px;
+
+  &.wallet-delegation-status--green {
+    background: $green;
+  }
+
+  &.wallet-delegation-status--red {
+    background: $red;
+  }
+
+  &.wallet-delegation-status--yellow {
+    background: $yellow;
+  }
+}
+
+.wallet-delegation-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.wallet-delegation-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  margin-bottom: 18px;
+  margin-right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.wallet-delegation-value {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 5px;
+}
+
+.wallet-delegation-process {
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: right;
+  color: $blue-light;
+  margin-top: 5px;
+  flex-grow: 1;
+}
+// /wallet-delegations

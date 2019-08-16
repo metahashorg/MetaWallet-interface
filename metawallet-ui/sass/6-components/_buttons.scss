@@ -1,0 +1,206 @@
+/*
+  Buttons
+*/
+
+
+
+// buttons
+.btn {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  //border-radius: 34px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  padding: 21px 28px 20px 28px;
+  border: 1px solid rgba($blue-light, 0);
+  transition: all 0.1s linear;
+  //will-change: border, color, background;
+
+  &.disabled {
+    opacity: 0.3;
+
+    &:active {
+      -webkit-filter: none !important;
+      filter: none !important;
+    }
+  }
+
+  // icon
+  &.btn--icon {
+    width: 32px;
+    height: 32px;
+  }
+  // /icon
+
+
+  // empty
+  &.btn--empty {
+    color: $blue-light;
+
+    &:active {
+      color: $white;
+    }
+  }
+  // /empty
+
+
+  // text-sizes
+  &.btn-text-sm {
+    font-size: 12px;
+  }
+  // /text-sizes
+
+
+  // sizes
+  &.btn-xxs {
+    font-size: 10px;
+    line-height: 12px;
+    padding: 8px 12px 8px 12px;
+    text-transform: none;
+    white-space: nowrap;
+
+    @include breakpoint-iphone-6() {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    @include breakpoint-iphone-6-plus() {
+
+    }
+    @include breakpoint-iphone-X() {
+
+    }
+  }
+
+  &.btn-xs {
+    font-size: 10px;
+    line-height: 14px;
+    padding: 13px 12px 11px 12px;
+
+    @include breakpoint-iphone-6() {
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+    @include breakpoint-iphone-6-plus() {
+
+    }
+    @include breakpoint-iphone-X() {
+
+    }
+  }
+
+  &.btn-sm {
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 11px;
+    padding: 19px 12px 18px 12px;
+
+    @include breakpoint-iphone-6() {
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+    @include breakpoint-iphone-6-plus() {
+
+    }
+    @include breakpoint-iphone-X() {
+
+    }
+
+    &.btn-primary {
+      font-weight: 500;
+      font-size: 12px;
+    }
+  }
+  // /sizes
+
+
+  // width
+  &.btn-inline {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+  }
+
+  &.btn-width-194 {
+    width: 194px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  // /width
+
+
+  // styles
+  &.btn-primary {
+    color: $white;
+    border: 1px solid rgba($blue-light, 0.25);
+    background: $blue-014;
+    background: -webkit-linear-gradient(180deg, rgba($blue-002, 0.5) 0%, rgba($blue-005, 0) 100%), $blue-014;
+    background: linear-gradient(180deg, rgba($blue-002, 0.5) 0%, rgba($blue-005, 0) 100%), $blue-014;
+    @include box-sizing(border-box);
+    @include background-clip(border-box);
+    @include background-origin(border-box);
+
+    &:active {
+      -webkit-filter: saturate(80%) brightness(150%);
+      filter: saturate(80%) brightness(150%);
+    }
+
+    &.btn-error {
+      border-color: rgba($red-2, 1);
+      background: $red;
+      background: -webkit-linear-gradient(180deg, rgba($red-2, 1) 0%, rgba($red-3, 1) 100%), $red;
+      background: linear-gradient(180deg, rgba($red-2, 1) 0%, rgba($red-3, 1) 100%), $red;
+    }
+  }
+
+  &.btn-filled {
+    color: $white;
+    border: 1px solid rgba($blue-light, 0.25);
+    background: $blue-007;
+    @include box-sizing(border-box);
+    @include background-clip(border-box);
+    @include background-origin(border-box);
+
+    &:active {
+      -webkit-filter: saturate(80%) brightness(150%);
+      filter: saturate(80%) brightness(150%);
+    }
+  }
+
+  &.btn-outline {
+    color: $blue-light;
+    background: transparent;
+    border: 1px solid $blue-light;
+
+    &:active {
+      color: $white;
+      border-color: $white;
+    }
+
+    &.btn-desaturated {
+      border-color: rgba($blue-light, 0.5);
+
+      &:active {
+        border-color: rgba($white, 0.5);
+      }
+    }
+
+    &.btn-link {
+      border: none !important;
+    }
+  }
+  // /styles
+
+
+  // icons
+  .icon-left {
+    margin-right: 7px;
+  }
+  // /icons
+}
+// /buttons

@@ -1,0 +1,189 @@
+/*
+  Auth
+*/
+
+
+
+// overwrites
+.page--auth {
+
+  // logo
+  .logo-main {
+    margin-top: 40px;
+
+    @include breakpoint-iphone-6() {
+      margin-top: 63px;
+    }
+    @include breakpoint-iphone-6-plus() {
+      margin-top: 83px;
+    }
+    @include breakpoint-iphone-X() {
+      margin-top: 103px;
+    }
+  }
+
+  .logo-main__version {
+    font-size: 10px;
+    opacity: 0.5;
+    margin-top: 4px;
+  }
+  // logo
+}
+// overwrites
+
+
+
+// welcome text
+.auth-welcome-text {
+  font-weight: 300;
+  font-size: 18px;
+  color: $blue-light;
+  margin-top: 25px;
+
+  @include breakpoint-iphone-6() {
+    margin-top: 38px;
+  }
+  @include breakpoint-iphone-6-plus() {
+    margin-top: 49px;
+  }
+  @include breakpoint-iphone-X() {
+
+  }
+}
+// /welcome text
+
+
+
+// form
+.auth-form {
+  margin-top: 20px;
+
+  &.auth-form--show-help {
+    margin-bottom: 25px;
+
+    @include breakpoint-iphone-6() {
+      margin-bottom: 49px;
+    }
+    @include breakpoint-iphone-6-plus() {
+
+    }
+    @include breakpoint-iphone-X() {
+      margin-bottom: 69px;
+    }
+  }
+
+  .auth-header + & {
+    margin-top: 20px;
+
+    @include breakpoint-iphone-6() {
+      margin-top: 29px;
+    }
+    @include breakpoint-iphone-6-plus() {
+
+    }
+    @include breakpoint-iphone-X() {
+      margin-top: 31px;
+    }
+  }
+
+  .auth-text + & {
+    margin-top: 20px;
+
+    @include breakpoint-iphone-6() {
+      margin-top: 37px;
+    }
+    @include breakpoint-iphone-6-plus() {
+
+    }
+    @include breakpoint-iphone-X() {
+
+    }
+  }
+
+}
+// /form
+
+
+
+// help
+.auth-help {
+  display: none;
+  color: $white;
+  margin: 15px 0 15px 0;
+
+  @include breakpoint-iphone-6() {
+    margin: 25px 0 25px 0;
+  }
+  @include breakpoint-iphone-6-plus() {
+
+  }
+  @include breakpoint-iphone-X() {
+    margin: 35px 0 45px 0;
+  }
+
+  .auth-form--show-help & {
+    display: block;
+  }
+}
+// /help
+
+
+
+// actions
+.auth-actions {
+  width: 68%;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 15px;
+
+  @include breakpoint-iphone-6() {
+    margin-top: 42px;
+  }
+  @include breakpoint-iphone-6-plus() {
+    margin-top: 91px;
+  }
+  @include breakpoint-iphone-X() {
+
+  }
+}
+// /actions
+
+
+
+// header and text
+.auth-header {
+  font-size: 18px;
+  color: $white;
+  margin-top: 20px;
+
+  @include breakpoint-iphone-6() {
+    margin-top: 29px;
+  }
+  @include breakpoint-iphone-6-plus() {
+
+  }
+  @include breakpoint-iphone-X() {
+    margin-top: 49px;
+  }
+}
+
+.auth-text {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  color: $blue-light;
+  padding: 0 30px;
+  margin-top: 14px;
+
+  @include breakpoint-iphone-6() {
+    font-size: 14px;
+  }
+  @include breakpoint-iphone-6-plus() {
+
+  }
+  @include breakpoint-iphone-X() {
+
+  }
+}
+// /header and text

@@ -1,0 +1,9 @@
+{
+  "name": "metawallet-ui",
+  "version": "1.0.0",
+  "description": "metawallet-ui",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
+}

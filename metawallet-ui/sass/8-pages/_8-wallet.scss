@@ -1,0 +1,662 @@
+/*
+  Wallet
+*/
+
+
+
+// overwrites
+.page--wallet {
+
+  .page-wrapper {
+    flex: 0 0 auto;
+
+    padding-top: 55px;
+
+    @include breakpoint-iphone-6() {
+      padding-top: 85px;
+    }
+    @include breakpoint-iphone-6-plus() {
+
+    }
+    @include breakpoint-iphone-X() {
+      padding-top: 105px;
+    }
+  }
+
+  .page-inner {
+    height: 100%;
+  }
+
+  .container {
+    padding-top: 0;
+  }
+
+  .home-transaction-list-wrapper {
+    position: relative;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 20px 5% 0 5%;
+
+    .pages--blurred & {
+      overflow: hidden;
+    }
+  }
+
+  &.page--wallet-nokey {
+
+    .page-inner {
+      &:before {
+        @extend %disconnected;
+      }
+    }
+  }
+}
+// /overwrites
+
+
+
+// border
+.home-transaction-list-border {
+  position: relative;
+  bottom: 0;
+  //margin-left: 4%;
+  //margin-right: 4%;
+  margin-left: 0;
+  margin-right: 0;
+  height: 1px;
+  //background: $blue-011;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.1s linear;
+
+  &.state-scrolled {
+    opacity: 1;
+  }
+
+  &:before {
+    content: '';
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba($black, 0.6) 0%, rgba($black, 0) 100%);
+    pointer-events: none;
+  }
+}
+// /border
+
+
+
+// wallet-block
+.wallet-block-wrapper {
+  position: relative;
+  // @hidden
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}
+
+.wallet-block {
+  position: relative;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  //background: linear-gradient(180deg, rgba($blue-light, 0.1508) 0%, rgba($blue-007, 0) 100%), rgba($blue-024, 0.5);
+  //border: 1px solid rgba($blue-light, 0.12);
+  background: linear-gradient(180deg, $blue-020 0%, $blue-023 100%);
+  border: 1px solid $blue-016;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: left;
+  padding: 14px 20px 14px 77px;
+
+  .desaturated &,
+  &.desaturated {
+    //background: linear-gradient(180deg, rgba(desaturate($blue-light, 100%), 0.1508) 0%, rgba(desaturate($blue-007, 100%), 0) 100%), rgba(desaturate($blue-024, 100%), 0.5);
+    //border-color: rgba(desaturate($blue-light, 100%), 0.12);
+    border-color: desaturate($blue-016, 100%);
+    background: linear-gradient(180deg, desaturate($blue-020, 100%) 0%, desaturate($blue-023, 100%) 100%);
+  }
+}
+
+.wallet-block__img-wrapper {
+  width: 50px;
+  height: 50px;
+  //border: 2px solid $blue-light;
+  //border-radius: 50%;
+  position: absolute;
+  top: 7px;
+  left: 9px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    background: $blue-light;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px;
+
+    .desaturated & {
+      background: desaturate($blue-light, 100%);
+    }
+  }
+
+  .desaturated & {
+    border-color: desaturate($blue-light, 100%);
+  }
+}
+
+.wallet-block__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.wallet-block__title {
+  font-weight: 300;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: $white;
+  margin-bottom: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wallet-block__address {
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 17px;
+  letter-spacing: 0.03em;
+  color: $blue-light;
+  margin-bottom: 7px;
+  //word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  .desaturated & {
+    color: desaturate($blue-light, 100%);
+  }
+}
+
+.wallet-block__amount {
+  font-weight: 400;
+  font-size: 34px;
+  line-height: normal;
+  color: $white;
+  margin-bottom: 2px;
+}
+
+.wallet-block__amount-small {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.wallet-block__amount-smaller {
+  font-size: 16px;
+  font-weight: 300;
+  margin-left: 4px;
+}
+
+.wallet-block__amount-recalc {
+  font-size: 13px;
+  line-height: normal;
+  color: $gray;
+  margin-bottom: 10px;
+  margin-top: -7px;
+}
+
+.wallet-block__freeze {
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.03em;
+  color: $blue-light;
+
+  .desaturated & {
+    color: desaturate($blue-light, 100%);
+  }
+
+  .icon {
+    margin-right: 5px;
+  }
+}
+
+.wallet-block__freeze-balance {
+  margin-left: 15px;
+}
+// /wallet-block
+
+
+
+// wallet-actions
+.wallet-actions-wrapper {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+// /wallet-actions
+
+
+
+// menu-actions
+.menu-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu-action {
+  flex: 1;
+  color: $blue-light;
+  font-weight: 300;
+  font-size: 10px;
+  text-align: center;
+  transition: all 0.1s linear;
+
+  .desaturated & {
+    color: desaturate($blue-light, 100%);
+  }
+
+  &.active,
+  &:active {
+    color: $white;
+
+    .menu-action__icon {
+      border-color: $white;
+    }
+  }
+
+  &.disabled {
+    color: $gray;
+
+    .menu-action__icon {
+      border-color: $gray-005;
+
+      .icon {
+        color: $gray-005;
+      }
+    }
+  }
+
+  &.menu-action--inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+
+    .menu-action__icon {
+      margin: 0 10px 0 0;
+    }
+  }
+}
+
+.menu-action__icon {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid $blue-light;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s linear;
+
+  .desaturated & {
+    border-color: desaturate($blue-light, 100%);
+  }
+
+  .icon {
+    margin: 0;
+    transition: all 0.1s linear;
+  }
+}
+// /menu-round-icons
+
+
+
+// logs
+.transactions-logs {
+  text-align: left;
+}
+
+.transactions-logs-header {
+  font-weight: 400;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: $white;
+  margin-bottom: 16px;
+}
+
+.transactions-logs-group {
+  margin-bottom: 20px;
+}
+
+.transactions-logs-title {
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 15px;
+  text-transform: capitalize;
+  color: $white;
+  margin-bottom: 9px;
+}
+
+.transactions-log {
+  position: relative;
+  height: 70px;
+  //border-radius: 10px;
+  margin-bottom: 10px;
+  // @hidden
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+
+  .card-icon-slide {
+    bottom: 9px;
+    right: 8px;
+  }
+
+  .undercard-menu {
+    background: linear-gradient(180deg, $blue-017, $blue-021);
+    background-repeat: no-repeat;
+    border: 1px solid $blue-016;
+  }
+}
+
+.transactions-log-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 13px 8px 13px 30px;
+  background: linear-gradient(180deg, $blue-017, $blue-021);
+  background-repeat: no-repeat;
+  border: 1px solid $blue-016;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.transactions-logs-date {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: $white;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.transactions-logs-details {
+
+}
+
+.transactions-logs-info {
+  position: relative;
+}
+
+.transactions-logs-details {
+  width: 45%;
+}
+
+.transactions-logs-info-wallet {
+  font-size: 13px;
+  line-height: 15px;
+  color: $white;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.transactions-logs-info-action {
+  position: absolute;
+  left: -18px;
+  top: 5px;
+}
+
+.transactions-logs-info-address {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 15px;
+  color: $blue-light;
+  margin-top: 12px;
+}
+
+.transactions-logs-value {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $white;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+// /logs
+
+
+
+// transfer
+.transfer-form {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.transfer-form-actions {
+  margin-top: 45px;
+}
+// /transfer
+
+
+
+// wallet-dots
+.menu-actions-dots {
+  margin: 18px auto;
+  text-align: center;
+  height: 5px;
+
+  i {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 1px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: $blue-light;
+    opacity: 0.3;
+    transition: opacity 0.1s linear;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+// /wallet-dots
+
+
+
+// wallet-actions-bottom
+.wallet-actions-bottom {
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+// /wallet-actions-bottom
+
+
+
+// empty
+.empty-block-message {
+  margin-top: 30px;
+}
+
+.empty-block-message__title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+}
+
+.empty-block-message__text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: $blue-light;
+  margin-top: 21px;
+}
+// /empty
+
+
+
+.scrollblock-top-gradient,
+.pulltorefresh-gradient {
+  height: 0;
+  width: 100%;
+  opacity: 0;
+  z-index: 11000;
+  position: relative;
+
+  &:before {
+    content: '';
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+  }
+}
+
+
+
+
+
+// logs
+.delegation-logs {
+  text-align: left;
+  padding: 20px 0 20px 0;
+}
+
+.delegation-log {
+  position: relative;
+  height: 70px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 13px 8px 13px 47px;
+  background: linear-gradient(180deg, $blue-017, $blue-021);
+  background-repeat: no-repeat;
+  border: 1px solid $blue-016;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delegation-log-info {
+  position: relative;
+}
+
+.delegation-log-details {
+  width: 45%;
+}
+
+.delegation-log-info-wallet {
+  font-size: 13px;
+  line-height: 15px;
+  color: $blue-light;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.delegation-log-info-action {
+  position: absolute;
+  left: -27px;
+  top: 7px;
+}
+
+.delegation-log-info-value {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $white;
+}
+
+.delegation-log-info-action-value {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: $blue-light;
+  opacity: 0.5;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+  width: 40px;
+  left: 50%;
+  margin-left: -28px;
+
+  span {
+    border: 1px solid $blue-light;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: inline-block;
+    min-width: 20px;
+    padding: 2px 6px;
+    height: 16px;
+  }
+}
+
+.delegation-log-info-button {
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: -0.02em;
+  color: $white;
+  background: $blue-007;
+  border: none;
+  min-width: 80px;
+  padding: 9px 12px 7px 9px;
+  border-radius: 15px;
+  transition: all 0.1s linear;
+
+  .icon {
+    margin-right: 2px;
+  }
+
+  &:active {
+    background: $white;
+    color: $blue-007;
+  }
+}
+// /logs

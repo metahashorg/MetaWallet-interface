@@ -1,0 +1,524 @@
+/*
+  Inputs
+*/
+
+
+
+// inputs
+.input-invisible {
+  display: block;
+  width: 100%;
+  text-align: center;
+
+  &.input-invisible--left {
+    text-align: left;
+  }
+
+  &.form-control--error {
+    color: $red;
+
+    @include placeholder() {
+      color: $red !important;
+
+    }
+  }
+}
+
+.input {
+  background: $blue-026;
+  border: 1px solid rgba($blue-light, 0.3);
+  font-size: 12px;
+  line-height: 17px;
+  //border-radius: 20px;
+  border-radius: 10px;
+  padding: 12px 16px 11px 16px;
+  transition: all 0.1s linear;
+  color: $white;
+
+  @include placeholder() {
+    color: rgba($white, 0.29);
+  }
+
+  &.input--block {
+    display: block;
+    width: 100%;
+  }
+
+  & + .icon {
+    transition: all 0.1s linear;
+  }
+
+  &:focus {
+    border-color: rgba($white, 0.5);
+
+    & + .icon {
+      color: $white;
+    }
+  }
+}
+
+.input-wrapper {
+  position: relative;
+
+  .input {
+    padding-right: 32px;
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    right: 17px;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+
+    -webkit-pointer-events: none;
+    pointer-events: none;
+  }
+}
+// /inputs
+
+
+
+.form-group {
+  margin-bottom: 15px;
+
+  @include breakpoint-iphone-6() {
+    margin-bottom: 20px;
+  }
+  @include breakpoint-iphone-6-plus() {
+
+  }
+  @include breakpoint-iphone-X() {
+
+  }
+
+  &.form-group--xs {
+
+    .form-label {
+      font-size: 10px;
+      line-height: normal;
+      margin-bottom: 9px;
+    }
+  }
+}
+
+
+.form-group-title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: $white;
+  text-align: left;
+  margin: 27px 0 22px 0;
+}
+
+.form-group-title-tip {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  color: $white;
+  text-align: left;
+  margin: 0 0 17px 0;
+
+  .form-group-title + & {
+    margin-top: -10px;
+  }
+}
+
+
+.form-group-submit {
+  margin-top: 20px;
+
+  @include breakpoint-iphone-6() {
+    margin-top: 29px;
+  }
+  @include breakpoint-iphone-6-plus() {
+
+  }
+  @include breakpoint-iphone-X() {
+
+  }
+}
+
+
+
+// label
+.form-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: $blue-light;
+  text-align: left;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.form-label-param {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 23px;
+  font-size: 10px;
+  text-transform: none;
+
+  .icon {
+    margin-right: 4px;
+  }
+}
+// /label
+
+
+
+// form control
+.form-control {
+  display: block;
+  width: 100%;
+  background: rgba($blue-025, 0.6);
+  //border-radius: 34px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 17px;
+  text-align: center;
+  //text-transform: uppercase;
+  color: $white;
+  padding: 21px 20px 20px 20px;
+  border: 1px solid rgba($blue-light, 0.3);
+
+  transition: all 0.2s linear;
+  //will-change: color, background, border-color, transform;
+
+  @include box-sizing(border-box);
+  @include background-clip(padding-box);
+
+  &:placeholder-shown {
+    border-color: rgba($blue-light, 0);
+  }
+
+  @include placeholder() {
+    color: $blue-light;
+  }
+
+  &.form-control--placeholder-xs {
+    @include placeholder() {
+      font-size: 10px;
+    }
+  }
+
+  &[readonly=readonly] {
+    background: $blue-022;
+    border-color: $blue-022;
+    pointer-events: none;
+  }
+  &.form-control--password {
+    letter-spacing: 3px;
+
+    @include placeholder() {
+      letter-spacing: normal;
+    }
+  }
+
+  &.form-control--error {
+    border-color: $red!important;
+  }
+
+  &.form-control--xs {
+    font-size: 12px;
+    line-height: 17px;
+    text-align: left;
+    padding: 13px 16px 10px 16px;
+    margin-bottom: 24px;
+  }
+
+  &.form-control--sm {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 11px;
+    padding: 19px 12px 18px 12px;
+    margin-bottom: 24px;
+  }
+
+  .form-control-wrapper--readonly & {
+    background: none;
+    border: none;
+  }
+}
+
+.form-control-wrapper {
+  position: relative;
+
+  .form-control {
+    position: relative;
+
+
+    &.show-dropdown {
+      z-index: 100;
+      background: #050b1f;
+
+      & + .btn--icon {
+        z-index: 100;
+      }
+    }
+
+    .form-control-dropdown {
+      z-index: 90;
+    }
+  }
+
+  select.form-control[readonly=readonly] + .btn {
+    opacity: 0.5;
+  }
+
+  .form-control-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    background: #09335e;
+    text-align: left;
+    margin-top: -21px;
+    padding-top: 21px;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba($black, 0.18);
+  }
+
+  .form-control-dropdown-list {
+    max-height: 171px;
+    overflow: auto;
+  }
+
+  .form-control-dropdown-item {
+    font-size: 12px;
+    line-height: 17px;
+    padding: 19px 17px 6px 17px;
+    color: $white;
+    transition: 0.1s linear all;
+
+    &:last-child {
+      padding-bottom: 14px;
+    }
+
+    &:active {
+      background: rgba($white, 0.1);
+    }
+
+    & + .form-control-dropdown-item {
+      border-top: 1px solid rgba($white, 0.1);
+    }
+  }
+}
+
+.form-control-wrapper--state-left {
+
+  .form-control {
+    padding-left: 50px;
+  }
+
+  .form-control-state-bg {
+    background: rgba($blue-022, 0.5);
+    position: absolute;
+    top: 0 ;
+    left: 0;
+    width: 40px;
+    bottom: 0;
+    border-radius: 50% 0 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.form-control-wrapper--icon-right {
+
+  .form-control {
+    padding-right: 40px;
+  }
+
+  .btn--icon {
+    position: absolute;
+    top: 50%;
+    margin: -16px 0 0 0;
+    right: 10px;
+    padding: 0;
+    pointer-events: none;
+  }
+
+  .btn-link {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    left: auto;
+    width: auto;
+    margin: -8px 0 0 0;
+    display: inline-block;
+    padding: 0;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    height: 17px;
+    text-align: right;
+    text-decoration-line: underline;
+    text-transform: none;
+    color: $blue-light;
+
+    &:active {
+      color: $white;
+    }
+
+    &.disabled {
+      color: $blue-light;
+    }
+  }
+}
+
+.form-control-wallet-preview {
+  height: 30px;
+  margin: 0 0 8px 0;
+
+  .form-control & {
+    margin: -8px -10px -7px -10px;
+  }
+}
+
+.form-control-wallet-preview__img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 8px;
+  margin-top: -2px;
+}
+
+.form-control-wallet-preview__title {
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: $white;
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.form-control-wallet-preview__balance {
+  font-size: 12px;
+  line-height: 14px;
+  color: $blue-light;
+  margin-top: 1px;
+}
+// /form control
+
+
+
+// checkbox
+.checkbox {
+  width: 24px;
+  height: 24px;
+  border: 1px solid $blue-light;
+  box-sizing: border-box;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+
+  &.checkbox--sm {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba($white, 0.5);
+    background: rgba($blue-026, 0.5);
+    margin-top: -4px;
+
+    .icon {
+      top: -4px;
+    }
+  }
+
+  &.checkbox--invisible {
+    width: 14px;
+    height: 14px;
+    border: none;
+    background: none;
+
+    .icon {
+      top: -4px;
+    }
+  }
+
+  input {
+    display: none;
+
+    &:checked + .icon {
+      display: block;
+    }
+  }
+
+  .icon {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+// /checkbox
+
+
+
+// ios style checkbox
+.checkbox-switch {
+  display: none;
+  margin: 0;
+
+  & + .checkbox-switch-fake {
+    position: relative;
+    padding: 0;
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      background: $gray-002;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      //will-change: background;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      left: 1px;
+      top: 1px;
+      width: 20px;
+      height: 20px;
+      border-radius: 16px;
+      background: $white;
+      border: 1px solid $gray-001;
+      box-shadow: 0 1.5px 1.8px rgba($black, 0.5);
+
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      //will-change: margin-left;
+    }
+  }
+
+  &:checked + .checkbox-switch-fake {
+    &:before {
+      background: $green-2;
+    }
+    &:after {
+      margin-left: 16px;
+    }
+  }
+}
+// /ios style checkbox

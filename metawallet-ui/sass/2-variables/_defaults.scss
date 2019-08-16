@@ -1,0 +1,83 @@
+/*
+  Defaults
+*/
+
+
+
+// colors black and white
+$white:   #ffffff; // 255, 255, 255
+$black:   #000000; //   0,   0,   0
+
+// colors grays
+$gray:      #C4C4C4; // 196, 196, 196
+$gray-001:  #E5E5E5; // 229, 229, 229
+$gray-002:  #DADADA; // 218, 218, 218
+$gray-003:  #282828; //  40,  40,  40
+$gray-004:  #161616; //  22,  22,  22
+$gray-005:  #828282; // 130, 130, 130
+
+// colors blue
+$blue-light:  #99CEFF; // 153, 206, 255
+$blue:        #4B8CC6; //  75, 140, 198
+
+$blue-001: #d7ecff; // 215, 236, 255
+$blue-002: #a8d1f7; // 168, 209, 247
+//$blue-003:  #99CEFF; // 153, 206, 255
+$blue-004: #79bfff; // 121, 191, 255
+$blue-005: #359eff; //  53, 158, 255
+$blue-006: #609ed5; //  96, 158, 213
+$blue-007: #2f7bc2; //  47, 123, 194
+$blue-008: #3b73a7; //  59, 115, 167
+$blue-009: #306ca3; //  48, 108, 163
+$blue-010: #29669e; //  41, 102, 158
+$blue-011: #225d93; //  34,  93, 147
+$blue-012: #235382; //  35,  83, 130
+$blue-013: #0F4E88; //  15,  78, 136
+$blue-014: #0b4a83; //  11,  74, 131
+$blue-015: #264c77; //  38,  76,  19
+$blue-016: #264771; //  38,  71, 113
+$blue-017: #154470; //  21,  68, 112
+$blue-018: #004377; //   0,  67, 119
+$blue-019: #093b6b; //   9,  59, 107
+$blue-020: #1a385f; //  26,  56,  95
+$blue-021: #082e5a; //   8,  46,  90
+$blue-022: #00294f; //   0,  41,  79
+$blue-023: #041d40; //   4,  29,  64
+$blue-024: #061A37; //   6,  26,  55
+$blue-025: #090021; //   9,   0,  33
+$blue-026: #03081C; //   3,   8,  28
+
+// colors
+$green:     #6aad14; // 106, 173,  20
+$green-2:   #00ee70; //   0, 238, 112
+$green-3:   #168545; //  22, 133,  69
+$green-4:   #3BCA2E; //  59, 202,  46
+$red:       #FB5E5B; // 251,  94,  91
+$red-2:     #FF8785; // 255, 135, 133
+$red-3:     #E83E3B; // 232,  62,  59
+$orange:    #FA801D; // 250, 128,  29
+$yellow:    #fab31d; // 250, 179,  29
+
+// colors socials
+$color-fb:  #3D5B97;
+$color-vk:  #4E6D90;
+$color-tw:  #5BAEEC;
+$color-ig:  #3D5B97;
+$color-tg:  #219FDF;
+$color-yt:  #C62D2E;
+$color-in:  #1779B3;
+$color-mm:  #20AB6D;
+
+
+
+
+// fonts
+$font-family-base: "Roboto", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+
+
+
+//
+$images-path: '../i/';
+$icons-path: $images-path + 'icons/';
+$currency-path: $images-path + 'currency/';

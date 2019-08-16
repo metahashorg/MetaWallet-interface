@@ -1,0 +1,28 @@
+/*
+  Wallet - Transfer
+*/
+
+
+
+// overwrites
+.page--wallet-transfer {
+
+  .page-inner {
+    overflow: auto;
+  }
+
+  .page-wrapper {
+    padding-bottom: 25px;
+
+    @include breakpoint-iphone-6() {
+      padding-bottom: 35px;
+    }
+    @include breakpoint-iphone-6-plus() {
+
+    }
+    @include breakpoint-iphone-X() {
+      padding-bottom: 45px;
+    }
+  }
+}
+// /overwrites

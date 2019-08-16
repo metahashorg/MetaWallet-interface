@@ -1,0 +1,483 @@
+/*
+  Mixins
+*/
+
+
+
+// optional at root
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+
+
+
+// strip-unit
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+
+
+
+// rem fallback to px
+@mixin font-size($size-value: 16, $important:false) {
+  @if($important) {
+    font-size: ($size-value) + px !important;
+    //font-size: ($size-value / 16) + rem !important;
+  } @else {
+    font-size: ($size-value) + px;
+    //font-size: ($size-value / 16) + rem;
+  }
+}
+// rem fallback to px
+@mixin line-height($size-value: 16, $important:false) {
+  @if($important) {
+    line-height: ($size-value) + px !important;
+    //line-height: ($size-value / 10) + rem !important;
+  } @else {
+    line-height: ($size-value) + px;
+    //line-height: ($size-value / 10) + rem;
+  }
+}
+
+
+
+
+// placeholder
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+  //@include optional-at-root(':-moz-placeholder') {
+  //  @content;
+  //}
+  //@include optional-at-root('::-moz-placeholder') {
+  //  @content;
+  //}
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+
+
+
+// CSS filters
+// grayscale      ex: filter: grayscale(100%);
+// sepia          ex: filter: sepia(100%);
+// saturate       ex: filter: saturate(0%);
+// hue-rotate     ex: filter: hue-rotate(45deg);
+// invert         ex: filter: invert(100%);
+// brightness     ex: filter: brightness(15%);
+// contrast       ex: filter: contrast(200%);
+// blur           ex: filter: blur(2px);
+@mixin filter($filter-type, $filter-amount) {
+  @if ($filter-type == 'none') {
+    -webkit-filter: none;
+    //-moz-filter: none;
+    //-ms-filter: none;
+    //-o-filter: none;
+    filter: none;
+  } @else {
+    -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+    //-moz-filter: $filter-type+unquote('(#{$filter-amount})');
+    //-ms-filter: $filter-type+unquote('(#{$filter-amount})');
+    //-o-filter: $filter-type+unquote('(#{$filter-amount})');
+    filter: $filter-type+unquote('(#{$filter-amount})');
+  }
+}
+
+
+
+
+// hi resolution
+@mixin hi-res {
+  @media (-webkit-min-device-pixel-ratio: 1.2), (min-resolution: 144dpi){
+    @content;
+  }
+}
+
+
+
+
+// responsitive
+@mixin respond-to($breakpoint, $breakpointMax:false) {
+  @if ($breakpoint and $breakpointMax) {
+    @media screen and (min-width: $breakpoint) and (max-width: $breakpointMax) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+@mixin respond-to-min($breakpoint) {
+  @media screen and (min-width: $breakpoint + 1) {
+    @content;
+  }
+}
+@mixin respond-to-max($breakpoint) {
+  @media screen and (max-width: $breakpoint - 1) {
+    @content;
+  }
+}
+
+
+
+
+// text stroke 1px
+@mixin text-stroke-1px($color) {
+  text-shadow:
+          $color 1px 0 0,
+          $color  0.540302px  0.841471px 0,
+          $color -0.416147px  0.909297px 0px,
+          $color -0.989992px  0.141120px 0px,
+          $color -0.653644px -0.756802px 0px,
+          $color  0.283662px -0.958924px 0px,
+          $color  0.960170px -0.279415px 0px;
+}
+// text stroke 2px
+@mixin text-stroke-2px($color) {
+  text-shadow:
+          $color 2px 0px 0px,
+          $color 1.75517px 0.958851px 0px,
+          $color 1.0806px 1.68294px 0px,
+          $color 0.141474px 1.99499px 0px,
+          $color -0.832294px 1.81859px 0px,
+          $color -1.60229px 1.19694px 0px,
+          $color -1.97998px 0.28224px 0px,
+          $color -1.87291px -0.701566px 0px,
+          $color -1.30729px -1.5136px 0px,
+          $color -0.421592px -1.95506px 0px,
+          $color 0.567324px -1.91785px 0px,
+          $color 1.41734px -1.41108px 0px,
+          $color 1.92034px -0.558831px 0px;
+}
+// text stroke 3px
+@mixin text-stroke-3px($color) {
+  text-shadow:
+          $color 3px 0px 0px,
+          $color 2.83487px 0.981584px 0px,
+          $color 2.35766px 1.85511px 0px,
+          $color 1.62091px 2.52441px 0px,
+          $color 0.705713px 2.91581px 0px,
+          $color -0.287171px 2.98622px 0px,
+          $color -1.24844px 2.72789px 0px,
+          $color -2.07227px 2.16926px 0px,
+          $color -2.66798px 1.37182px 0px,
+          $color -2.96998px 0.42336px 0px,
+          $color -2.94502px -0.571704px 0px,
+          $color -2.59586px -1.50383px 0px,
+          $color -1.96093px -2.27041px 0px,
+          $color -1.11013px -2.78704px 0px,
+          $color -0.137119px -2.99686px 0px,
+          $color 0.850987px -2.87677px 0px,
+          $color 1.74541px -2.43999px 0px,
+          $color 2.44769px -1.73459px 0px,
+          $color 2.88051px -0.838247px 0px;
+}
+// text stroke 4px
+@mixin text-stroke-4px($color) {
+  text-shadow:
+          $color 4px 0px 0px,
+          $color 3.87565px 0.989616px 0px,
+          $color 3.51033px 1.9177px 0px,
+          $color 2.92676px 2.72656px 0px,
+          $color 2.16121px 3.36588px 0px,
+          $color 1.26129px 3.79594px 0px,
+          $color 0.282949px 3.98998px 0px,
+          $color -0.712984px 3.93594px 0px,
+          $color -1.66459px 3.63719px 0px,
+          $color -2.51269px 3.11229px 0px,
+          $color -3.20457px 2.39389px 0px,
+          $color -3.69721px 1.52664px 0px,
+          $color -3.95997px 0.56448px 0px,
+          $color -3.97652px -0.432781px 0px,
+          $color -3.74583px -1.40313px 0px,
+          $color -3.28224px -2.28625px 0px,
+          $color -2.61457px -3.02721px 0px,
+          $color -1.78435px -3.57996px 0px,
+          $color -0.843183px -3.91012px 0px,
+          $color 0.150409px -3.99717px 0px,
+          $color 1.13465px -3.8357px 0px,
+          $color 2.04834px -3.43574px 0px,
+          $color 2.83468px -2.82216px 0px,
+          $color 3.44477px -2.03312px 0px,
+          $color 3.84068px -1.11766px 0px,
+          $color 3.9978px -0.132717px 0px;
+}
+// text stroke 5px
+@mixin text-stroke-5px($color) {
+  text-shadow:
+          $color 5px 0px 0px,
+          $color 4.90033px 0.993347px 0px,
+          $color 4.60531px 1.94709px 0px,
+          $color 4.12668px 2.82321px 0px,
+          $color 3.48353px 3.58678px 0px,
+          $color 2.70151px 4.20736px 0px,
+          $color 1.81179px 4.6602px 0px,
+          $color 0.849836px 4.92725px 0px,
+          $color -0.145998px 4.99787px 0px,
+          $color -1.13601px 4.86924px 0px,
+          $color -2.08073px 4.54649px 0px,
+          $color -2.94251px 4.04248px 0px,
+          $color -3.68697px 3.37732px 0px,
+          $color -4.28444px 2.57751px 0px,
+          $color -4.71111px 1.67494px 0px,
+          $color -4.94996px 0.7056px 0px,
+          $color -4.99147px -0.291871px 0px,
+          $color -4.83399px -1.27771px 0px,
+          $color -4.48379px -2.2126px 0px,
+          $color -3.95484px -3.05929px 0px,
+          $color -3.26822px -3.78401px 0px,
+          $color -2.4513px -4.35788px 0px,
+          $color -1.53666px -4.75801px 0px,
+          $color -0.560763px -4.96845px 0px,
+          $color 0.437495px -4.98082px 0px,
+          $color 1.41831px -4.79462px 0px,
+          $color 2.34258px -4.41727px 0px,
+          $color 3.17346px -3.86382px 0px,
+          $color 3.87783px -3.15633px 0px,
+          $color 4.4276px -2.32301px 0px,
+          $color 4.80085px -1.39708px 0px,
+          $color 4.98271px -0.415447px 0px;
+}
+
+
+
+
+// Font Face
+// @include font-face("Helvetica", $font-path-helvetica + "HelveticaUltraLight/HelveticaUltraLight", 100, normal, eot woff ttf);
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+          eot: "?",
+          svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+          otf: "opentype",
+          ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    font-display: fallback;
+    src: $src;
+  }
+}
+
+
+
+
+//
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  ::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+
+
+
+//
+$browser-context: 16;
+@function rem($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+
+
+
+// inline-block
+$inline-block-alignment: middle;
+@mixin inline-block($alignment: $inline-block-alignment, $ie-alignment: auto) {
+  // standard
+  display: inline-block;
+  @if $alignment and $alignment != none {
+    vertical-align: $alignment;
+  }
+}
+
+
+
+
+// border-radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  //-moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+
+
+
+// transform
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  //-moz-transform: $transform;
+  transform: $transform;
+}
+
+
+
+
+// box-shadow
+@mixin box-shadow($arg) {
+  -webkit-box-shadow: $arg;
+  //-moz-box-shadow: $arg;
+  box-shadow: $arg;
+}
+
+
+
+
+// box-sizing
+@mixin box-sizing($arg) {
+  -webkit-box-sizing: $arg;
+  //-moz-box-sizing:    $arg;
+  box-sizing:         $arg;
+}
+
+
+
+
+// background-clip
+@mixin background-clip($arg: padding-box) {
+  -webkit-background-clip:  $arg;
+  //-moz-background-clip:     $arg;
+  background-clip:          $arg;
+}
+
+
+
+
+// background-origin
+@mixin background-origin($arg: border-box) {
+  -webkit-background-origin:  $arg;
+  //-moz-background-origin:     $arg;
+  background-origin:          $arg;
+}
+
+
+
+
+// transition
+@mixin transition($arg) {
+  -webkit-transition:   $arg;
+  //-moz-transition:      $arg;
+  //-o-transition:        $arg;
+  transition:           $arg;
+}
+
+
+
+
+// text-shadow
+@mixin text-shadow($arg) {
+  -webkit-text-shadow: $arg;
+  //-moz-text-shadow:    $arg;
+  //-o-text-shadow:      $arg;
+  text-shadow:         $arg;
+}
+
+
+
+
+// transform-origin
+@mixin transform-origin($arg) {
+  -webkit-transform-origin: $arg;
+  //-moz-transform-origin:    $arg;
+  //-o-transform-origin:      $arg;
+  transform-origin:         $arg;
+}
+
+
+
+
+// user-select
+@mixin user-select($arg) {
+  -webkit-touch-callout:  $arg;
+  -webkit-user-select:    $arg;
+  //-khtml-user-select:     $arg;
+  //-moz-user-select:       $arg;
+  //-ms-user-select:        $arg;
+  user-select:            $arg;
+}
+
+
+
+
+// background-size
+@mixin background-size($arg: 100% auto) {
+  -webkit-background-size: $arg;
+  //-moz-background-size: $arg;
+  background-size: $arg;
+}
+
+
+
+
+// media
+@mixin breakpoint-iphone-6-lower {
+  @media (max-height: 666px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-iphone-6 {
+  @media (min-height: 667px) {
+    @content;
+  }
+}
+@mixin breakpoint-iphone-6-plus {
+  @media (min-height: 736px) {
+    @content;
+  }
+}
+@mixin breakpoint-iphone-X {
+  @media (min-height: 812px) {
+    @content;
+  }
+}

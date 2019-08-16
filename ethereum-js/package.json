@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "ethereumjs-tx": "^2.1.0",
+    "ethereumjs-wallet": "^0.6.3",
+    "web3": "^1.0.0-beta.55"
+  },
+  "devDependencies": {
+    "browserify": "16.2.3",
+    "tinyify": "2.5.0"
+  },
+  "scripts": {
+    "build": "browserify --standalone Ethereum src/index.js > dist/ethereum.js",
+    "build:min": "browserify -p tinyify --standalone Ethereum src/index.js > dist/ethereum.min.js",
+    "build:full": "npm run build && npm run build:min"
+  }
+}

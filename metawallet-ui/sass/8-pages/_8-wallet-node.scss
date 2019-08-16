@@ -1,0 +1,246 @@
+/*
+  Wallet - Node
+*/
+
+
+
+// overwrites
+.page--wallet-node {
+
+  .page-inner {
+    overflow: auto;
+  }
+
+  .page-wrapper {
+    padding-top: 55px;
+    padding-bottom: 20px;
+
+    @include breakpoint-iphone-6() {
+      padding-top: 75px;
+    }
+    @include breakpoint-iphone-6-plus() {
+
+    }
+    @include breakpoint-iphone-X() {
+      padding-top: 85px;
+    }
+  }
+
+  .menu-actions {
+    margin-top: 15px;
+    margin-bottom: 25px;
+  }
+}
+// /overwrites
+
+
+
+.wallet-node {
+  background: linear-gradient(180deg, rgba($blue-021, 0.5) 0%, rgba($blue-024, 0.5) 100%);
+  mix-blend-mode: normal;
+  border: 1px solid rgba($blue-light, 0.12);
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 9px 30px 18px 20px;
+  color: $white;
+  text-align: left;
+  position: relative;
+}
+
+.wallet-node-type {
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 17px;
+  letter-spacing: 0.03em;
+  margin-bottom: 9px;
+}
+
+.wallet-node-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  height: 63px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 6px;
+}
+
+.wallet-node-value {
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 6px;
+}
+
+.wallet-node-details {
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.wallet-node-info {
+  position: relative;
+  margin-top: 15px;
+  margin-right: -10px;
+  margin-bottom: -8px;
+  padding-top: 13px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20px;
+    right: -20px;
+    height: 1px;
+    background: rgba(153, 206, 255, 0.15);
+  }
+}
+
+.wallet-node-info-line {
+  font-size: 11px;
+  line-height: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 0 7px 0;
+}
+
+.wallet-node-info-line__label {
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  color: $blue-light;
+}
+
+.wallet-node-info-line__value {
+  text-align: right;
+  color: $white;
+  flex: 1 0 auto;
+  padding-left: 10px;
+}
+
+.wallet-node-info-bar {
+  background: rgba($blue-007, 0.3);
+  width: 60%;
+  height: 12px;
+  border-radius: 6px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-top: -1px;
+
+  .percent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 6px;
+    background: $blue-light;
+  }
+}
+
+.wallet-node-action {
+  background: linear-gradient(180deg, rgba($blue-010, 0.5) 0%, rgba($blue-014, 0.5) 100%);
+  border: 1px solid rgba($blue-light, 0.25);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 10px 9px 10px;
+
+  & + & {
+    margin-top: 10px;
+  }
+}
+
+.wallet-node-action-value {
+  font-size: 14px;
+  line-height: 16px;
+  color: $white;
+  text-align: left;
+  flex: 1 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wallet-node-action-button {
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: $blue-light;
+  border: 1px solid rgba($blue-light, 0.5);
+  min-width: 110px;
+  padding: 9px 12px 7px 9px;
+  border-radius: 15px;
+  transition: all 0.1s linear;
+
+  .icon {
+    margin-right: 12px;
+  }
+
+  &:active {
+    border-color: $white;
+    color: $white;
+  }
+}
+
+
+
+// delegate form
+.delegate-form {
+  margin-top: 21px;
+  margin-bottom: 32px;
+
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .form-label {
+      width: 25%;
+      margin-bottom: 0;
+    }
+
+    .form-control-wrapper {
+      .form-control {
+        width: 100%;
+      }
+    }
+
+    .form-control-wrapper,
+    .form-control {
+      flex: 1 0 auto;
+      width: 75%;
+    }
+
+    .form-control {
+      margin-bottom: 0;
+      font-size: 16px;
+
+      @include placeholder() {
+        color: $blue-light;
+      }
+
+      &:placeholder-shown {
+        border-color: rgba($blue-light, 0.3);
+      }
+    }
+  }
+}
+
+.delegate-form-title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: $white;
+  text-align: left;
+  margin-bottom: 23px;
+}
+
+.delegate-form-actions {
+  margin-top: 45px;
+}
+// /delegate form

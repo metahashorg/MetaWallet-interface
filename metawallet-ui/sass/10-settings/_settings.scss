@@ -1,0 +1,329 @@
+/*
+  Settings
+*/
+
+
+
+// variables
+$settings-padding-l:  10%;
+$settings-padding-r: 7.5%;
+// /variables
+
+
+
+// settings
+.settings {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  color: $white;
+  background: $blue-012;
+
+  &.settings--blurred {
+
+    .settings-page {
+      overflow: hidden;
+      -webkit-filter: blur(9px);
+      filter: blur(9px);
+      box-shadow: none;
+    }
+
+    .settings-page-inner {
+      // ..
+    }
+  }
+
+  .page-nav__bottom-border {
+    left: 0;
+    right: 0;
+  }
+}
+
+.settings-page {
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 0 100px 10px rgba(0, 0, 0, .75);
+  transition: filter 0.1s linear, box-shadow 0.1s linear;
+}
+
+.settings-page-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: -webkit-linear-gradient(top, $blue-012 0%, $blue-019 100%);
+    background: linear-gradient(to bottom, $blue-012 0%, $blue-019 100%);
+
+    .disconnected & {
+      @extend %disconnected;
+    }
+  }
+}
+
+.settings-page-wrapper {
+  position: relative;
+  margin-top: 16px;
+  padding-top: 49px;
+  padding-bottom: 50px;
+
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @include breakpoint-iphone-6() {
+    margin-top: 35px;
+  }
+  @include breakpoint-iphone-6-plus() {
+
+  }
+  @include breakpoint-iphone-X() {
+    margin-top: 53px;
+  }
+}
+
+// /settings
+
+
+
+//  settings-block
+.settings-block {
+  margin: 0;
+  color: $white;
+
+  &.settings-block--mt {
+    margin-top: 60px;
+
+    &.settings-block--compact {
+      margin-top: 46px;
+    }
+  }
+}
+
+.settings-actions {
+  margin-top: 40px;
+  padding: 0 $settings-padding-r 0 $settings-padding-l;
+}
+
+.settings-block__header {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+
+  padding: 0 $settings-padding-r 17px $settings-padding-l;
+
+  .settings-block--compact & {
+    padding-top: 21px;
+  }
+}
+
+.settings-block-list {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: left;
+
+  background: linear-gradient(180deg, rgba($blue-light, 0.25) 0%, rgba($blue-007, 0) 100%), rgba($blue-014, 0.75);
+  border-top: 1px solid $blue-008;
+  border-bottom: 1px solid $blue-008;
+
+  .settings-block--compact & {
+    background: none;
+    border: none;
+  }
+}
+
+.settings-block-item {
+  display: block;
+  padding-left: $settings-padding-l;
+
+  &:first-child {
+    .settings-block-item-inner {
+      .settings-block--compact & {
+        border-top: 1px solid $blue-011;
+      }
+    }
+  }
+
+  &:last-child {
+    .settings-block-item-inner {
+      border-bottom: none;
+
+      .settings-block--compact & {
+        border-bottom: 1px solid $blue-011;
+      }
+    }
+  }
+
+  .input-invisible {
+    text-align: left;
+
+    @include placeholder() {
+      color: rgba($white, 0.5);
+    }
+  }
+
+  @at-root {
+    label#{&},
+    button#{&} {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      transition: all 0.1s linear;
+      //will-change: background;
+
+      &:active {
+        background: rgba($white, 0.15);
+      }
+
+      .setting-btn-icon {
+        margin: -8px 10px -5px 0;
+      }
+
+      .setting-btn-icon-r {
+        margin: 0 0 0 10px;
+      }
+    }
+  }
+}
+
+
+.settings-block-item-inner {
+  padding-top: 18px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid $blue-008;
+  display: flex;
+  flex-direction: row;
+
+  padding-right: $settings-padding-r;
+
+  &.settings-block-item-inner--disabled {
+    & > * {
+      opacity: 0.5;
+    }
+  }
+
+  .settings-block--compact & {
+    border-bottom: 1px solid $blue-011;
+  }
+}
+
+.settings-block-item__label {
+  flex: 1 0 auto;
+}
+
+.settings-block-item__value {
+  font-weight: 300;
+  text-align: right;
+
+  .checkbox-switch-fake {
+    margin-top: -5px;
+    margin-bottom: -5px;
+  }
+
+  &.settings-block-item__value--main {
+    width: 60%;
+    padding-left: 5px;
+  }
+}
+
+.settings-block__status {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: normal;
+  color: $blue-light;
+  margin-top: 32px;
+  margin-bottom: 22px;
+  padding-left: $settings-padding-l;
+  padding-right: $settings-padding-r;
+
+  b {
+    font-weight: 500;
+  }
+
+  p + p {
+    margin-top: 14px;
+  }
+}
+
+.settings-block__hint {
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 13px;
+  color: rgba($blue-light, 0.7);
+  margin-top: 32px;
+  margin-bottom: 32px;
+  padding-left: $settings-padding-l;
+  padding-right: $settings-padding-r;
+
+  b {
+    font-weight: 500;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .settings-block__status + & {
+    margin-top: 22px;
+  }
+}
+// /settings-block
+
+
+
+// keypad
+.settings-keypad {
+  text-align: center;
+}
+// /keypad
+
+
+
+// textarea
+.settings-textarea-wrapper {
+  margin-top: 29px;
+  margin-bottom: 29px;
+
+  padding-left: $settings-padding-l;
+  padding-right: $settings-padding-r;
+}
+
+.settings-textarea {
+  padding: 17px 13px 17px 17px;
+  background: rgba($blue-023, 0.5);
+  border: 1px solid $blue-009;
+  border-radius: 10px;
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  line-height: 14px;
+  color: $white;
+
+  @include placeholder() {
+    color: rgba($white, 0.5);
+  }
+}
+// /textarea

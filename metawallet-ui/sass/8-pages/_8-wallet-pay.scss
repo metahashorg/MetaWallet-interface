@@ -1,0 +1,145 @@
+/*
+  Wallet - Pay
+*/
+
+
+
+// overwrites
+.page--wallet-metapay {
+
+  .page-wrapper {
+    padding-top: 55px;
+
+    @include breakpoint-iphone-6() {
+      padding-top: 75px;
+    }
+    @include breakpoint-iphone-6-plus() {
+
+    }
+    @include breakpoint-iphone-X() {
+      padding-top: 85px;
+    }
+  }
+}
+// /overwrites
+
+
+
+// metapay form
+.metapay-form {
+  margin-top: 27px;
+  margin-bottom: 32px;
+
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .form-label {
+      width: 25%;
+      margin-bottom: 0;
+      padding-left: 5px;
+
+      @include breakpoint-iphone-6() {
+        padding-left: 10px;
+      }
+      @include breakpoint-iphone-6-plus() {
+        padding-left: 15px;
+
+      }
+      @include breakpoint-iphone-X() {
+
+      }
+    }
+
+    .form-control-wrapper {
+      .form-control {
+        width: 100%;
+      }
+    }
+
+    .form-control-wrapper,
+    .form-control {
+      flex: 1 0 auto;
+      width: 75%;
+    }
+
+    .form-control {
+      margin-bottom: 0;
+
+      @include placeholder() {
+        color: $blue-light;
+      }
+
+      &:placeholder-shown {
+        border-color: rgba($blue-light, 0.3);
+      }
+    }
+  }
+
+
+  &.metapay-form--compact {
+
+    .form-group {
+      margin-bottom: 10px;
+
+      .form-label {
+        color: $white;
+        padding-left: 5px;
+        width: 20%;
+      }
+
+      .form-control-wrapper {
+        .form-control {
+          width: 100%;
+        }
+      }
+
+      .form-control {
+        background: rgba($blue-025, 0.35);
+        border-color: transparent;
+
+        &.form-control--empty {
+          background: rgba($blue-025, 0.2);
+        }
+
+        &.form-control--readonly {
+          background: transparent;
+          border-color: transparent;
+          font-weight: 500;
+          font-size: 16px;
+          color: $white;
+        }
+      }
+
+      .form-control-wrapper,
+      .form-control {
+        flex: 1 0 auto;
+        width: 80%;
+      }
+    }
+
+    .metapay-form-actions {
+      margin-top: 35px;
+    }
+
+    .metapay-form-error {
+      color: $red;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      margin: 15px 30px -17px 30px;
+
+      &.metapay-form-error--inline {
+        margin: 15px 30px 15px 20%;
+        padding-left: 5px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.metapay-form-actions {
+  margin-top: 45px;
+}
+// /metapay form

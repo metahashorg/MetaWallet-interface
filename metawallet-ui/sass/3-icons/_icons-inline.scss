@@ -1,0 +1,319 @@
+/*
+  Icons-inline
+*/
+
+
+
+// loader
+.icon-loader-1 {
+  width: 56px;
+  height: 17px;
+}
+
+.icon-loader-2 {
+  width: 114px;
+  height: 17px;
+}
+
+.icon-loader-3 {
+  width: 35px;
+  height: 17px;
+}
+// /loader
+
+
+
+// sidemenu
+.icon-menu-close {
+  width: 24px;
+  height: 24px;
+
+  @extend %icon-enlarged-tap-area;
+}
+
+.icon-menu-home {
+  width: 19px;
+  height: 21px;
+}
+
+.icon-menu-apps {
+  width: 20px;
+  height: 20px;
+  margin-top: -4px;
+}
+
+.icon-menu-settings {
+  width: 20px;
+  height: 20px;
+  margin-top: -4px;
+}
+
+.icon-menu-support {
+  width: 18px;
+  height: 20px;
+  margin-top: -4px;
+}
+
+.icon-menu-logout {
+  width: 20px;
+  height: 16px;
+  margin-top: -2px;
+}
+// /sidemenu
+
+
+
+//
+.icon-logo-wallet-inline {
+  width: 35px;
+  height: 41px;
+  margin-right: 11px;
+  margin-top: -18px;
+}
+
+.icon-partner-1-inline {
+  width: 100px;
+  height: 19px;
+}
+
+.icon-partner-2-inline {
+  width: 120px;
+  height: 36px;
+}
+
+.icon-partner-3-inline {
+  width: 80px;
+  height: 20px;
+}
+
+.icon-metahash-inline {
+  width: 36px;
+  height: 27px;
+}
+
+.icon-github-inline {
+  width: 36px;
+  height: 34px;
+}
+
+.icon-link-inline {
+  width: 8px;
+  height: 15px;
+}
+
+.icon-mail-inline {
+  width: 12px;
+  height: 8px;
+  margin-top: -2px;
+}
+
+.icon-address-book-inline {
+  width: 19px;
+  height: 19px;
+}
+
+.icon-loader-big-inline {
+  width: 88px;
+  height: 50px;
+  color: $white;
+}
+
+.icon-select-arrow-inline {
+  width: 10px;
+  height: 6px;
+  margin-top: 1px;
+}
+
+.icon-clock-inline {
+  width: 12px;
+  height: 13px;
+  margin-top: -1px;
+}
+
+.icon-undelegate-inline {
+  width: 12px;
+  height: 12px;
+  margin-top: -1px;
+}
+
+.icon-delegate-inline {
+  width: 12px;
+  height: 12px;
+  margin-top: -1px;
+}
+
+.icon-crossed-round-inline {
+  width: 13px;
+  height: 13px;
+  margin-top: -1px;
+}
+
+.icon-forging-inline {
+  width: 15px;
+  height: 16px;
+}
+
+.icon-favorite-inline {
+  width: 14px;
+  height: 13px;
+}
+
+.icon-favorite-empty-inline {
+  width: 14px;
+  height: 13px;
+}
+
+.icon-profile-pic-inline {
+  width: 15px;
+  height: 14px;
+  margin-top: -3px;
+  margin-right: 8px;
+}
+
+.icon-arrow-complete-inline {
+  width: 17px;
+  height: 10px;
+  margin-top: -2px;
+  margin-right: 7px;
+}
+
+.icon-arrow-sort-top-inline {
+  width: 8px;
+  height: 5px;
+  margin-left: 6px;
+  margin-top: -2px;
+}
+
+.icon-copy-inline {
+  width: 14px;
+  height: 16px;
+}
+
+.icon-add-wallet-inline {
+  width: 36px;
+  height: 26px;
+}
+
+.icon-magic-inline {
+  width: 16px;
+  height: 16px;
+  margin-right: 7px;
+}
+
+.icon-print-inline {
+  width: 13px;
+  height: 12px;
+  margin-right: 7px;
+}
+
+.icon-btm-menu-handle-inline {
+  width: 44px;
+  height: 7px;
+  color: white;
+  opacity: 0.5;
+}
+
+.icon-repeat-inline {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-save-inline {
+  width: 12px;
+  height: 12px;
+  margin-right: 7px;
+}
+
+.icon-qr-code-inline {
+  width: 16px;
+  height: 16px;
+  margin-top: -2px;
+}
+
+.icon-delegations-inline {
+  width: 18px;
+  height: 18px;
+  margin-top: -2px;
+}
+
+.icon-key-inline {
+  width: 15px;
+  height: 15px;
+}
+
+.icon-remove-inline {
+  width: 12px;
+  height: 12px;
+}
+
+.icon-edit-inline {
+  width: 12px;
+  height: 12px;
+}
+
+.icon-freeze-inline {
+  width: 14px;
+  height: 13px;
+  margin-top: -2px;
+}
+
+.icon-transfer-inline {
+  width: 16px;
+  height: 14px;
+}
+
+.icon-repeat-inline {
+  width: 16px;
+  height: 13px;
+}
+
+.icon-info-inline {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-forge-inline {
+  width: 15px;
+  height: 16px;
+}
+
+.icon-plus-inline {
+  width: 25px;
+  height: 25px;
+}
+
+.icon-closed-inline {
+  width: 27px;
+  height: 37px;
+}
+
+.icon-fire-inline {
+  width: 17px;
+  height: 22px;
+}
+
+.icon-search-inline {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-state-ok-inline {
+  width: 16px;
+  height: 16px;
+  color: $green-4;
+}
+
+.icon-touchid-inline {
+  width: 29px;
+  height: 30px;
+}
+
+.icon-faceid-inline {
+  width: 28px;
+  height: 28px;
+}
+
+.icon-delete-text-inline {
+  width: 30px;
+  height: 22px;
+}

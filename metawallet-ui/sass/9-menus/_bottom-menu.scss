@@ -1,0 +1,538 @@
+/*
+  Bottom-menu
+*/
+
+
+
+.bottom-menus {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 900;
+  overflow: hidden;
+}
+
+.btm-menu {
+  position: absolute;
+  left: 2%;
+  right: 2%;
+  bottom: 0;
+  height: auto;
+
+  //background: linear-gradient(180deg, rgba($blue-009, 0.7) 0%, rgba($blue-014, 0.7) 100%);
+  background: linear-gradient(180deg, rgba($blue-009, 1) 0%, rgba($blue-014, 1) 100%); //uiopt1
+
+  border: 1px solid rgba($blue-light, 0.25);
+  border-bottom: none;
+  box-sizing: border-box;
+  border-radius: 13px 13px 0 0;
+  padding: 40px 0 0 0;
+
+  box-shadow: 0 0 70px 0 rgba(0, 0, 0, 0.7); //uiopt1
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: -webkit-linear-gradient(left, $blue-014 0%, rgba($white, 0.5) 50%, $blue-014 100%);
+    background: linear-gradient(to right, rgba($blue-014, 0) 0%, rgba($white, 0.5) 50%, rgba($blue-014, 0) 100%);
+  }
+
+  // forging
+  &.btm-menu--forging {
+
+    .btm-menu-content {
+      padding-left: 28px;
+      padding-right: 25px;
+    }
+  }
+  // /forging
+}
+
+.btm-menu-handle {
+  width: 44px;
+  height: 7px;
+  color: $blue-017;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  margin-left: -22px;
+
+  @extend %icon-enlarged-tap-area2;
+}
+
+.btm-menu-title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  margin-bottom: 10px;
+
+  .icon-wrapper {
+    margin-bottom: 10px;
+    margin-top: -5px;
+    text-align: center;
+  }
+
+  .icon-round-block {
+    width: 30px;
+    height: 30px;
+    border: 1px solid $white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+
+.btm-menu-content {
+  overflow: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 25px 40px 30px;
+  max-height: 390px;
+
+  @include breakpoint-iphone-6() {
+    max-height: 480px;
+  }
+  @include breakpoint-iphone-6-plus() {
+    max-height: 600px;
+  }
+  @include breakpoint-iphone-X() {
+
+  }
+}
+
+.btm-menu-actions {
+  margin-bottom: 19px;
+  text-align: center;
+}
+
+.btm-menu-actions-bottom {
+  margin: 18px 0 20px 0;
+
+  .menu-action__icon {
+    margin-bottom: 12px;
+  }
+}
+
+.btm-menu-action {
+  color: $blue-light;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  font-weight: 300;
+  font-size: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  transition: color 0.1s linear;
+  //will-change: color;
+
+  &:active {
+    color: $white;
+  }
+}
+
+.btm-menu-action-text {
+  margin-top: 8px;
+}
+
+.btm-menu-options {
+  margin-bottom: 10px;
+}
+
+.btn-menu-option {
+  border-bottom: 1px solid rgba($blue-light, 0.1);
+  margin-right: -25px;
+  padding: 16px 25px 16px 0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+
+
+// params
+.btn-menu-params {
+  font-size: 12px;
+  line-height: normal;
+  color: $white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn-menu-params__label {
+  font-weight: 500;
+  text-align: left;
+  text-transform: capitalize;
+  min-width: 30%;
+  padding-right: 5px;
+
+  .icon {
+    margin-top: -1px;
+    margin-left: 5px;
+    float: right;
+  }
+}
+
+.btn-menu-params__value {
+  font-weight: 300;
+  text-align: right;
+}
+
+.btn-menu-params__value-special {
+  color: $blue-light;
+}
+// /params
+
+
+
+.btn-menu-status {
+  font-size: 11px;
+  line-height: normal;
+  text-transform: uppercase;
+  color: $white;
+  margin-bottom: 9px;
+}
+
+.btn-menu-loader {
+  margin-top: 5px;
+}
+
+
+
+// story
+.transfer-story {
+  position: relative;
+  padding-left: 27px;
+  font-size: 11px;
+  line-height: 13px;
+  color: $white;
+  opacity: 0.2;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: -9px;
+    border: 1px solid $white;
+    border-radius: 50%;
+  }
+
+  &.transfer-story--progress {
+    opacity: 1;
+    color: $blue-light;
+
+    &:before {
+      @extend .icon-loading-round;
+      @extend .animation-spin;
+      width: 20px;
+      height: 20px;
+      margin-top: -10px;
+      background-size: 100% auto;
+      border: none;
+    }
+  }
+
+  &.transfer-story--success {
+    opacity: 1;
+    color: $green;
+
+    &:before {
+      @extend .icon-success-tick;
+      margin-top: -10px;
+      border: none;
+    }
+  }
+}
+// /story
+
+
+
+// diagram
+.circle-diagram-wrapper {
+  position: relative;
+  width: 133px;
+  height: 133px;
+}
+
+.circle-diagram {
+  margin: 2px 0 0 0;
+}
+
+.circle-diagram-label {
+  color: $white;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-diagram-label__value {
+  margin-top: -4px;
+  font-size: 23px;
+  line-height: 27px;
+}
+
+.circle-diagram-label__text {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+}
+// /diagram
+
+
+
+// forging timing
+.forging-timing {
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  margin-right: -18px;
+}
+
+.forging-timing-info {
+  margin: 9px 0 0 0;
+}
+
+.forging-timing-info__start {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: $blue-light;
+  margin-bottom: 10px;
+}
+// /forging timing
+
+
+
+// forging timer
+.forging-timer {
+
+}
+
+.forging-timer-col {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  margin-right: 6px;
+
+  & {
+    .forging-timer-col__val:after {
+      content: ':';
+      position: absolute;
+      top: 0;
+      left: 100%;
+      margin-left: 3px;
+      font-size: 20px;
+      line-height: 23px;
+      color: $white;
+      opacity: 0.5;
+    }
+  }
+  &:last-child {
+    .forging-timer-col__val:after {
+      display: none;
+    }
+  }
+}
+
+.forging-timer-col__val {
+  font-size: 20px;
+  line-height: 23px;
+  color: $white;
+  position: relative;
+}
+
+.forging-timer-col__label {
+  font-size: 10px;
+  line-height: 12px;
+  color: $blue-light;
+  opacity: 0.5;
+  text-align: left;
+  margin-top: -2px;
+}
+
+.forging-timer-hint {
+  font-size: 9px;
+  line-height: 11px;
+  color: $blue-light;
+  opacity: 0.5;
+  margin-top: 12px;
+}
+// forging timer
+
+
+
+// forging active
+.forging-active {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.forging-active__info {
+
+}
+
+.forging-active__title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: $blue-light;
+
+}
+
+.forging-active__tickets {
+  font-size: 18px;
+  line-height: 21px;
+  color: $white;
+  margin-top: 4px;
+}
+
+.forging-active__status {
+  color: $green-2;
+  position: relative;
+  margin-top: -4px;
+}
+
+.forging-active__status-icon {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.forging-active__status-label {
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forging-active-info {
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid rgba($blue-light, 0.1);
+}
+
+.forging-active-info-row {
+  font-size: 11px;
+  line-height: 13px;
+  color: $white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.forging-active-info-row__label {
+  text-align: left;
+}
+
+.forging-active-info-row__value {
+  text-align: right;
+}
+
+.forging-active-info-hint {
+  width: 70%;
+  margin-top: 15px;
+  font-size: 9px;
+  line-height: 11px;
+  color: $blue-light;
+  opacity: 0.5;
+}
+// /forging active
+
+
+
+// forging reward
+.forging-reward {
+  margin-top: 68px;
+}
+
+.forging-reward-title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+}
+
+.forging-reward-list {
+  margin-top: 17px;
+}
+
+.forging-reward-item {
+  border-radius: 10px;
+  background: rgba($blue-007, 0.15);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1px;
+  padding: 13px 13px 11px 13px;
+}
+
+.forging-reward-item__info {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  text-align: left;
+
+  &.forging-reward-item__info--active {
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+
+    .forging-reward-item__title {
+      color: $green-2;
+    }
+  }
+}
+
+.forging-reward-item__title {
+
+}
+
+.forging-reward-item__date {
+
+}
+
+.forging-reward-item__amount {
+  color: $blue-light;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: right;
+  text-transform: uppercase;
+}
+// forging reward

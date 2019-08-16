@@ -1,0 +1,375 @@
+/*
+  Icons
+*/
+
+
+
+// base tap area
+%icon-enlarged-tap-area {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    bottom: -7px;
+    left: -7px;
+  }
+}
+%icon-enlarged-tap-area2 { // slide views close btn
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    right: -200px;
+    bottom: -14px;
+    left: -200px;
+  }
+}
+// /base tap area
+
+
+
+// base
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+// /base
+
+
+
+.icon-logo-blue-light {
+  background: url(#{$icons-path}logo-blue-light.svg);
+  width: 125px;
+  height: 28px;
+}
+
+.icon-logo-white {
+  background: url(#{$icons-path}logo-white.svg);
+  width: 114px;
+  height: 22px;
+}
+
+.icon-logo-wallet {
+  background: url(#{$icons-path}logo-wallet.svg);
+  width: 35px;
+  height: 41px;
+  margin-right: 11px;
+  margin-top: -18px;
+}
+
+.icon-logo-menu {
+  background: url(#{$icons-path}logo-menu.svg);
+  width: 240px;
+  height: 251px;
+}
+
+.icon-tick-green {
+  background: url(#{$icons-path}tick-green.svg);
+  width: 14px;
+  height: 16px;
+  margin-right: 6px;
+  margin-top: -4px;
+}
+
+.icon-notification-close {
+  background: url(#{$icons-path}notification-close.svg);
+  width: 14px;
+  height: 14px;
+}
+
+.icon-notification-error {
+  background: url(#{$icons-path}notification-error.svg);
+  width: 14px;
+  height: 14px;
+}
+
+.icon-notification-success {
+  background: url(#{$icons-path}notification-success.svg);
+  width: 16px;
+  height: 16px;
+}
+
+.icon-notification-info {
+  background: url(#{$icons-path}notification-info.svg);
+  width: 16px;
+  height: 16px;
+}
+
+.icon-notification-attention {
+  background: url(#{$icons-path}notification-attention.svg);
+  width: 16px;
+  height: 15px;
+}
+
+.icon-notification-attention-white {
+  background: url(#{$icons-path}notification-attention-white.svg);
+  width: 16px;
+  height: 15px;
+  margin-top: -6px;
+}
+
+.icon-notification-error-white {
+  background: url(#{$icons-path}notification-error-white.svg);
+  width: 14px;
+  height: 18px;
+}
+
+.icon-notification-success-white {
+  background: url(#{$icons-path}notification-success-white.svg);
+  width: 16px;
+  height: 16px;
+}
+
+.icon-arrow-back {
+  background: url(#{$icons-path}arrow-back.svg);
+  width: 22px;
+  height: 16px;
+
+  @extend %icon-enlarged-tap-area;
+}
+
+.icon-arrow-transaction-down {
+  background: url(#{$icons-path}arrow-transaction-down.svg);
+  width: 10px;
+  height: 32px;
+}
+
+.icon-arrow-delegation-down {
+  background: url(#{$icons-path}arrow-delegation-down.svg);
+  width: 18px;
+  height: 31px;
+}
+
+.icon-tick-blue-light {
+  background: url(#{$icons-path}tick-blue-light.svg);
+  width: 17px;
+  height: 20px;
+}
+
+.icon-round-mail {
+  background: url(#{$icons-path}round-mail.svg);
+  width: 22px;
+  height: 22px;
+}
+
+.icon-round-google-auth {
+  background: url(#{$icons-path}round-google-auth.svg);
+  width: 22px;
+  height: 22px;
+}
+
+.icon-round-pass {
+  background: url(#{$icons-path}round-pass.svg);
+  width: 22px;
+  height: 22px;
+}
+
+.icon-round-faceid {
+  background: url(#{$icons-path}round-faceid.svg);
+  width: 22px;
+  height: 22px;
+}
+
+.icon-round-code {
+  background: url(#{$icons-path}round-code.svg);
+  width: 22px;
+  height: 22px;
+}
+
+.icon-round-delete {
+  background: url(#{$icons-path}round-delete.svg);
+  width: 22px;
+  height: 22px;
+}
+
+.icon-round-edit {
+  background: url(#{$icons-path}round-edit.svg);
+  width: 22px;
+  height: 22px;
+}
+
+.icon-round-logout {
+  background: url(#{$icons-path}round-logout.svg);
+  width: 22px;
+  height: 22px;
+}
+
+.icon-round-language {
+  background: url(#{$icons-path}round-language.svg);
+  width: 22px;
+  height: 22px;
+}
+
+.icon-round-wallet {
+  background: url(#{$icons-path}round-wallet.svg);
+  width: 22px;
+  height: 22px;
+}
+
+.icon-round-info {
+  background: url(#{$icons-path}round-info.svg);
+  width: 22px;
+  height: 22px;
+}
+
+.icon-tick-white {
+  background: url(#{$icons-path}tick-white.svg);
+  width: 14px;
+  height: 16px;
+}
+
+.icon-add {
+  background: url(#{$icons-path}add.svg);
+  width: 20px;
+  height: 20px;
+}
+
+.icon-address-book {
+  background: url(#{$icons-path}address-book.svg);
+  width: 20px;
+  height: 20px;
+}
+
+.icon-menu-dots {
+  background: url(#{$icons-path}menu-dots.svg) center center no-repeat;
+  width: 23px;
+  height: 20px;
+
+  @extend %icon-enlarged-tap-area;
+}
+
+.icon-favorite {
+  background: url(#{$icons-path}favorite.svg);
+  width: 14px;
+  height: 13px;
+}
+
+.icon-favorite-empty {
+  background: url(#{$icons-path}favorite-empty.svg);
+  width: 14px;
+  height: 13px;
+}
+
+.icon-arrow-slide-right {
+  background: url(#{$icons-path}arrow-slide-right.svg);
+  width: 19px;
+  height: 8px;
+}
+
+.icon-arrow-settings {
+  background: url(#{$icons-path}arrow-settings.svg);
+  width: 5px;
+  height: 11px;
+}
+
+.icon-arrow-blue-r {
+  background: url(#{$icons-path}arrow-blue-r.svg);
+  width: 14px;
+  height: 8px;
+}
+
+.icon-arrow-blue-l {
+  @extend .icon-arrow-blue-r;
+
+  -webkit-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+.icon-copy-white {
+  background: url(#{$icons-path}copy-white.svg);
+  width: 14px;
+  height: 16px;
+}
+
+.icon-qr-code {
+  background: url(#{$icons-path}qr-code.svg);
+  width: 16px;
+  height: 16px;
+}
+
+.icon-attention-red {
+  background: url(#{$icons-path}attention-red.svg);
+  width: 25px;
+  height: 24px;
+}
+
+.icon-key-empty {
+  background: url(#{$icons-path}key-empty.svg);
+  width: 62px;
+  height: 78px;
+}
+
+.icon-nodes-empty {
+  background: url(#{$icons-path}nodes-empty.svg);
+  width: 114px;
+  height: 65px;
+}
+
+.icon-success-tick {
+  background: url(#{$icons-path}success-tick.svg);
+  width: 16px;
+  height: 17px;
+}
+
+
+
+// loader
+.icon-loading-round {
+  background: url(#{$images-path}loader/loading-round.png);
+  width: 121px;
+  height: 121px;
+}
+// /loader
+
+
+
+// images
+.icon-cloud {
+  background: url(#{$images-path}pages/cloud@2x.png);
+  width: 178px;
+  height: 134px;
+  background-size: 178px 134px;
+}
+// /images
+
+
+
+// currency
+.icon-mhc,
+.icon-tmh {
+  background: url(#{$currency-path}metahash.svg);
+  width: 20px;
+  height: 16px;
+
+  .desaturated & {
+    background-image: url(#{$currency-path}metahash_desaturated.svg);
+  }
+}
+
+.icon-btc {
+  background: url(#{$currency-path}bitcoin.svg);
+  width: 16px;
+  height: 21px;
+
+  .desaturated & {
+    background-image: url(#{$currency-path}bitcoin_desaturated.svg);
+  }
+}
+
+.icon-eth {
+  background: url(#{$currency-path}etherium.svg);
+  width: 14px;
+  height: 25px;
+
+  .desaturated & {
+    background-image: url(#{$currency-path}etherium_desaturated.svg);
+  }
+}
+// /currency

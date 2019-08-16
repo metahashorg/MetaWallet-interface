@@ -1,0 +1,41 @@
+/*
+  Fonts
+*/
+
+
+
+// roboto
+$font-path-roboto: '../fonts/roboto/';
+
+// 100 Ultra-Light
+// ..
+
+// 200 Thin
+@include font-face("Roboto", $font-path-roboto + "Roboto-Thin", 200, normal, eot woff ttf);
+@include font-face("Roboto", $font-path-roboto + "Roboto-ThinItalic", 200, italic, eot woff ttf);
+
+// 300 Light
+@include font-face("Roboto", $font-path-roboto + "Roboto-Light", 300, normal, eot woff ttf);
+@include font-face("Roboto", $font-path-roboto + "Roboto-LightItalic", 300, italic, eot woff ttf);
+
+// 400 Regular
+@include font-face("Roboto", $font-path-roboto + "Roboto-Regular", 400, normal, eot woff ttf);
+@include font-face("Roboto", $font-path-roboto + "Roboto-Italic", 400, italic, eot woff ttf);
+
+// 500 Medium
+@include font-face("Roboto", $font-path-roboto + "Roboto-Medium", 500, normal, eot woff ttf);
+@include font-face("Roboto", $font-path-roboto + "Roboto-MediumItalic", 500, italic, eot woff ttf);
+
+// 600 Semi-Bold
+// ..
+
+// 700 Bold
+@include font-face("Roboto", $font-path-roboto + "Roboto-Bold", 700, normal, eot woff ttf);
+@include font-face("Roboto", $font-path-roboto + "Roboto-BoldItalic", 700, italic, eot woff ttf);
+
+// 800 Heavy
+// ..
+
+// 900 Black
+@include font-face("Roboto", $font-path-roboto + "Roboto-Black", 900, normal, eot woff ttf);
+@include font-face("Roboto", $font-path-roboto + "Roboto-BlackItalic", 900, italic, eot woff ttf);

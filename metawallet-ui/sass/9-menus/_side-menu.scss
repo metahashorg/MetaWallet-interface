@@ -1,0 +1,189 @@
+/*
+  Sidemenu
+*/
+
+
+
+.menu {
+  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 900;
+
+  //background: linear-gradient(0deg, rgba($blue-024, 0.78) 54.06%, rgba($blue-024, 0) 100%);
+  background: linear-gradient(0deg, rgba($blue-024, 1) 54.06%, rgba($blue-024, 0.95) 100%); //uiopt1
+
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-wrapper {
+  flex: 1 0 auto;
+}
+
+.menu-footer {
+  flex-shrink: 0;
+  margin-top: 18px;
+  margin-bottom: 24px;
+  text-align: center;
+
+  @include breakpoint-iphone-6() {
+
+  }
+  @include breakpoint-iphone-6-plus() {
+    margin-top: 18px;
+    margin-bottom: 33px;
+  }
+  @include breakpoint-iphone-X() {
+
+  }
+}
+
+.menu-footer__copyright {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: $blue-light;
+  opacity: 0.5;
+
+  @include breakpoint-iphone-6() {
+
+  }
+  @include breakpoint-iphone-6-plus() {
+
+  }
+  @include breakpoint-iphone-X() {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.menu-logo-wrapper {
+  margin: 34px 0 6px 0;
+  height: 140px;
+
+  @include breakpoint-iphone-6() {
+    margin: 48px 0 16px 0;
+  }
+  @include breakpoint-iphone-6-plus() {
+    height: 230px;
+  }
+  @include breakpoint-iphone-X() {
+    height: 251px;
+  }
+
+  .icon {
+    height: 100%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+.menu-close {
+  position: absolute;
+  top: 25px;
+  right: 13px;
+  z-index: 1;
+  color: $blue-light;
+  transition: color 0.1s linear;
+  //will-change: color;
+
+  @include breakpoint-iphone-6() {
+    top: 46px;
+    right: 19px;
+  }
+  @include breakpoint-iphone-6-plus() {
+
+  }
+  @include breakpoint-iphone-X() {
+
+  }
+
+  &:active {
+    color: $white;
+  }
+}
+
+
+
+// nav
+.menu-nav {
+  margin: 0 6% 0 6%;
+}
+
+.menu-profile {
+  //font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: $white;
+  margin: 47px 0 0 52px
+}
+
+.menu-list {
+  margin-top: 6px;
+
+  @include breakpoint-iphone-6() {
+    margin-top: 34px;
+  }
+  @include breakpoint-iphone-6-plus() {
+
+  }
+  @include breakpoint-iphone-X() {
+
+  }
+}
+
+.menu-item {
+  color: $white;
+  margin: 0 0 25px 0;
+  padding: 0 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.current {
+    color: $blue-light;
+  }
+}
+
+.menu-item-divider {
+  display: block;
+  height: 1px;
+  min-height: 1px;
+  background: rgba($blue-light, 0.3);
+  margin: 38px 0;
+}
+
+.menu-item__icon {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 30px;
+  width: 49px;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 30px;
+    width: 1px;
+    margin-right: -2px;
+  }
+}
+
+.menu-item__label {
+  display: inline-block;
+  vertical-align: top;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+// /nav

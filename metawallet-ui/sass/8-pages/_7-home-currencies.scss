@@ -1,0 +1,199 @@
+/*
+  Home - Currencies
+*/
+
+
+
+// overwrites
+.page--home-currencies {
+
+  .page-wrapper {
+    flex: 0 0 auto;
+  }
+
+  .page-inner {
+    height: 100%;
+  }
+
+  .home-currency-list-wrapper,
+  .home-wallet-list-wrapper {
+    position: relative;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 27px 5% 20px 5%;
+
+    .pages--blurred & {
+      overflow: hidden;
+    }
+  }
+
+  .home-currency-list {
+    margin-top: 0;
+  }
+}
+// /overwrites
+
+
+
+// currency
+.home-currency-list {
+  margin-top: 28px;
+}
+
+.currency {
+  margin-bottom: 16px;
+}
+
+.currency-title {
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-left: 1px;
+  text-align: left;
+}
+
+.currency-card-wrapper {
+  position: relative;
+  width: 100%;
+  height: 160px;
+}
+
+.currency-card {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid $blue-016;
+  background: linear-gradient(180deg, $blue-015 0%, $blue-021 100%), $blue-021;
+  background-clip: content-box;
+  background-repeat: no-repeat;
+
+  .desaturated & {
+    border-color: desaturate($blue-016, 100%);
+    background: linear-gradient(180deg, desaturate($blue-015, 100%) 0%, desaturate($blue-021, 100%) 100%), desaturate($blue-021, 100%);
+  }
+}
+
+.currency-graph {
+  position: absolute;
+  left: 0;
+  right: 15px;
+  width: auto;
+  top: 55px;
+  bottom: 30px;
+  height: auto;
+}
+
+.currency-graph-svg {
+  display: block;
+}
+
+.currency-tl {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+}
+
+.currency-logo {
+  width: 42px;
+  height: 42px;
+  border: 1px solid $blue-light;
+  border-radius: 50%;
+  margin-bottom: 20px;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 42px;
+    width: 1px;
+    margin-right: -4px;
+  }
+
+  .desaturated & {
+    border-color: desaturate($blue-light, 100%);
+  }
+}
+
+.currency-stats {
+
+}
+
+.currency-stat {
+  color: $blue-light;
+  font-weight: 500;
+  font-size: 12px;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+  text-align: left;
+
+  b {
+    font-weight: 600;
+  }
+
+  .desaturated & {
+    color: desaturate($blue-light, 100%);
+  }
+}
+
+.currency-tr {
+  text-align: right;
+  position: absolute;
+  top: 13px;
+  right: 18px;
+}
+
+.currency-amount {
+  font-size: 27px;
+  color: $white;
+}
+
+.currency-amount-small {
+  font-size: 20px;
+}
+
+.currency-amount-smaller {
+  font-size: 16px;
+  margin-left: 4px;
+}
+
+.currency-amount-recalc {
+  font-size: 13px;
+  color: $gray;
+  margin-top: 3px;
+}
+
+.currency-br {
+  position: absolute;
+  bottom: 15px;
+  right: 18px;
+  text-align: right;
+}
+
+.currency-rate-diff {
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.currency-rate {
+  color: $blue-light;
+  font-size: 12px;
+  opacity: 0.5;
+
+  .desaturated & {
+    color: desaturate($blue-light, 100%);
+  }
+}
+
+.currency-bl {
+  position: absolute;
+  bottom: 15px;
+  left: 18px;
+
+  .desaturated & {
+    color: desaturate($blue-light, 100%);
+  }
+}
+// /currency

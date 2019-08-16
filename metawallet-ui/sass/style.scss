@@ -1,0 +1,65 @@
+/*
+	SCSS main file
+
+	run build.sass.sh to compile css
+	use file watcher SCSS with params: --watch --sourcemap=none --style=extended --no-cache --trace style.scss:../public/css/style.css
+*/
+
+
+
+// mixins
+@import '0-utils/mixins';
+@import '0-utils/reset';
+
+// fonts
+@import '1-fonts/fonts';
+
+// defaults
+@import '2-variables/defaults';
+@import '2-variables/animations';
+
+// icons
+@import '3-icons/icons';
+@import '3-icons/icons-inline';
+
+// vendors
+//@import '4-vendor/..';
+
+// layout
+@import '5-layout/layout';
+
+// components
+@import '6-components/components';
+@import '6-components/inputs';
+@import '6-components/buttons';
+@import '6-components/notifications';
+
+// alerts
+@import '7-alerts/alerts';
+
+// pages
+@import '8-pages/pages';
+@import '8-pages/1-preloading';
+@import '8-pages/2-loading';
+@import '8-pages/3-auth';
+@import '8-pages/4-terms';
+@import '8-pages/5-locked';
+@import '8-pages/6-set-password';
+@import '8-pages/7-home';
+@import '8-pages/7-home-currencies';
+@import '8-pages/7-home-wallets';
+@import '8-pages/8-wallet';
+@import '8-pages/8-wallet-delegations';
+@import '8-pages/8-wallet-nodes';
+@import '8-pages/8-wallet-node';
+@import '8-pages/8-wallet-pay';
+@import '8-pages/8-wallet-transfer';
+@import '8-pages/8-wallet-forging';
+@import '8-pages/9-support';
+
+// menus
+@import '9-menus/side-menu';
+@import '9-menus/bottom-menu';
+
+// settings
+@import '10-settings/settings';

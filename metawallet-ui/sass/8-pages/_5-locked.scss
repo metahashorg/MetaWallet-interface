@@ -1,0 +1,209 @@
+/*
+  Locked
+*/
+
+
+
+// overwrites
+.page--locked {
+
+  .container {
+    margin-top: 50px;
+
+    @include breakpoint-iphone-6() {
+      margin-top: 60px;
+    }
+    @include breakpoint-iphone-6-plus() {
+      margin-top: 80px;
+    }
+    @include breakpoint-iphone-X() {
+      margin-top: 109px;
+    }
+  }
+}
+// /overwrites
+
+
+
+// header
+.locked-header {
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 22px;
+  text-align: center;
+  color: $white;
+  letter-spacing: 0.2px;
+}
+
+.locked-subheader {
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 13px;
+  height: 13px;
+  text-align: center;
+  color: $blue-light;
+  margin: 7px 0 0 0;
+}
+// /header
+
+
+
+// dots
+.locked-dots {
+  margin-top: 15px;
+
+  @include breakpoint-iphone-6() {
+    margin-top: 25px;
+  }
+  @include breakpoint-iphone-6-plus() {
+    margin-top: 30px;
+  }
+  @include breakpoint-iphone-X() {
+    margin-top: 41px;
+  }
+}
+
+.locked-dot {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: $blue-light;
+  opacity: 0.5;
+  margin: 0 12px 0 11px;
+  width: 11px;
+  height: 11px;
+  transition: all 0.1s linear;
+
+  @include breakpoint-iphone-6() {
+    width: 13px;
+    height: 13px;
+  }
+  @include breakpoint-iphone-6-plus() {
+
+  }
+  @include breakpoint-iphone-X() {
+
+  }
+
+  &.active {
+    background: $white;
+    opacity: 1;
+  }
+}
+// /dots
+
+
+
+// keypad
+.locked-keypad {
+  margin-top: 25px;
+
+  @include breakpoint-iphone-6() {
+    margin-top: 30px;
+  }
+  @include breakpoint-iphone-6-plus() {
+    margin-top: 40px;
+  }
+  @include breakpoint-iphone-X() {
+    margin-top: 45px;
+  }
+}
+
+.locked-key {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  margin: 0 9px 9px 9px;
+  box-sizing: border-box;
+  width: 56px;
+  height: 56px;
+  line-height: 54px;
+  border-radius: 50%;
+  border: 1px solid rgba($blue-light, 0.2);
+  font-weight: 300;
+  position: relative;
+  transition: color 0.1s linear;
+  //will-change: background;
+  color: $blue-light;
+
+  @include breakpoint-iphone-6() {
+    width: 66px;
+    height: 66px;
+    line-height: 64px;
+    margin: 0 11px 13px 11px;
+  }
+  @include breakpoint-iphone-6-plus() {
+    width: 77px;
+    height: 77px;
+    line-height: 75px;
+    margin: 0 11px 13px 11px;
+  }
+  @include breakpoint-iphone-X() {
+
+  }
+
+  &.locked-key--noborder {
+    border-color: transparent;
+  }
+
+  &.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+
+    &:active {
+      color: $blue-light;
+    }
+  }
+
+  &:active {
+    color: $white;
+  }
+}
+
+.locked-key__big {
+  font-size: 28px;
+
+  @include breakpoint-iphone-6() {
+    font-size: 32px;
+  }
+  @include breakpoint-iphone-6-plus() {
+    font-size: 36px;
+  }
+  @include breakpoint-iphone-X() {
+
+  }
+}
+
+.locked-key__icon {
+  display: flex;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2px;
+  box-sizing: border-box;
+}
+// /keypad
+
+
+
+// actions
+.locked-actions {
+  margin-top: 20px;
+
+  @include breakpoint-iphone-6() {
+    margin-top: 23px;
+  }
+  @include breakpoint-iphone-6-plus() {
+
+  }
+  @include breakpoint-iphone-X() {
+
+  }
+}
+// /actions

@@ -1,0 +1,134 @@
+/*
+  Wallet - Nodes
+*/
+
+
+
+// overwrites
+.page--wallet-nodes {
+  overflow: hidden;
+
+  .page-inner {
+    height: 100%;
+  }
+
+  .page-wrapper {
+    flex: 0 0 auto;
+    padding-top: 55px;
+
+    @include breakpoint-iphone-6() {
+      padding-top: 75px;
+    }
+    @include breakpoint-iphone-6-plus() {
+
+    }
+    @include breakpoint-iphone-X() {
+      padding-top: 85px;
+    }
+
+    //&:after {
+    //  content: '';
+    //  position: absolute;
+    //  bottom: 0;
+    //  left: 3%;
+    //  right: 3%;
+    //  height: 1px;
+    //  background: $blue-011;
+    //}
+  }
+}
+// /overwrites
+
+
+
+.wallet-nodes-search {
+  position: relative;
+  height: 60px;
+  box-sizing: border-box;
+
+  .input {
+    background: rgba($blue-026, 0.3);
+    border: 1px solid rgba($blue-light, 0.3);
+
+    @include placeholder() {
+      color: $blue-light;
+    }
+  }
+
+  .icon {
+    color: $blue-light;
+  }
+}
+
+.wallet-nodes-params-sort-selects-wrapper {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  margin-bottom: 8px;
+}
+
+.wallet-nodes-params-sort-select {
+  background: $blue-013;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.wallet-nodes-params-sort-option {
+  flex: 1;
+  font-size: 11px;
+  text-transform: capitalize;
+  padding: 15px 0 14px 0;
+  color: $blue-light;
+  transition: all 0.1s linear;
+
+  &:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  &.active {
+    color: $white;
+  }
+
+  &:active {
+    color: $white;
+    text-shadow: 0 0 10px $white;
+    background: $blue-007;
+  }
+}
+
+.wallet-nodes-params {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.wallet-nodes-params-sort {
+  font-size: 11px;
+  line-height: 11px;
+  height: 11px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 10px;
+}
+
+.wallet-nodes-list-wrapper {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.wallet-nodes {
+
+}

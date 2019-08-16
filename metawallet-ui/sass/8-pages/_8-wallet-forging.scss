@@ -1,0 +1,233 @@
+/*
+  Wallet - Forging
+*/
+
+
+
+// overwrites
+.page--wallet-forging {
+
+  .page-inner {
+    overflow: auto;
+  }
+
+  .page-wrapper {
+    padding-bottom: 0;
+  }
+}
+// /overwrites
+
+
+
+// border
+.home-forging-list-border {
+  position: relative;
+  bottom: 0;
+  margin-left: 4%;
+  margin-right: 4%;
+  height: 1px;
+  background: rgba($blue-011, 0.7);
+}
+// /border
+
+
+// forging
+.home-forging-list-wrapper {
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: 20px 5% 20px 5%;
+
+  .pages--blurred & {
+    overflow: hidden;
+  }
+}
+
+.forging-logs {
+
+}
+
+.forging-log {
+  padding: 13px 18px 13px 13px;
+  text-align: left;
+  background: rgba($blue-007, 0.15);
+  border-radius: 5px;
+  margin-bottom: 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.forging-log--active {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+.forging-log__info {
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: $white;
+
+  .forging-log--active & {
+    font-size: 11px;
+    line-height: 13px;
+  }
+}
+
+.forging-log__title {
+
+  .forging-log--active & {
+    color: $green-4;
+  }
+}
+
+.forging-log__dt {
+
+}
+
+.forging-log__value {
+  font-size: 11px;
+  line-height: 13px;
+  color: $green-4;
+}
+// /forging
+
+
+//  wallet forging block
+.wallet-forging-block {
+  position: relative;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  background: linear-gradient(180deg, rgba($blue-light, 0.1508) 0%, rgba($blue-007, 0) 100%), rgba($blue-024, 0.5);
+  border: 1px solid rgba($blue-light, 0.12);
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: left;
+  padding: 19px 0 23px 23px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &.desaturated {
+    border-color: rgba(desaturate($blue-light, 100%), 0.12);
+    background: linear-gradient(180deg, rgba(desaturate($blue-light, 100%), 0.15) 0%, rgba(desaturate($blue-007, 100%), 0) 100%), rgba(desaturate($blue-024, 100%), 0.5);
+
+    .circle-diagram-wrapper {
+      @include filter(grayscale, 100%);
+    }
+  }
+
+  .circle-diagram-wrapper {
+    margin-top: 9px;
+  }
+
+  .circle-diagram {
+    margin: 0;
+  }
+
+  .circle-diagram__img-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid $blue-006;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: -22px;
+
+    .desaturated & {
+      border-color: desaturate($blue-006, 100%);
+    }
+
+    .circle-diagram__img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.wallet-forging-block-info {
+  flex: 1 0 auto;
+  width: 150px;
+  max-width: 150px;
+
+  @include breakpoint-iphone-6() {
+    width: auto;
+    max-width: 175px;
+  }
+  @include breakpoint-iphone-6-plus() {
+
+  }
+  @include breakpoint-iphone-X() {
+
+  }
+}
+
+.wallet-forging-block__title {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  color: $white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wallet-forging-block__address {
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 17px;
+  letter-spacing: 0.03em;
+  color: $blue-light;
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  .desaturated & {
+    color: desaturate($blue-light, 100%);
+  }
+}
+
+.wallet-forging-block-stats {
+  margin-top: 31px;
+}
+
+.wallet-forging-block-stat {
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.wallet-forging-block-stat__title {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  color: $blue-light;
+
+  .desaturated & {
+    color: desaturate($blue-light, 100%);
+  }
+}
+
+.wallet-forging-block-stat__value {
+  font-size: 14px;
+  line-height: 16px;
+  color: $white;
+  margin-top: 2px;
+
+  b {
+    font-weight: bold;
+  }
+}
+// /wallet forging block

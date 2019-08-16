@@ -1,0 +1,146 @@
+/*
+  Notifications
+*/
+
+
+
+.notifications {
+  position: absolute;
+  top: 62px;
+  left: 5%;
+  right: 5%;
+  z-index: 1000;
+}
+
+.notification {
+  background: $white;
+  border-radius: 10px;
+  padding: 14px 42px 13px 14px;
+  position: relative;
+  margin-top: 8px;
+
+  box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.7); //uiopt1
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.notification__text {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: $black;
+
+  .notification--error & {
+
+    &:before {
+      content: '';
+      @extend .icon-notification-error;
+      display: inline-block;
+      vertical-align: middle;
+      margin: -4px 11px 0 0;
+    }
+  }
+
+  .notification--success & {
+    &:before {
+      content: '';
+      @extend .icon-notification-success;
+      display: inline-block;
+      vertical-align: middle;
+      margin: -5px 11px -2px 0;
+    }
+  }
+
+  .notification--warning & {
+    &:before {
+      content: '';
+      @extend .icon-notification-attention;
+      display: inline-block;
+      vertical-align: middle;
+      margin: -5px 11px -2px 0;
+    }
+  }
+
+  .notification--info & {
+    &:before {
+      content: '';
+      @extend .icon-notification-info;
+      display: inline-block;
+      vertical-align: middle;
+      margin: -5px 11px -2px 0;
+    }
+  }
+
+  .notification--loading & {
+    &:before {
+      content: '';
+      @extend .icon;
+      @extend .icon-loading-round;
+      @extend .animation-spin;
+      display: inline-block;
+      vertical-align: middle;
+      margin: -3px 11px -2px 0;
+      width: 20px;
+      height: 20px;
+      background-size: 20px 20px;
+    }
+  }
+}
+
+.notification__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  .notification--loading & {
+    display: none;
+  }
+}
+
+
+
+
+// colorful
+.notifications-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 0;
+}
+
+.notification-color {
+  background: $blue-light;
+  color: $white;
+  font-size: 13px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 46px 0 14px 0;
+
+  &:before {
+    content: '';
+    @extend .icon-notification-attention-white;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+
+  &.notification-color--error {
+    background: $red;
+
+    &:before {
+      @extend .icon-notification-error-white;
+    }
+  }
+
+  &.notification-color--success {
+    background: $green-2;
+
+    &:before {
+      @extend .icon-notification-success-white;
+    }
+  }
+}
+// /colorful

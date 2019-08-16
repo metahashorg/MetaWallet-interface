@@ -1,0 +1,236 @@
+/*
+  Pages
+*/
+
+
+
+// base
+.pages {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: $blue-024;
+  //will-change: filter;
+
+  &.pages--blurred {
+
+    .page {
+      overflow: hidden;
+      -webkit-filter: blur(9px);
+      filter: blur(9px);
+      box-shadow: 0 0 100px 10px rgba(0, 0, 0, 0);
+    }
+
+    .page-inner {
+      // ..
+    }
+  }
+}
+
+.page {
+  height: 100%;
+  min-height: 100%;
+
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  box-shadow: 0 0 100px 10px rgba(0, 0, 0, .75);
+
+  transition: filter 0.1s linear, box-shadow 0.1s linear;
+}
+
+.page-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: auto;
+  min-height: 100%;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: url(#{$images-path}bg.png) top center no-repeat;
+    background-size: 100% auto;
+    background-color: $blue-024;
+    background-attachment: local;
+
+    .disconnected & {
+      @extend %disconnected;
+    }
+  }
+}
+
+.page-wrapper {
+  position: relative;
+  flex: 1 0 auto;
+
+  .disconnected & {
+    @extend %disconnected;
+  }
+}
+// /base
+
+
+
+// modal
+.modal-page {
+  z-index: 1000;
+}
+// /modal
+
+
+
+// footer
+.page-footer {
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 18px;
+  margin-bottom: 16px;
+
+  @include breakpoint-iphone-6() {
+
+  }
+  @include breakpoint-iphone-6-plus() {
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+  @include breakpoint-iphone-X() {
+
+  }
+
+  .disconnected & {
+    @extend %disconnected;
+  }
+}
+
+.page-footer__logo {
+  margin-bottom: 12px;
+}
+
+.page-footer__copyright {
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 14px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: $blue-light;
+  opacity: 0.5;
+
+  @include breakpoint-iphone-6() {
+
+  }
+  @include breakpoint-iphone-6-plus() {
+
+  }
+  @include breakpoint-iphone-X() {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+// /footer
+
+
+
+// page-nav
+.page-nav {
+  position: absolute;
+  top: 25px;
+  left: 5%;
+  right: 5%;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  vertical-align: middle;
+  align-items: center;
+  z-index: 1;
+
+  // fix
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+  transform: translateZ(0);
+
+  @include breakpoint-iphone-6() {
+    top: 36px;
+  }
+  @include breakpoint-iphone-6-plus() {
+    top: 36px;
+  }
+  @include breakpoint-iphone-X() {
+    top: 46px;
+  }
+
+  &.page-nav--relative {
+    flex: 0 0 auto;
+    position: relative;
+    padding-left: 5%;
+    padding-right: 5%;
+    left: 0;
+    right: 0;
+    padding-bottom: 16px;
+
+    @include breakpoint-iphone-6() {
+      padding-bottom: 15px;
+    }
+    @include breakpoint-iphone-6-plus() {
+
+    }
+    @include breakpoint-iphone-X() {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.page-nav-left {
+  min-width: 20%;
+  text-align: left;
+}
+
+.page-nav-center {
+  flex-grow: 1;
+  text-align: center;
+  color: $white;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: -2px;
+  transition: opacity 0.1s linear;
+}
+
+.page-nav-right {
+  min-width: 20%;
+  text-align: right;
+}
+
+.page-nav__bottom-border {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: $blue-011;
+}
+
+.page-nav-profile {
+  color: $blue-light;
+  font-size: 12px;
+  line-height: 12px;
+}
+// /page-nav

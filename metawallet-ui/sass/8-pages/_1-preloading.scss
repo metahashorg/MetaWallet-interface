@@ -1,0 +1,69 @@
+/*
+  Preloader
+*/
+
+
+
+// overwrites
+.page--preloader {
+
+  .page-inner {
+    &:before {
+      background: $blue-025;
+    }
+  }
+
+  .page-wrapper {
+    .disconnected & {
+      @extend %reset-filters;
+    }
+  }
+
+  .logo-main {
+    margin-top: 215px;
+
+    @include breakpoint-iphone-6() {
+      margin-top: 260px;
+    }
+    @include breakpoint-iphone-6-plus() {
+      margin-top: 300px;
+    }
+    @include breakpoint-iphone-X() {
+      margin-top: 317px;
+    }
+  }
+}
+// /overwrites
+
+
+
+// connection
+.preloader-connection-status {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: normal;
+  text-align: center;
+  color: $white;
+  margin-top: 46px;
+
+  @include breakpoint-iphone-6() {
+    margin-top: 46px;
+  }
+  @include breakpoint-iphone-6-plus() {
+    margin-top: 46px;
+  }
+  @include breakpoint-iphone-X() {
+    margin-top: 46px;
+  }
+}
+
+.preloader-connection-tip {
+  font-weight: 300;
+  font-size: 14px;
+  text-align: center;
+  color: $blue-light;
+  text-shadow: 0 0 2px rgba($white, 0.5);
+  margin-top: 13px;
+}
+// /connection
