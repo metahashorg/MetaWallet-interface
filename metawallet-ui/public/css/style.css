@@ -1719,6 +1719,7 @@ form {
   display: inline-block;
   padding: 0;
   font-weight: normal;
+  border-radius: 0;
   font-size: 12px;
   line-height: 17px;
   height: 17px;
@@ -4729,21 +4730,31 @@ form {
 .wallet-forging-block .circle-diagram {
   margin: 0; }
 .wallet-forging-block .circle-diagram__img-wrapper {
+  width: 50px;
+  height: 50px;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -28px 0 0 -28px; }
+.wallet-forging-block .circle-diagram__img-wrapper:before {
+  content: '';
+  position: absolute;
+  background: #99CEFF;
+  border-radius: 50%;
   top: 50%;
   left: 50%;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  border: 2px solid #609ed5;
-  box-sizing: border-box;
-  overflow: hidden;
-  margin: -22px; }
-.desaturated .wallet-forging-block .circle-diagram__img-wrapper {
-  border-color: #9b9b9b; }
+  margin: -20px; }
+.desaturated .wallet-forging-block .circle-diagram__img-wrapper:before {
+  background: #cccccc; }
 .wallet-forging-block .circle-diagram__img-wrapper .circle-diagram__img {
   display: block;
-  width: 100%; }
+  width: 100%;
+  height: 100%;
+  position: relative; }
+.desaturated .wallet-forging-block .circle-diagram__img-wrapper {
+  border-color: #cccccc; }
 
 .wallet-forging-block-info {
   flex: 1 0 auto;

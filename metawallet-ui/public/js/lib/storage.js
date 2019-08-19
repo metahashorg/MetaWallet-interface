@@ -34,8 +34,6 @@ function storageGet (key, defaultVal, cast) {
  * @param {CookieOptions=} options
  */
 function storageSet (key, value, options) {
-    console.log("storageSet", { key, value, options });
-
     if (typeof value === "object") {
         value = JSON.stringify(value);
     }
@@ -51,8 +49,6 @@ function storageSet (key, value, options) {
  * @param {string} key
  */
 function storageRemove (key) {
-    console.log("storageRemove", { key });
-
     try {
         window.localStorage.removeItem(key);
     } catch (e) {

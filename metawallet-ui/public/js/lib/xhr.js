@@ -30,9 +30,9 @@ function xhrGetPreparedData (dataParam, method) {
         preparedData.push(i + "=" + encodeURIComponent(data[i]));
     }
 
-    return method === "GET"
-        ? (preparedData.length ? "?" + preparedData.join("&") : "")
-        : (preparedData.join("&"));
+    return method === "GET" ?
+        (preparedData.length ? "?" + preparedData.join("&") : "") :
+        (preparedData.join("&"));
 }
 
 /**
@@ -68,7 +68,7 @@ function xhr (params) {
                 }
             }
 
-            if (xhRequest.status === 400){
+            if (xhRequest.status === 400) {
                 reject(data, xhRequest.status);
             }
 
@@ -87,7 +87,7 @@ function xhr (params) {
 
         if (params.headers) {
             for (let header in params.headers) {
-                if (!params.headers.hasOwnProperty(header)) {
+                if (!Object.prototype.hasOwnProperty.call(params.headers, header)) {
                     continue;
                 }
                 xhRequest.setRequestHeader(header, params.headers[header]);
@@ -99,7 +99,6 @@ function xhr (params) {
         }
 
         xhRequest.timeout = API_XHR_TIMEOUT;
-
         xhRequest.send(preparedData);
     });
 }

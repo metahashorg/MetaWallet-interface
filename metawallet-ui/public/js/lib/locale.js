@@ -9,7 +9,7 @@ function __ (str, params) {
 
     if (params) {
         for (let code in params) {
-            if (!params.hasOwnProperty(code)) {
+            if (!Object.prototype.hasOwnProperty.call(params, code)) {
                 continue;
             }
             str = str.replace("$" + code, params[code]);
@@ -23,7 +23,7 @@ function __ (str, params) {
  * Replace placeholders with localized strings
  */
 function onLocaleLoaded () {
-    document.body.querySelectorAll("lang[name]").forEach(function (/** @type {HTMLElement} */ element) {
+    document.body.querySelectorAll("lang[name]").forEach(function ( /** @type {HTMLElement} */ element) {
         element.innerHTML = __(element.getAttribute("name"));
     });
 }

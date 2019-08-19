@@ -19,75 +19,63 @@ const TRANSACTION_TYPE_PAYMENT = "payment";
  * }} config
  * @constructor
  */
-function Transaction (config) {
+class Transaction {
+    constructor (config) {
+        /**
+         * @type {Object}
+         * @private
+         */
+        this._config = config;
+        /** @type {WalletCollection} */
+        this.walletCollection = config.walletCollection;
+        /** @type {?Wallet} */
+        this.wallet = config.wallet || null;
+        /** @type {string} */
+        this.hash = config.transaction.transaction;
+        /** @type {string} */
+        this.from = config.transaction.from;
+        /** @type {string} */
+        this.to = config.transaction.to === ADDRESS_FORGING ? __("wallets.metahash.name." + config.transaction.to) : config.transaction.to;
+        /** @type {number} */
+        this.value = config.transaction.value;
+        /** @type {string} */
+        this.data = config.transaction.data ? hex2ascii(config.transaction.data) : "";
+        /** @type {?number} */
+        this.direction = null;
+        if (this.wallet) {
+            this.direction = this.to === this.wallet.address ? TRANSACTION_DIRECTION_IN : (this.from === this.wallet.address ? TRANSACTION_DIRECTION_OUT : TRANSACTION_DIRECTION_UNKNOWN);
+        }
+        /** @type {number} */
+        this.intStatus = config.transaction.intStatus;
+        /** @type {number} */
+        this.status = [20, 101, 102, 103, 104].indexOf(config.transaction.intStatus) !== -1 ?
+            TRANSACTION_STATUS_DONE :
+            (config.transaction.intStatus === TRANSACTION_STATUS_WRONG ? TRANSACTION_STATUS_WRONG : TRANSACTION_STATUS_UNKNOWN);
+        /** @type {number} */
+        this.time = parseInt(config.transaction.timestamp);
+        /** @type {string} */
+        this.type = config.transaction.type; // block, forging, payment
+    }
     /**
-     * @type {Object}
-     * @private
+     * @return {Balance}
      */
-    this._config = config;
-
-    /** @type {WalletCollection} */
-    this.walletCollection = config.walletCollection;
-
-    /** @type {?Wallet} */
-    this.wallet = config.wallet || null;
-
-    /** @type {string} */
-    this.hash = config.transaction.transaction;
-
-    /** @type {string} */
-    this.from = config.transaction.from;
-
-    /** @type {string} */
-    this.to = config.transaction.to === ADDRESS_FORGING ? __("wallets.metahash.name." + config.transaction.to) : config.transaction.to;
-
-    /** @type {number} */
-    this.value = config.transaction.value;
-
-    /** @type {string} */
-    this.data = config.transaction.data ? hex2ascii(config.transaction.data) : "";
-
-    /** @type {?number} */
-    this.direction = null;
-    if (this.wallet) {
-        this.direction = this.to === this.wallet.address ? TRANSACTION_DIRECTION_IN : (this.from === this.wallet.address ? TRANSACTION_DIRECTION_OUT : TRANSACTION_DIRECTION_UNKNOWN);
+    getBalance () {
+        return this.wallet.currency.getBalance(this.value);
     }
-
-    /** @type {number} */
-    this.intStatus = config.transaction.intStatus;
-
-    /** @type {number} */
-    this.status = [20, 101, 102, 103, 104].indexOf(config.transaction.intStatus) !== -1
-        ? TRANSACTION_STATUS_DONE
-        : (config.transaction.intStatus === TRANSACTION_STATUS_WRONG ? TRANSACTION_STATUS_WRONG : TRANSACTION_STATUS_UNKNOWN);
-
-    /** @type {number} */
-    this.time = parseInt(config.transaction.timestamp);
-
-    /** @type {string} */
-    this.type = config.transaction.type; // block, forging, payment
+    /**
+     * @return {string}
+     */
+    getName () {
+        // console.log("Transaction", this._config.transaction.to, this.intStatus, this.data);
+        if (this._config.transaction.to === ADDRESS_FORGING && this.intStatus === 20 && this.data.match(/(method)/)) {
+            const delegateInfo = JSON.parse(this.data);
+            if (delegateInfo.method === "delegate") {
+                return delegateInfo.params.value === "100000000" ? __("transaction.metahash.name.forging") : __("transaction.metahash.name.forging.active");
+            }
+            if (delegateInfo.method === "undelegate") {
+                return __("transaction.metahash.name.forging.stop");
+            }
+        }
+        return this.intStatus ? __("transaction.metahash.name." + this.intStatus) : "";
+    }
 }
-
-/**
- * @return {Balance}
- */
-Transaction.prototype.getBalance = function () {
-    return this.wallet.currency.getBalance(this.value);
-};
-
-/**
- * @return {string}
- */
-Transaction.prototype.getName = function () {
-    // console.log("Transaction", this._config.transaction.to, this.intStatus, this.data);
-    if (this._config.transaction.to === ADDRESS_FORGING && this.intStatus === 20 && this.data.match(/(method)/) ){
-        const delegateInfo = JSON.parse(this.data);
-        if (delegateInfo.method === "delegate"){
-            return delegateInfo.params.value==="100000000" ? __("transaction.metahash.name.forging") : __("transaction.metahash.name.forging.active");
-        }
-        if (delegateInfo.method === "undelegate"){
-            return __("transaction.metahash.name.forging.stop");
-        }
-    }
-    return this.intStatus ? __("transaction.metahash.name." + this.intStatus) : "";
-};

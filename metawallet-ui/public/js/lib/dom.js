@@ -85,7 +85,7 @@ function xD (element) {
 
         /** @type {Array<HTMLElement|xD>} */
         let xDElements = [];
-        elements.forEach(function (/** @type {HTMLElement} */ element) {
+        elements.forEach(function ( /** @type {HTMLElement} */ element) {
             xDElements.push(xD(element));
         });
         return xDElements;
@@ -129,26 +129,6 @@ function dom (html, attributes) {
     }
 
     return xD(element);
-}
-
-/**
- * Extend object
- * @param {Function} child
- * @param {Function} parent
- */
-function extendFunction (child, parent) {
-    let f = function () {};
-    f.prototype = parent.prototype;
-    child.prototype = new f();
-    child.prototype.constructor = child;
-
-    child.__parent = parent.prototype;
-
-    for (let prop in parent) {
-        if (parent.hasOwnProperty(prop) && typeof child[prop] === "undefined") {
-            child[prop] = parent[prop];
-        }
-    }
 }
 
 /**
@@ -202,5 +182,7 @@ function showCopyMenu (selector) {
         document.removeEventListener("touchstart", closeCopyMenu);
     };
 
-    document.addEventListener("touchstart", closeCopyMenu, { passive: false });
+    document.addEventListener("touchstart", closeCopyMenu, {
+        passive: false
+    });
 }

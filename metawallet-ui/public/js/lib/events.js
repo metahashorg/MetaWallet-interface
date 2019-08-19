@@ -24,7 +24,10 @@ Events.addListener = function (event, callback, context) {
     if (!Events._listeners[event]) {
         Events._listeners[event] = [];
     }
-    Events._listeners[event].push({callback, context});
+    Events._listeners[event].push({
+        callback,
+        context
+    });
 };
 
 /**

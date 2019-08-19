@@ -31,7 +31,7 @@ BlockchainLib.hashType = function (hash) {
         return HASH_TYPE_METAHASH_ADDRESS;
     }
 
-    if (hLength === 42){
+    if (hLength === 42) {
         // адрес ETH
         if (hash.slice(0, 2) === "0x") {
             return HASH_TYPE_ETH_ADDRESS;
@@ -43,7 +43,7 @@ BlockchainLib.hashType = function (hash) {
     }
 
     // адрес BTC
-    if (hLength > 26 && hLength < 35 && (hash.slice(0, 1) === "1" || hash.slice(0, 1) === "3" || hash.slice(0, 1) === "m")){
+    if (hLength > 26 && hLength < 35 && (hash.slice(0, 1) === "1" || hash.slice(0, 1) === "3" || hash.slice(0, 1) === "m")) {
         return HASH_TYPE_BTC_ADDRESS;
     }
 
@@ -111,7 +111,7 @@ BlockchainLib.checkHashTypeForCurrency = function (hashType, currencyId) {
  */
 BlockchainLib.hashCollapse = function (hash, len = 10) {
     // @todo hash[0:12] + "…" + hash[49:52]
-    return hash.slice(0, len) + "..." + hash.slice(-Math.floor(len/2));
+    return hash.slice(0, len) + "..." + hash.slice(-Math.floor(len / 2));
 };
 
 /**
@@ -143,7 +143,7 @@ BlockchainLib.fromEncryptedWallet = function (currencyId, encryptedWallet, passw
         switch (currencyId) {
             case CURRENCY_ID_MHC:
             case CURRENCY_ID_TMH:
-                return  /** @type {MetaHashWallet} */ MetaHash.Wallet.fromEncryptedPEM(encryptedWallet, password);
+                return /** @type {MetaHashWallet} */ MetaHash.Wallet.fromEncryptedPEM(encryptedWallet, password);
             case CURRENCY_ID_ETH:
                 return /** @type {EthereumWallet} */ Ethereum.Wallet.fromV3JSON(encryptedWallet, password);
             case CURRENCY_ID_BTC:
@@ -164,7 +164,7 @@ BlockchainLib.fromPrivateKey = function (currencyId, privateKey) {
         switch (currencyId) {
             case CURRENCY_ID_MHC:
             case CURRENCY_ID_TMH:
-                return  /** @type {MetaHashWallet} */ MetaHash.Wallet.fromPrivateKey(privateKey);
+                return /** @type {MetaHashWallet} */ MetaHash.Wallet.fromPrivateKey(privateKey);
             case CURRENCY_ID_ETH:
                 return /** @type {EthereumWallet} */ Ethereum.Wallet.fromPrivateKey(privateKey);
             case CURRENCY_ID_BTC:

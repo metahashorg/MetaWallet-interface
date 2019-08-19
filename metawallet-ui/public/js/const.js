@@ -1,5 +1,5 @@
 const VERSION = "1.0";
-const VERSION_BUILD = "22";
+const VERSION_BUILD = "28";
 const VERSION_APP = "1.0.3.4";
 
 const NODE_PORT_PROXY = 9999;
@@ -22,8 +22,8 @@ const API_ENDPOINT_TOR_TEST = "https://tor-dev.metawat.ch/";
 const API_ENDPOINT_PROXY = "https://proxy.metawat.ch/";
 const API_ENDPOINT_PROXY_TEST = "https://proxy-dev.metawat.ch/";
 const API_ENDPOINT_APP = "https://app.metahash.org/api/";
-const API_ENDPOINT_PLUS = "https://plus.metawat.ch/api/";
 const API_ENDPOINT_NETREGISTRY = "https://netregistry.metahash.io/api/";
+const API_ENDPOINT_ICONS = "https://icons.metahash.io/";
 
 /** @link https://www.cloudflare.com/distributed-web-gateway/ */
 const API_ENDPOINT_ETHEREUM = "https://cloudflare-eth.com/";
@@ -100,8 +100,6 @@ const DEFAULT_BASE_PERIOD = "day";
 const DEFAULT_WALLETS_SHOW = 1;
 const DEFAULT_RATE_PERIOD = 10 * 60 * 1000;
 
-const DEFAULT_VIEW = "CurrenciesView";
-
 const DEFAULT_USER_EMAIL = "_unregistered";
 
 // ui animations
@@ -157,13 +155,19 @@ const METAHASH_WALLET_SECP256R1 = "secp256r1";
 
 // MetaHash system addresses
 const ADDRESS_FORGING = "0x666174686572206f662077616c6c65747320666f7267696e67";
+const ADDRESS_NODE_REGISTRATOR = "0x666174686572206f662073657276657220666f7267696e6720";
 
 const TRANSACTIONS_PER_FETCH = 20;
 
 const PROXYNODE_HARDCAP = 1e13;
 const PROXYNODE_HARDCAP_SOFT = 1e12;
+const TORRENTNODE_HARDCAP = 2e13;
+const TORRENTNODE_HARDCAP_SOFT = 5e11;
 const PROXYNODE_BALANCE_START = 1e11;
-const BALANCE_DELEGATION_MIN = 1;// 512e6; // @info test
+const BALANCE_DELEGATION_MIN = 512e6;
+
+const PROXYNODE = "Proxy";
+const TORRENTNODE = "InfrastructureTorrent";
 
 const PAYMENT_METAPAY = 1;
 const PAYMENT_DELEGATE = 2;

@@ -88,46 +88,46 @@ function makeDraggablePair (element, parentSelector, cardSelector, underCardSele
             minimumMovement: 10,
             throwProps: true,
             onDragStart: function () {
-                TweenMax.set(this.target, {clearProps: 'transform', x: 0});
+                TweenMax.set(this.target, {clearProps: "transform", x: 0});
 
                 let $fakeL = $underCard.cloneNode( true );
-                TweenMax.set($fakeL, {clearProps: 'transform', x: 0, className: '+=alert-fake-l'});
-                TweenMax.set($fakeL, {className: '-=alert-body-card--qr-pass', display: 'block'});
+                TweenMax.set($fakeL, {clearProps: "transform", x: 0, className: "+=alert-fake-l"});
+                TweenMax.set($fakeL, {className: "-=alert-body-card--qr-pass", display: "block"});
                 this.target.appendChild($fakeL);
 
                 let $fakeR = $underCard.cloneNode( true );
-                TweenMax.set($fakeR, {clearProps: 'transform', x: 0, className: '+=alert-fake-r'});
-                TweenMax.set($fakeR, {className: '-=alert-body-card--qr-pass', display: 'block'});
+                TweenMax.set($fakeR, {clearProps: "transform", x: 0, className: "+=alert-fake-r"});
+                TweenMax.set($fakeR, {className: "-=alert-body-card--qr-pass", display: "block"});
                 this.target.appendChild($fakeR);
             },
             onDragEnd: function () {
                 let self = this;
 
                 if (Math.abs(this.endX - this.startX) < (this.target.offsetWidth * threshold)) {
-                    TweenMax.to(this.target, 0.2, {x: 0, onComplete: function() {
-                        self.target.querySelector('.alert-fake-l').remove();
-                        self.target.querySelector('.alert-fake-r').remove();
-                        TweenMax.set(self.target, {clearProps: 'transform'});
+                    TweenMax.to(this.target, 0.2, {x: 0, onComplete: function () {
+                        self.target.querySelector(".alert-fake-l").remove();
+                        self.target.querySelector(".alert-fake-r").remove();
+                        TweenMax.set(self.target, {clearProps: "transform"});
                     }});
                 } else {
                     if (this.endX > this.startX) {
-                        TweenMax.to(this.target, 0.2, {x: '100%', onComplete: function() {
-                            self.target.querySelector('.alert-fake-l').remove();
-                            self.target.querySelector('.alert-fake-r').remove();
-                            TweenMax.set(self.target, {clearProps: 'transform, translate', x: 0, display: 'none'});
-                            $underCard.style.display = 'block';
+                        TweenMax.to(this.target, 0.2, {x: "100%", onComplete: function () {
+                            self.target.querySelector(".alert-fake-l").remove();
+                            self.target.querySelector(".alert-fake-r").remove();
+                            TweenMax.set(self.target, {clearProps: "transform, translate", x: 0, display: "none"});
+                            $underCard.style.display = "block";
                         }});
                     } else {
-                        TweenMax.to(this.target, 0.2, {x: '-100%', onComplete: function() {
-                            self.target.querySelector('.alert-fake-l').remove();
-                            self.target.querySelector('.alert-fake-r').remove();
-                            TweenMax.set(self.target, {clearProps: 'transform, translate', x: 0, display: 'none'});
-                            $underCard.style.display = 'block';
+                        TweenMax.to(this.target, 0.2, {x: "-100%", onComplete: function () {
+                            self.target.querySelector(".alert-fake-l").remove();
+                            self.target.querySelector(".alert-fake-r").remove();
+                            TweenMax.set(self.target, {clearProps: "transform, translate", x: 0, display: "none"});
+                            $underCard.style.display = "block";
                         }});
                     }
 
-                    document.querySelector(cardSelector + '-slide-icon').classList.remove('active');
-                    document.querySelector(underCardSelector + '-slide-icon').classList.add('active');
+                    document.querySelector(cardSelector + "-slide-icon").classList.remove("active");
+                    document.querySelector(underCardSelector + "-slide-icon").classList.add("active");
                 }
             }
         });
