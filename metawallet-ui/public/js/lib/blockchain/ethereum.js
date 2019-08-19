@@ -22,7 +22,9 @@ EthereumLib.sendTx = function (wallet, privateKey, transfer) {
         /** @type {EthereumWallet} */
         let ethereumWallet = Ethereum.Wallet.fromPrivateKey(privateKey);
 
-        ethereumApi.getNonce({address: wallet.address})
+        ethereumApi.getNonce({
+                address: wallet.address
+            })
             .then((nonce) => {
                 /** @type {EthereumTxParams} */
                 const txParams = {
@@ -37,19 +39,30 @@ EthereumLib.sendTx = function (wallet, privateKey, transfer) {
                 const tx = ethereumWallet.createTx(txParams);
 
                 try {
-                    ethereumApi.sendTx({tx: tx})
+                    ethereumApi.sendTx({
+                            tx: tx
+                        })
                         .then(function (result) {
                             console.log("sendTx", "result", result);
 
-                            new Task(/** @type {TaskConfig} */ {interval: 2 * 1000, callback: function () {
-                                ethereumApi.getTx({hash: result.txHash}).then((result) => {
-                                    console.log("getTx", result);
-                                    if (result && typeof result.hash !== "undefined") {
-                                        resolve({api: ethereumApi, wallet: ethereumWallet, transaction: result.hash });
-                                        this.stop();
-                                    }
-                                });
-                            }}).start();
+                            new Task( /** @type {TaskConfig} */ {
+                                interval: 2 * 1000,
+                                callback: function () {
+                                    ethereumApi.getTx({
+                                        hash: result.txHash
+                                    }).then((result) => {
+                                        console.log("getTx", result);
+                                        if (result && typeof result.hash !== "undefined") {
+                                            resolve({
+                                                api: ethereumApi,
+                                                wallet: ethereumWallet,
+                                                transaction: result.hash
+                                            });
+                                            this.stop();
+                                        }
+                                    });
+                                }
+                            }).start();
                         })
                         .catch(function (e) {
                             console.log("sendTx", "error", e.message);

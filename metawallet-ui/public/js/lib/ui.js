@@ -6,8 +6,8 @@
  * @returns {string}
  */
 function formatNum (number, decimals, decPoint, thousandsSep) {
-    decimals     = typeof decimals !== "undefined" ? decimals : 2;
-    decPoint     = decPoint || ".";
+    decimals = typeof decimals !== "undefined" ? decimals : 2;
+    decPoint = decPoint || ".";
     thousandsSep = thousandsSep || ",";
 
     let func = decimals >= 0 || number >= 1 ? "toFixed" : "toPrecision";

@@ -32,7 +32,7 @@ window.appLang = {
 
     // common
 
-    "common.version": "Interface ver. " + VERSION + "." + VERSION_BUILD + ". Application ver. " + VERSION_APP,// + metawallet.env.appVersion + "." + metawallet.env.build,
+    "common.version": "Interface ver. " + VERSION + "." + VERSION_BUILD + ". Application ver. " + VERSION_APP, // + metawallet.env.appVersion + "." + metawallet.env.build,
     "common.copyright": "Copyright © 2017-2019 #MetaHash.  All Rights Reserved",
 
     "common.enabled": "Enabled",
@@ -251,10 +251,10 @@ window.appLang = {
 
     // GEO
 
-    "node.geo.us":"America",
-    "node.geo.eu":"Europe",
-    "node.geo.cn":"Asia",
-    "node.geo.undefined":"undefined",
+    "node.geo.us": "America",
+    "node.geo.eu": "Europe",
+    "node.geo.cn": "Asia",
+    "node.geo.undefined": "undefined",
 
     // NodeView
     "nodeview.error.notenoghfunds": "Not enough funds for delegation",

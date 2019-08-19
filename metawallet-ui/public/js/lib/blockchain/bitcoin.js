@@ -31,7 +31,11 @@ BitcoinLib.sendTx = function (wallet, privateKey, transfer) {
             })
             .then(response => {
                 // console.log("response", response);
-                resolve({api: bitcoinAPI, wallet: bitcoinWallet, transaction: response.tx.hash});
+                resolve({
+                    api: bitcoinAPI,
+                    wallet: bitcoinWallet,
+                    transaction: response.tx.hash
+                });
             })
             .catch(function (e) {
                 // console.log("sendTx", "error", e.message);

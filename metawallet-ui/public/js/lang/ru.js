@@ -6,18 +6,47 @@ window.appLang = {
 
     // errors
 
+    "error.error": "Error",
     "error.unknown": "Unknown error",
     "error.connection": "Connection problem",
     "error.connection.offline": "Offline mode",
     "error.connection.online": "Online mode",
-    "error.notavailable": "Недоступно в текущей версии",
-    "error.availableonlyinmetagate": "Недоступно только в MetaGate",
+    "error.notavailable": "Not available in current version",
+    "error.availableonlyinmetagate": "Available only in desktop MetaGate",
     "error.unknown.domain": "Unknown domain",
+    "error.emptyfields": "Fill in all required fields",
+    "error.wrongqrcode": "No data found in scanned QR code",
+    "error.wrongpassword": "Wrong password",
+    "error.wrongpasscode": "Wrong passcode",
+    "error.wrongfaceid": "Authentication error",
+    "error.passwordsdonotmatch": "Passwords do not match",
+    "error.passwordshort": "New password too simple. Minimum length: ",
+    "error.notenoughfunds": "Not enough funds",
+    "error.pknotfound": "Private key not found on the device",
+    "error.wrongname": "Wrong name",
+
+    // success
+
+    "success.success": "Success",
+    "success.imported": "Import successful",
 
     // common
 
-    "common.version": "Interface ver. " + VERSION + "." + VERSION_BUILD + ". Application ver. " + VERSION_APP,// + metawallet.env.appVersion + "." + metawallet.env.build,
+    "common.version": "Interface ver. " + VERSION + "." + VERSION_BUILD + ". Application ver. " + VERSION_APP, // + metawallet.env.appVersion + "." + metawallet.env.build,
     "common.copyright": "Copyright © 2017-2019 #MetaHash.  All Rights Reserved",
+
+    "common.enabled": "Enabled",
+    "common.disabled": "Disabled",
+    "common.activated": "Activated",
+    "common.copied": "Copied",
+    "common.saved": "Saved",
+
+    "common.ok": "OK",
+    "common.cancel": "Cancel",
+    "common.yes": "Yes",
+    "common.no": "No",
+
+    "common.pleasewait": "Action in progress...",
 
     "currency.tmh": "TMH",
     "currency.btc": "BTC",
@@ -26,6 +55,21 @@ window.appLang = {
     "currency.usd": "USD",
 
     "action.continue": "Continue",
+
+    // Transaction
+
+    "transaction.metahash.name.1": "Approve",
+    "transaction.metahash.name.20": "Transfer to address",
+    "transaction.metahash.name.101": "Wallet reward",
+    "transaction.metahash.name.102": "Node reward",
+    "transaction.metahash.name.103": "Coin reward",
+    "transaction.metahash.name.104": "Random reward",
+    "transaction.metahash.name.forging": "Start Forging",
+    "transaction.metahash.name.forging.active": "Start Active Forging",
+    "transaction.metahash.name.forging.stop": "Stop Forging",
+
+    // System wallets
+    "wallets.metahash.name.0x666174686572206f662077616c6c65747320666f7267696e67": "#MetaForging",
 
     // MenuView
 
@@ -40,6 +84,7 @@ window.appLang = {
     "passcodemodalview.title": "Enter Passcode",
     "passcodemodalview.title.new": "Enter New Passcode",
     "passcodemodalview.title.repeat": "Repeat New Passcode",
+    "passcodemodalview.subtitle": "or use Face ID / Touch ID",
 
     "settings.passcode.changed": "Passcode changed",
     "settings.passcode.turnedon": "Passcode turned on",
@@ -50,7 +95,7 @@ window.appLang = {
     "loaderview.message.connected": "Connected!",
     "loaderview.message.connecting": "Connecting...",
 
-    "loaderview.tips.header": "TIP",
+    "loaderview.tips.header": "TIP ",
     "loaderview.tips.tip1": "Remember to keep the password yourself!",
     "loaderview.tips.tip2": "We never save your password anywhere.",
     "loaderview.tips.tip3": "Please keep your keys safely. Keep in mind that if you lose them, your keys cannot be recovered.",
@@ -62,11 +107,9 @@ window.appLang = {
     "loaderview.tips.tip9": "Please keep the key password safely. If you lose it, you will not be able to manage your money. Make sure  you will not forget it.",
     "loaderview.tips.tip10": "We never save your password anywhere.",
 
-
     // AuthView
 
     "auth.error.usernotfound": "User not found",
-    "auth.error.wrongcredentials": "Wrong password",
 
     // ResetPasswordView
 
@@ -100,6 +143,27 @@ window.appLang = {
     "walletsview.tab.wallets": "Wallets",
     "walletsview.tab.latesttransactions": "Latest Transactions",
 
+    // WalletView
+
+    "createwalletview.title": "Create new wallet",
+
+    // TransferView
+
+    "transferview.error.nodesoffline": "There are no nodes online now",
+    "transferview.error.notaccepted": "Transaction was not accepted",
+
+    // TransactionView
+
+    "transactionview.status.0": "Unknown",
+    "transactionview.status.10": "In Progress",
+    "transactionview.status.20": "Done",
+    "transactionview.status.40": "Not Accepted",
+
+    // AppsView
+
+    "appsview.action.get": "Get App",
+    "appsview.action.open": "Open App",
+
     // SettingsView
 
     "settings.title": "Settings",
@@ -112,17 +176,39 @@ window.appLang = {
     // PasswordSettingsView
 
     "settings.password.changed": "Password changed",
-    "settings.password.error.newpasswordsdonotmatch": "New passwords do not match",
     "settings.password.error.emptyoldpassword": "Enter your current password",
     "settings.password.error.emptynewpassword": "Enter your new password",
     "settings.password.error.wrongpassword": "Wrong current password",
-    "settings.password.error.shortnewpassword": "New password too simple. Minimum length: ",
 
     // PasscodeSettingsView
 
     "settings.passcode.turnon": "Turn on passcode",
     "settings.passcode.turnoff": "Turn off passcode",
     "settings.passcode.error.donotmatch": "Passcodes do not match",
+
+    // QrCodeAlertView
+
+    "qrcodealertview.title.address": "Wallet Address QR Code",
+    "qrcodealertview.title.pk": "Private Key QR Code",
+    "qrcodealertview.comment.address": "Use this QR code to scan, when someone needs to send you coins.",
+    "qrcodealertview.comment.pk": "This QR code has your private key. It gives access to your funds without password and can be used to restore lost wallet. Keep it secure!",
+    "qrcodealertview.comment.pknotexists": "Private key for this wallet was not found on the device.",
+    "qrcodealertview.actions.saveqr": "Save QR Code Image",
+    "qrcodealertview.actions.showpkqr": "Show PK QR Code",
+    "qrcodealertview.hint": "Swipe cards to switch between Wallet<br>and Private Key QR codes",
+
+    // WalletCreatedAlertView
+
+    "walletcreatedalertview.notice": "Password and key file are <i>non-recoverable</i> if lost. Keep them save and make backups!",
+
+    // WalletCreateAlertView
+
+    "walletcreatealertview.error.unknowncode": "Unknown QRcode",
+    "walletcreatealertview.title.address": "Address",
+    "walletcreatealertview.title.key.public": "Public Key",
+    "walletcreatealertview.title.key.enc": "Key file is encrypted",
+    "walletcreatealertview.title.key.open": "Key file is open",
+    "walletcreatealertview.address.unknown": "Address unknown",
 
     // WalletImportEncryptedAlertView
 
@@ -131,6 +217,47 @@ window.appLang = {
     "walletimportview.title.key.public": "Public Key",
     "walletimportview.title.key.enc": "Key file is encrypted",
     "walletimportview.title.key.open": "Key file is open",
+    "walletimportview.address.unknown": "Address unknown",
+
+    // MetaPayAlertView
+
+    "metapayalertview.error.nowallets": "No suitable wallets found",
+    "metapayalertview.error.notenoghfunds": "Not enough funds. Select different wallet or add funds",
+
+    // iCloudSyncAlertView
+
+    "icloudsyncalertview.title": "iCloud synchronization",
+    "icloudsyncalertview.warning": "WARNING!",
+    "icloudsyncalertview.text1": "Wallets private keys will be stored in iCloud by default. You can change this in settings later.",
+    "icloudsyncalertview.text2": "Storing passwords and private keys is your responsibility. They can not be restored. <b>If lost, they are gone.</b>",
+
+    // OfferPasscodeAlertView
+
+    "offerpasscodealertview.title": "Make it easier!",
+    "offerpasscodealertview.text": "You can set up a 4-digit passcode and simplify your login to the application.",
+    "offerpasscodealertview.actions.yes": "Set up a passcode",
+    "offerpasscodealertview.actions.no": "No, thanks, just let me in",
+
+    // NoPkAlertView
+
+    "nopkalertview.text1": "There is no private key<br>available on your device",
+    "nopkalertview.text2": "Unfortunately, you can’t make a transfer before you place this wallet’s private key to the memory storage of your phone/tablet. You can view the history of transactions, information about the wallet and cryptocurrency balance.",
+    "nopkalertview.actions.import": "Import key from QR code",
+    "nopkalertview.actions.cancel": "cancel and return",
+
+    // importpk
+
+    "importpk.wrongcurrency": "Scaned QR does not contain $currency wallet",
+
+    // GEO
+
+    "node.geo.us": "America",
+    "node.geo.eu": "Europe",
+    "node.geo.cn": "Asia",
+    "node.geo.undefined": "undefined",
+
+    // NodeView
+    "nodeview.error.notenoghfunds": "Not enough funds for delegation",
 };
 
 /**

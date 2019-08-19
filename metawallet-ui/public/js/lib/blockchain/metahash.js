@@ -44,8 +44,8 @@ MetaHashLib.getMetapayParams = function (metaPayUrl) {
     }
 
     let metaPayParams = {};
-    url.searchParams.split("&").forEach(function (/** @type {string} */ keyValue) {
-        keyValue = keyValue.split("=").map(function (/** @type {string} */ s) {
+    url.searchParams.split("&").forEach(function ( /** @type {string} */ keyValue) {
+        keyValue = keyValue.split("=").map(function ( /** @type {string} */ s) {
             return s.trim();
         });
         metaPayParams[keyValue[0]] = keyValue[1];
@@ -108,7 +108,11 @@ MetaHashLib.sendTx = function (wallet, privateKey, transfer) {
                 metahashApi.sendTx(tx)
                     .then(function (result) {
                         console.log("sendTx", "result", result);
-                        resolve({api: metahashApi, wallet: metahashWallet, transaction: result.params});
+                        resolve({
+                            api: metahashApi,
+                            wallet: metahashWallet,
+                            transaction: result.params
+                        });
                     })
                     .catch(function (e) {
                         console.log("sendTx", "error", e.message);

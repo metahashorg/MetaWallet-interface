@@ -1,5 +1,5 @@
 const VERSION = "1.0";
-const VERSION_BUILD = "26";
+const VERSION_BUILD = "27";
 const VERSION_APP = "1.0.3.4";
 
 const NODE_PORT_PROXY = 9999;
@@ -98,8 +98,6 @@ const DEFAULT_BASE_CURRENCY = CURRENCY_ID_USD;
 const DEFAULT_BASE_PERIOD = "day";
 const DEFAULT_WALLETS_SHOW = 1;
 const DEFAULT_RATE_PERIOD = 10 * 60 * 1000;
-
-const DEFAULT_VIEW = "CurrenciesView";
 
 const DEFAULT_USER_EMAIL = "_unregistered";
 

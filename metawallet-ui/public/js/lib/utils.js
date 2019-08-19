@@ -34,7 +34,7 @@ function strtotime (datetime) {
     _ = _.map(function (i) {
         return parseInt(i);
     });
-    return (new Date (_[0], _[1]-1, _[2], _[3], _[4], _[5])).getTime() / 1000;
+    return (new Date(_[0], _[1] - 1, _[2], _[3], _[4], _[5])).getTime() / 1000;
 }
 
 /**
