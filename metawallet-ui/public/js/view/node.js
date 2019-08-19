@@ -47,7 +47,7 @@ class NodeView extends View {
         nodeDetailsElement.classList.remove("color-yellow", "color-red", "color-green-2");
         const nodeStatusHardCapClass = this.node.getNodeStatusHardCapColor();
         nodeDetailsElement.classList.add(nodeStatusHardCapClass);
-        nodeDetailsElement.innerHTML = this.node.getHargCap();
+        nodeDetailsElement.innerHTML = this.node.getHardCap();
         this.element.qs("node-trust").innerHTML = this.node.trust;
         this.element.querySelector(".percent").style.width = (this.node.trust * 100).toString() + "%";
         this.element.qs("node-roi").innerHTML = this.node.roi;

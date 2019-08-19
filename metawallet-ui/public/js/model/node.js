@@ -20,7 +20,7 @@ class ServerNode {
         this.address = nodeConfig.address;
         /** @type {string} */
         this.name = nodeConfig.name;
-        /** @type {string} */
+        /** @type {Array} */
         this.type = nodeConfig.type;
         /** @type {string} */
         this.balance = JSON.parse(nodeConfig.balance);
@@ -83,16 +83,19 @@ class ServerNode {
     /**
      * @return {string}
      */
-    getHargCap () {
-        return metawallet.walletCollection.mhcCurrency.getBalance(Math.abs(PROXYNODE_HARDCAP - this.balance.delegated)).fullSimpleString + " to hardcap";
+    getHardCap () {
+        const hardcap = this.type[0] === TORRENTNODE ? TORRENTNODE_HARDCAP : PROXYNODE_HARDCAP;
+        return metawallet.walletCollection.mhcCurrency.getBalance(Math.abs(hardcap - this.balance.delegated)).fullSimpleString + " to hardcap";
     }
     /**
      * @return {string}
      */
     getNodeStatusHardCapColor () {
-        const hardCapBalance = PROXYNODE_HARDCAP - this.balance.delegated;
+        const hardcap = this.type[0] === TORRENTNODE ? TORRENTNODE_HARDCAP : PROXYNODE_HARDCAP;
+        const hardcapsoft = this.type[0] === TORRENTNODE ? TORRENTNODE_HARDCAP_SOFT : PROXYNODE_HARDCAP_SOFT;
+        const hardCapBalance = hardcap - this.balance.delegated;
         let color = "color-green-2";
-        if (hardCapBalance < PROXYNODE_HARDCAP_SOFT && hardCapBalance > 0) {
+        if (hardCapBalance < hardcapsoft && hardCapBalance > 0) {
             color = "color-yellow";
         } else if (hardCapBalance <= 0) {
             color = "color-red";

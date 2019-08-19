@@ -16,7 +16,7 @@ MetaHashLib.addressCheck = function (address) {
  * @return {string}
  */
 MetaHashLib.addressIcon = function (address) {
-    return "https://icons.metahash.io/" + address;
+    return API_ENDPOINT_ICONS + address;
 };
 
 /**

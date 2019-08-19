@@ -1,5 +1,5 @@
 const VERSION = "1.0";
-const VERSION_BUILD = "27";
+const VERSION_BUILD = "28";
 const VERSION_APP = "1.0.3.4";
 
 const NODE_PORT_PROXY = 9999;
@@ -23,6 +23,7 @@ const API_ENDPOINT_PROXY = "https://proxy.metawat.ch/";
 const API_ENDPOINT_PROXY_TEST = "https://proxy-dev.metawat.ch/";
 const API_ENDPOINT_APP = "https://app.metahash.org/api/";
 const API_ENDPOINT_NETREGISTRY = "https://netregistry.metahash.io/api/";
+const API_ENDPOINT_ICONS = "https://icons.metahash.io/";
 
 /** @link https://www.cloudflare.com/distributed-web-gateway/ */
 const API_ENDPOINT_ETHEREUM = "https://cloudflare-eth.com/";
@@ -160,8 +161,13 @@ const TRANSACTIONS_PER_FETCH = 20;
 
 const PROXYNODE_HARDCAP = 1e13;
 const PROXYNODE_HARDCAP_SOFT = 1e12;
+const TORRENTNODE_HARDCAP = 2e13;
+const TORRENTNODE_HARDCAP_SOFT = 5e11;
 const PROXYNODE_BALANCE_START = 1e11;
-const BALANCE_DELEGATION_MIN = 512e6; // @info test
+const BALANCE_DELEGATION_MIN = 512e6;
+
+const PROXYNODE = "Proxy";
+const TORRENTNODE = "InfrastructureTorrent";
 
 const PAYMENT_METAPAY = 1;
 const PAYMENT_DELEGATE = 2;

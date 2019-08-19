@@ -44,6 +44,6 @@ class NodeSubView extends View {
         nodeDetailsElement.classList.remove("color-yellow", "color-red", "color-green-2");
         const nodeStatusHardCapClass = this.node.getNodeStatusHardCapColor();
         nodeDetailsElement.classList.add(nodeStatusHardCapClass);
-        nodeDetailsElement.innerHTML = this.node.getHargCap();
+        nodeDetailsElement.innerHTML = this.node.getHardCap();
     }
 }
