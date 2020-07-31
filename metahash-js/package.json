@@ -2,7 +2,7 @@
   "dependencies": {
     "crypto-js": "3.1.9-1",
     "dohdec": "2.0.0",
-    "elliptic": "6.4.1",
+    "elliptic": "6.5.3",
     "key-encoder": "1.1.7",
     "locutus": "2.0.10",
     "node-fetch": "2.3.0"
