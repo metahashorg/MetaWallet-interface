@@ -1,4 +1,4 @@
-# MetaHashWallett-interface
+# MetaHashWallet-interface
 [bitcoin-js](https://github.com/metahashorg/MetaWallet-interface/blob/master/bitcoin-js) - working with bitcoin's keys and api + bip38 encryption
 
 [ethereum-js](https://github.com/metahashorg/MetaWallet-interface/blob/master/ethereum-js) - working with ethereum's keys and api + V3 JSON encryption
