@@ -9,7 +9,7 @@
     "date-fns": "^1.29.0",
     "lodash-es": "^4.17.11",
     "metrics-graphics": "^2.15.6",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "query-string": "^6.4.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
